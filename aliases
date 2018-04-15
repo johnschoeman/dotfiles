@@ -8,12 +8,12 @@ alias v="$VISUAL"
 # Bundler
 alias b="bundle"
 
+# RSpec
+alias ber="bundle exec rspec"
+
 # Rails
 alias migrate="rake db:migrate db:rollback && rake db:migrate db:test:prepare"
 alias s="rspec"
 
 # Pretty print the path
 alias path='echo $PATH | tr -s ":" "\n"'
-
-# Include custom aliases
-[[ -f ~/.aliases.local ]] && source ~/.aliases.local
