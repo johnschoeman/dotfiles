@@ -13,12 +13,13 @@
   ci = commit -v
   co = checkout
   dc = diff --word-diff --cached --color-words
-  df = diff --word-diff -color-words
+  df = diff --word-diff --color-words
   glog = log -E -i --grep
   ls = log --oneline
   mup = !git checkout master && git pull && git checkout -
   pf = push --force-with-lease
   sla = log --oneline --decorate --graph --all -20
+  slah = log --oneline --decorate --graph -40
   st = status
   uncommit = reset --soft HEAD^
   unstage = reset
