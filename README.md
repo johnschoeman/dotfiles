@@ -10,18 +10,36 @@ Thank you to all the [contributors](https://github.com/thoughtbot/dotfiles/contr
 Requirements
 ------------
 
-Set zsh as your login shell:
+zsh must be your login shell:
 
-    chsh -s $(which zsh)
+```bash
+chsh -s $(which zsh)
+```
 
 Install
 -------
 
-Clone onto your laptop:
+1. Clone onto your laptop:
 
-    git clone git://github.com/johnschoeman/dotfiles.git ~/dotfiles
+```bash
+git clone git://github.com/johnschoeman/dotfiles.git ~/dotfiles
+```
 
-Make symlinks for relevant files
+2. Run the setup script:
+
+```bash
+bash ~/dotfiles/setup_dotfiles.sh
+```
+
+This will
+
+- Set zsh as the login shell
+- Make symlinks for relevant files:
+- source aliases and rcrc
+
+
+
+
 
 What's in it?
 -------------
