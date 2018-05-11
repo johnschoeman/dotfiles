@@ -15,5 +15,10 @@ alias ber="bundle exec rspec"
 alias migrate="rake db:migrate db:rollback && rake db:migrate db:test:prepare"
 alias s="rspec"
 
+# Mix
+alias mxt="mix test"
+alias mxf="mix format"
+alias mxs="mix phx.server"
+
 # Pretty print the path
 alias path='echo $PATH | tr -s ":" "\n"'
