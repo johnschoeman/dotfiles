@@ -38,6 +38,8 @@ Plug 'vim-ruby/vim-ruby'
 Plug 'vim-scripts/tComment'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'elmcast/elm-vim'
+Plug '/usr/local/opt/fzf/'
+Plug 'junegunn/fzf.vim'
 
 if g:has_async
   Plug 'w0rp/ale'
