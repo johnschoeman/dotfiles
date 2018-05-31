@@ -21,10 +21,8 @@ nmap <leader>so :source $MYVIMRC<cr>
 nmap j gj
 nmap k gk
 
-imap <C-s> <esc>:w<CR>
-imap <esc> <esc>:w<CR>
-imap jk <esc>:w<CR>
-imap kj <esc>:w<CR>
+imap jk <esc>
+imap kj <esc>
 
 " automatically rebalance windows on vim resize
 autocmd VimResized * :wincmd =
