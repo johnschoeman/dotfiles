@@ -42,7 +42,7 @@ Plug '/usr/local/opt/fzf/'
 Plug 'junegunn/fzf.vim'
 Plug 'prettier/vim-prettier', {
   \ 'do': 'yarn install',
-  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue'] }
+  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'vue'] }
 
 if g:has_async
   Plug 'w0rp/ale'
