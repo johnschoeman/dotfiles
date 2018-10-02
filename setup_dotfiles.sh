@@ -36,6 +36,7 @@ links=(
   ~/.rspec
   ~/.tmux.conf
   ~/.vimrc
+  ~/.zsh
   ~/.zshenv
   ~/.zshrc
 )
@@ -53,6 +54,7 @@ files=(
   ~/dotfiles/rspec
   ~/dotfiles/tmux.conf
   ~/dotfiles/vim/vimrc
+  ~/dotfiles/zsh
   ~/dotfiles/zshenv
   ~/dotfiles/zshrc
 )
