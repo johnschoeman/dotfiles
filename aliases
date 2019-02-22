@@ -27,9 +27,8 @@ alias be="bundle exec"
 # RSpec
 alias ber="bundle exec rspec"
 
-# Rails
-alias migrate="rake db:migrate db:rollback && rake db:migrate db:test:prepare"
-alias s="rspec"
+# Yarn
+alias yarp="yarn run prettier"
 
 # Mix
 alias mxt="mix test"
