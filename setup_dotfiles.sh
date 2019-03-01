@@ -25,6 +25,7 @@ echo
 
 links=(
   ~/.aginore
+  ~/.alacritty.yml
   ~/.aliases
   ~/.ctags
   ~/.gemrc
@@ -43,6 +44,7 @@ links=(
 
 files=(
   ~/dotfiles/agignore
+  ~/dotfiles/alacritty.yml
   ~/dotfiles/aliases
   ~/dotfiles/ctags
   ~/dotfiles/gemrc
