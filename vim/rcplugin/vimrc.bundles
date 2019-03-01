@@ -50,6 +50,6 @@ if g:has_async
 endif
 
 let g:prettier#autoformat = 0
-autocmd BufWritePre *.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql, PrettierAsync
+autocmd BufWritePre *.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql PrettierAsync
 
 call plug#end()
