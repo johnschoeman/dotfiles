@@ -36,6 +36,8 @@ links=(
   ~/.rcrc
   ~/.rspec
   ~/.tmux.conf
+  ~/.vim/rcfiles/general
+  ~/.vim/rcfiles/search-and-replace
   ~/.vimrc
   ~/.zsh
   ~/.zshenv
@@ -55,6 +57,8 @@ files=(
   ~/dotfiles/rcrc
   ~/dotfiles/rspec
   ~/dotfiles/tmux.conf
+  ~/dotfiles/vim/rcfiles/general
+  ~/dotfiles/vim/rcfiles/search-and-replace
   ~/dotfiles/vim/vimrc
   ~/dotfiles/zsh
   ~/dotfiles/zshenv
@@ -89,25 +93,37 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
 else
   echo "Not making symlinks, you may need to link the relevant files manually"
 fi
+echo
 
 # Source config files
 
+echo "---Sourcing Config Files---"
+echo
 config_files=(~/.aliases ~/.rcrc)
 
-echo
-echo "---Source files---"
-echo
-read -p "Do you want to source aliases and rcrc? (y/n) " -n 1 -r
-echo
-
-if [[ $REPLY =~ ^[Yy]$ ]]; then
-  for file in "${config_files[@]}"
-  do
-    echo "running source ${file}"
-    source "${file}"
-  done
-fi
+for file in "${config_files[@]}"
+do
+  echo "running source ${file}"
+  source "${file}"
+done
 
 echo
+
+# Install Plug for vim
+
+echo "---Installing Plug for vim---"
+echo
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+echo
+
+# Install jellybeans for vim
+
+echo "---Installing jellybeans for vim---"
+echo
+mkdir -p ~/.vim/colors
+cd ~/.vim/colors
+curl -O https://raw.githubusercontent.com/nanotech/jellybeans.vim/master/colors/jellybeans.vim
+echo
+
 echo "-------------------------"
 echo "Done with dotfiles setup!"
