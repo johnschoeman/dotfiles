@@ -16,10 +16,6 @@ alias du="du -cksh"
 alias df="df -h"
 alias sed="sed -E"
 
-# Global aliases
-alias -g G="| grep"
-alias -g ONE="| awk '( print \$1)'"
-
 # Bundler
 alias b="bundle"
 alias be="bundle exec"
