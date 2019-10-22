@@ -25,6 +25,8 @@ alias ber="bundle exec rspec"
 
 # Yarn
 alias yarp="yarn run prettier"
+alias y="yarn install"
+alias yp="yarn install && cd ios && pod install && cd .."
 
 # Mix
 alias mxt="mix test"
