@@ -1,7 +1,5 @@
-[init]
-  templatedir = ~/.git_template
 [push]
-  default = upstream
+ default = upstream
 [color]
   ui = auto
 [alias]
