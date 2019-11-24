@@ -27,6 +27,7 @@ links=(
   ~/.aginore
   ~/.alacritty.yml
   ~/.aliases
+  ~/.bash_profile
   ~/.ctags
   ~/.gemrc
   ~/.gitconfig
@@ -48,6 +49,7 @@ files=(
   ~/dotfiles/agignore
   ~/dotfiles/alacritty.yml
   ~/dotfiles/aliases
+  ~/dotfiles/bash_profile
   ~/dotfiles/ctags
   ~/dotfiles/gemrc
   ~/dotfiles/gitconfig
