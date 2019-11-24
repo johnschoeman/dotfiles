@@ -17,12 +17,14 @@ call plug#begin('~/.vim/bundle')
 " Define bundles via Github repos
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
+Plug 'morhetz/gruvbox'
+Plug 'HerringtonDarkholme/yats.vim' " TS syntax
+
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'elixir-lang/vim-elixir'
-Plug 'fatih/vim-go'
+Plug '/usr/local/opt/fzf/'
+Plug 'junegunn/fzf.vim'
+
 Plug 'janko-m/vim-test'
-Plug 'leafgarland/typescript-vim'
-Plug 'pangloss/vim-javascript'
 Plug 'pbrisbin/vim-mkdir'
 Plug 'slim-template/vim-slim'
 
@@ -35,26 +37,27 @@ Plug 'tpope/vim-rake'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-surround'
-
 Plug 'vim-ruby/vim-ruby'
 Plug 'vim-scripts/tComment'
 
 Plug 'elmcast/elm-vim'
-Plug '/usr/local/opt/fzf/'
-Plug 'junegunn/fzf.vim'
+
+Plug 'leafgarland/typescript-vim'
+Plug 'pangloss/vim-javascript'
 
 Plug 'christoomey/vim-run-interactive'
 Plug 'christoomey/vim-tmux-navigator'
 
-Plug 'prettier/vim-prettier', {
-  \ 'do': 'yarn install',
-  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'vue', 'ruby'] }
+
+" Plug 'prettier/vim-prettier', {
+"   \ 'do': 'yarn install',
+"   \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'vue', 'ruby'] }
 
 if g:has_async
   Plug 'w0rp/ale'
 endif
 
-let g:prettier#autoformat = 0
-autocmd BufWritePre *.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.js PrettierAsync
+" let g:prettier#autoformat = 0
+" autocmd BufWritePre *.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.js PrettierAsync
 
 call plug#end()

@@ -1,7 +1,7 @@
 "Vim Config
 "----------
 
-colorscheme jellybeans
+colorscheme gruvbox
 
 set backspace=2   " Backspace deletes like most programs in insert mode
 set nobackup
@@ -15,7 +15,7 @@ set laststatus=2  " Always display the status line
 set autowrite     " Automatically :write before running commands
 
 
-" COC Config
+" CoC Config
 "------------
 
 let g:coc_global_extensions = [
@@ -31,9 +31,13 @@ set hidden          " if hidden is not set, TextEdit might fail
 set nobackup        " some servers have issues with backup files, see #649
 set nowritebackup
 set cmdheight=2     " Better display for messages
-set updatetime=300  " You will ahve bad experience for diagonstic messages when it's default 4000.
+set updatetime=300  " You will ahve bad experience for diagonstic messages when it's default 4000
 set shortmess+=c    " don't give |ins-completion-menu| messages.
 set signcolumn=yes  " always show signcolums
+set guicursor=    " Reset cursor mode https://github.com/neoclide/coc.nvim/issues/1011
+
+" Prettier for CoC
+command! -nargs=0 Prettier :CocCommand prettier.formatFile " runs prettier on save
 
 " Use tab for trigger completion with characters ahead and navigate.
 " Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
@@ -56,6 +60,9 @@ inoremap <silent><expr> <c-space> coc#refresh()
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 " Or use `complete_info` if your vim support it, like:
 " inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
+
+" Snippets
+"
 
 " Use `[g` and `]g` to navigate diagnostics
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
