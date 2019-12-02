@@ -21,6 +21,12 @@ echo
 echo "Done setting shell"
 echo
 
+# Install nvim
+
+echo "---Installing nvim---"
+brew install neovim
+echo "Done installing nvim"
+
 # Make symlinks for relevant files
 
 links=(
@@ -43,6 +49,7 @@ links=(
   ~/.zsh
   ~/.zshenv
   ~/.zshrc
+  ~/.config/nvim/init.vim
 )
 
 files=(
@@ -65,6 +72,7 @@ files=(
   ~/dotfiles/zsh
   ~/dotfiles/zshenv
   ~/dotfiles/zshrc
+  ~/dotfiles/init.vim
 )
 
 # Get okay to overwrite files from user
@@ -111,11 +119,11 @@ done
 
 echo
 
-# Install Plug for vim
+# Install Plug for nvim
 
-echo "---Installing Plug for vim---"
+echo "---Installing Plug for nvim---"
 echo
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 echo
 
 # Install jellybeans for vim
