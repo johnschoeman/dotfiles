@@ -127,5 +127,12 @@ curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
 echo
 
 
+# Source zsh files
+# source ~/.zshrc
+# Create .config folder and add symlink between config/nvim/init.vim and dotfiles/initi.vim
+# run PlugInstall from neovim
+# add gruvbox colors
+
+
 echo "-------------------------"
 echo "Done with dotfiles setup!"

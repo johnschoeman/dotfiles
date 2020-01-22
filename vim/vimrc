@@ -23,6 +23,5 @@ call plug#begin('~/.vim/bundle')
 call s:SourceConfigFilesIn('rcplugins')
 call plug#end()
 
-call s:SourceConfigFilesIn('rcfiles')
-
 source ~/dotfiles/vim/rcplugin/vimrc.bundles
+source ~/dotfiles/vim/rcfiles/general
