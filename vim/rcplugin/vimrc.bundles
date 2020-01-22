@@ -53,10 +53,6 @@ Plug 'christoomey/vim-tmux-navigator'
 "   \ 'do': 'yarn install',
 "   \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'vue', 'ruby'] }
 
-if g:has_async
-  Plug 'w0rp/ale'
-endif
-
 " let g:prettier#autoformat = 0
 " autocmd BufWritePre *.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.js PrettierAsync
 

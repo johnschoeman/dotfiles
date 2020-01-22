@@ -34,6 +34,8 @@ links=(
   ~/.alacritty.yml
   ~/.aliases
   ~/.bash_profile
+  ~/.config/nvim/init.vim
+  ~/.config/nvim/coc-settings.json
   ~/.ctags
   ~/.gemrc
   ~/.gitconfig
@@ -57,6 +59,8 @@ files=(
   ~/dotfiles/alacritty.yml
   ~/dotfiles/aliases
   ~/dotfiles/bash_profile
+  ~/dotfiles/vim/init.vim
+  ~/dotfiles/vim/coc-settings.json
   ~/dotfiles/ctags
   ~/dotfiles/gemrc
   ~/dotfiles/gitconfig
@@ -119,21 +123,13 @@ done
 
 echo
 
-# Install Plug for nvim
+# Install Plug for vim
+echo "---Installing Plug for neovim---"
+echo
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+echo
 
-echo "---Installing Plug for nvim---"
-echo
-curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-echo
-
-# Install jellybeans for vim
-
-echo "---Installing jellybeans for vim---"
-echo
-mkdir -p ~/.vim/colors
-cd ~/.vim/colors
-curl -O https://raw.githubusercontent.com/nanotech/jellybeans.vim/master/colors/jellybeans.vim
-echo
 
 echo "-------------------------"
 echo "Done with dotfiles setup!"

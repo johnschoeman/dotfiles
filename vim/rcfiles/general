@@ -2,6 +2,7 @@
 "----------
 
 colorscheme gruvbox
+set background=dark
 
 set backspace=2   " Backspace deletes like most programs in insert mode
 set nobackup
@@ -25,6 +26,12 @@ let g:coc_global_extensions = [
   \ 'coc-eslint', 
   \ 'coc-prettier', 
   \ 'coc-json', 
+  \ 'coc-css',
+  \ 'coc-highlightA',
+  \ 'coc-html',
+  \ 'coc-yaml',
+  \ 'coc-lists',
+  \ 'coc-solargraph'
   \ ]
 
 set hidden          " if hidden is not set, TextEdit might fail
@@ -34,7 +41,8 @@ set cmdheight=2     " Better display for messages
 set updatetime=300  " You will ahve bad experience for diagonstic messages when it's default 4000
 set shortmess+=c    " don't give |ins-completion-menu| messages.
 set signcolumn=yes  " always show signcolums
-set guicursor=    " Reset cursor mode https://github.com/neoclide/coc.nvim/issues/1011
+set guicursor=      " Reset cursor mode https://github.com/neoclide/coc.nvim/issues/1011
+autocmd OptionSet guicursor noautocmd set guicursor=
 
 " Prettier for CoC
 command! -nargs=0 Prettier :CocCommand prettier.formatFile " runs prettier on save

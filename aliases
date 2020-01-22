@@ -28,9 +28,9 @@ alias yarp="yarn run prettier"
 alias y="yarn install"
 alias yp="yarn install && cd ios && pod install && cd .."
 
+# Vim
+alias vim="nvim"
+alias vi="nvim"
+
 # Pretty print the path
 alias path='echo $PATH | tr -s ":" "\n"'
-
-# Vim
-alias vim=nvim
-alias vi=nvim

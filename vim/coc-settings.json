@@ -1,0 +1,17 @@
+{
+  "suggest.noselect": false,
+  "prettier.requireConfig": true,
+  "tslint.enable": true,
+  "coc.preferences.formatOnSaveFiletypes": [
+    "css",
+    "graphql",
+    "javascript",
+    "javascriptreact",
+    "json",
+    "markdown",
+    "Markdown",
+    "typescript.tsx",
+    "typescript",
+    "typescriptreact"
+  ]
+}
