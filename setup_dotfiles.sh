@@ -22,7 +22,6 @@ echo "Done setting shell"
 echo
 
 # Install nvim
-
 echo "---Installing nvim---"
 brew install neovim
 echo "Done installing nvim"
@@ -33,7 +32,6 @@ links=(
   ~/.aginore
   ~/.alacritty.yml
   ~/.aliases
-  ~/.bash_profile
   ~/.config/nvim/init.vim
   ~/.config/nvim/coc-settings.json
   ~/.ctags
@@ -58,7 +56,6 @@ files=(
   ~/dotfiles/agignore
   ~/dotfiles/alacritty.yml
   ~/dotfiles/aliases
-  ~/dotfiles/bash_profile
   ~/dotfiles/vim/init.vim
   ~/dotfiles/vim/coc-settings.json
   ~/dotfiles/ctags
@@ -110,7 +107,6 @@ fi
 echo
 
 # Source config files
-
 echo "---Sourcing Config Files---"
 echo
 config_files=(~/.aliases ~/.rcrc)
@@ -123,7 +119,7 @@ done
 
 echo
 
-# Install Plug for vim
+# Install Plug for neovim
 echo "---Installing Plug for neovim---"
 echo
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
