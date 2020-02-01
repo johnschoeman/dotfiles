@@ -63,9 +63,14 @@ fi
 precmd () { vcs_info }
 PROMPT='%F{5}[%F{2}%n%F{5}] %F{3}%3~ ${vcs_info_msg_0_} %f%# '
 
+# set nvim to default editor
+export VISUAL=nvim
+export EDITOR="$VISUAL"
+
 # aliases
 [[ -f ~/.aliases ]] && source ~/.aliases
 
+# paths
 export PATH=$PATH:/usr/bin
 export JAVA_HOME="$(/usr/libexec/java_home)"
 
