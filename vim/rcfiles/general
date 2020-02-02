@@ -1,24 +1,25 @@
 "Vim Config
 "----------
 
+"General
+"-------
 colorscheme gruvbox
 set background=dark
 
-set backspace=2   " Backspace deletes like most programs in insert mode
+set backspace=2       " Backspace deletes like most programs in insert mode
 set nobackup
 set nowritebackup
-set noswapfile    " http://robots.thoughtbot.com/post/18739402579/global-gitignore#comment-458413287
+set noswapfile        " http://robots.thoughtbot.com/post/18739402579/global-gitignore#comment-458413287
 set history=50
-set ruler         " show the cursor position all the time
-set showcmd       " display incomplete commands
-set incsearch     " do incremental searching
-set laststatus=2  " Always display the status line
-set autowrite     " Automatically :write before running commands
+set ruler             " show the cursor position all the time
+set showcmd           " display incomplete commands
+set incsearch         " do incremental searching
+set laststatus=2      " Always display the status line
+set autowrite         " Automatically :write before running commands
+set diffopt+=vertical " Always use vertical diffs
 
-
-" CoC Config
+"CoC Config
 "------------
-
 let g:coc_global_extensions = [
   \ 'coc-snippets',
   \ 'coc-pairs',
@@ -161,8 +162,8 @@ nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 
 
-" Relative Line Numbers
-" ---------------------
+"Relative Line Numbers
+"---------------------
 :set number relativenumber
 :augroup numbertoggle
 :  autocmd!
@@ -171,8 +172,8 @@ nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 :augroup END
 
 
-" Mappings
-" --------
+"Mappings
+"--------
 nmap <leader>h :echo "hello"<cr>
 nmap 0 ^
 nmap <leader>vr :sp $MYVIMRC<cr>
@@ -309,6 +310,12 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 
+"Spell Check
+"-----------
+autocmd BufRead,BufNewFile *.md setlocal spell
+autocmd BufRead,BufNewFile *.txt setlocal spell
+autocmd FileType gitcommit setlocal spell
+
 " Set spellfile to location that is guaranteed to exist, can be symlinked to
 " Dropbox or kept in Git and managed outside of thoughtbot/dotfiles using rcm.
 set spellfile=$HOME/.vim-spell-en.utf-8.add
@@ -316,12 +323,9 @@ set spellfile=$HOME/.vim-spell-en.utf-8.add
 " Autocomplete with dictionary words when spell check is on
 set complete+=kspell
 
-" Always use vertical diffs
-set diffopt+=vertical
 
 "Search / Substitute related configurations
 "-------------------------------------------
-
 set hlsearch
 set incsearch
 set ignorecase
