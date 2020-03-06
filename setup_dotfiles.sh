@@ -30,8 +30,8 @@ echo "Done installing nvim"
 
 links=(
   ~/.aginore
-  ~/.alacritty.yml
   ~/.aliases
+  ~/.config/kitty/kitty.conf
   ~/.config/nvim/init.vim
   ~/.config/nvim/coc-settings.json
   ~/.ctags
@@ -54,8 +54,8 @@ links=(
 
 files=(
   ~/dotfiles/agignore
-  ~/dotfiles/alacritty.yml
   ~/dotfiles/aliases
+  ~/dotfiles/kitty.conf
   ~/dotfiles/vim/init.vim
   ~/dotfiles/vim/coc-settings.json
   ~/dotfiles/ctags
