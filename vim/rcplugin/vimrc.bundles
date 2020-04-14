@@ -44,16 +44,14 @@ Plug 'elmcast/elm-vim'
 
 Plug 'leafgarland/typescript-vim'
 Plug 'pangloss/vim-javascript'
+Plug 'peitalin/vim-jsx-typescript'
+Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+Plug 'jparise/vim-graphql'
 
 Plug 'christoomey/vim-run-interactive'
 Plug 'christoomey/vim-tmux-navigator'
 
-
-" Plug 'prettier/vim-prettier', {
-"   \ 'do': 'yarn install',
-"   \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'vue', 'ruby'] }
-
-" let g:prettier#autoformat = 0
-" autocmd BufWritePre *.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.js PrettierAsync
+autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
+autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
 
 call plug#end()

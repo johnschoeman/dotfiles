@@ -24,8 +24,6 @@ let g:coc_global_extensions = [
   \ 'coc-snippets',
   \ 'coc-pairs',
   \ 'coc-tsserver',
-  \ 'coc-eslint', 
-  \ 'coc-prettier', 
   \ 'coc-json', 
   \ 'coc-css',
   \ 'coc-highlightA',
@@ -34,6 +32,14 @@ let g:coc_global_extensions = [
   \ 'coc-lists',
   \ 'coc-solargraph'
   \ ]
+
+if isdirectory('./node_modules') && isdirectory('./node_modules/prettier')
+  let g:coc_global_extensions += ['coc-prettier']
+endif
+
+if isdirectory('./node_modules') && isdirectory('./node_modules/eslint')
+  let g:coc_global_extensions += ['coc-eslint']
+endif
 
 set hidden          " if hidden is not set, TextEdit might fail
 set nobackup        " some servers have issues with backup files, see #649
@@ -44,9 +50,6 @@ set shortmess+=c    " don't give |ins-completion-menu| messages.
 set signcolumn=yes  " always show signcolums
 set guicursor=      " Reset cursor mode https://github.com/neoclide/coc.nvim/issues/1011
 autocmd OptionSet guicursor noautocmd set guicursor=
-
-" Prettier for CoC
-command! -nargs=0 Prettier :CocCommand prettier.formatFile " runs prettier on save
 
 " Use tab for trigger completion with characters ahead and navigate.
 " Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
@@ -72,10 +75,10 @@ inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
 " Snippets
 "
-
-" Use `[g` and `]g` to navigate diagnostics
-nmap <silent> [g <Plug>(coc-diagnostic-prev)
-nmap <silent> ]g <Plug>(coc-diagnostic-next)
+"
+" Use `ng` and `mg` to navigate diagnostics
+nmap <silent> ng <Plug>(coc-diagnostic-prev)
+nmap <silent> mg <Plug>(coc-diagnostic-next)
 
 " Remap keys for gotos
 nmap <silent> gd <Plug>(coc-definition)
@@ -85,6 +88,19 @@ nmap <silent> gr <Plug>(coc-references)
 
 " Use K to show documentation in preview window
 nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! ShowDocIfNoDiagnostic(timer_id)
+  if (coc#util#has_float() == 0)
+    silent call CocActionAsync('doHover')
+  endif
+endfunction
+
+function! s:show_hover_doc()
+  call timer_start(500, 'ShowDocIfNoDiagnostic')
+endfunction
+
+autocmd CursorHoldI * :call <SID>show_hover_doc()
+autocmd CursorHold * :call <SID>show_hover_doc()
 
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
