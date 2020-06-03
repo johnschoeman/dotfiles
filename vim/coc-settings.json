@@ -1,7 +1,6 @@
 {
   "suggest.noselect": false,
   "prettier.requireConfig": true,
-  "tslint.enable": true,
   "coc.preferences.formatOnSaveFiletypes": [
     "css",
     "elm",
@@ -14,5 +13,7 @@
     "typescript.tsx",
     "typescript",
     "typescriptreact"
-  ]
+  ],
+  "typescript.implementationsCodeLens.enable": false,
+  "typescript.referencesCodeLens.enable": false
 }

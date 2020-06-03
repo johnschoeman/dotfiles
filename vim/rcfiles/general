@@ -176,10 +176,17 @@ nnoremap <silent> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
+"End COC Config
+"--------------
 
+"Neovim Config
+"-------------
 
-"Relative Line Numbers
-"---------------------
+" keep highlighting in sync for js
+autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
+autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
+
+" use relative line numbers
 :set number relativenumber
 :augroup numbertoggle
 :  autocmd!
@@ -188,8 +195,7 @@ nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 :augroup END
 
 
-"Mappings
-"--------
+" set mappings
 nmap <leader>h :echo "hello"<cr>
 nmap 0 ^
 nmap <leader>vr :sp $MYVIMRC<cr>
