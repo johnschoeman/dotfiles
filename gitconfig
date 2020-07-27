@@ -16,6 +16,7 @@
   glog = log -E -i --grep
   ls = log --oneline
   dup = !git checkout development && git pull && git checkout -
+  gud = git add --all && git commit --amend --no-edit
   mup = !git checkout master && git pull && git checkout -
   pf = push --force-with-lease
   sla = log --oneline --decorate --graph --all -20
@@ -24,6 +25,7 @@
   uncommit = reset --soft HEAD^
   unstage = reset
   wlog = log --pretty=format:'%C(yellow)%h%C(reset) - %an [%C(green)%ar%C(reset)] %s'
+  gstat = git log --numstat --pretty="%H" commit1..commit2 | awk 'NF==3 {plus+=$1; minus+=$2} END {printf("+%d, -%d\n", plus, minus)}'
 [core]
   excludesfile = ~/.gitignore
   autocrlf = input
