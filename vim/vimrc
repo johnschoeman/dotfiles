@@ -10,6 +10,9 @@ set nocompatible
 
 let mapleader = "\<Space>"
 
+"" thank me later - THANK YOU.
+nnoremap ; :
+
 function! s:SourceConfigFilesIn(directory)
   let directory_splat = '~/.vim/' . a:directory . '/*'
   for config_file in split(glob(directory_splat), '\n')

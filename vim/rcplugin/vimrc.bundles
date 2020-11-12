@@ -51,4 +51,6 @@ Plug 'jparise/vim-graphql'
 Plug 'christoomey/vim-run-interactive'
 Plug 'christoomey/vim-tmux-navigator'
 
+Plug 'dkprice/vim-easygrep'
+
 call plug#end()

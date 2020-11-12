@@ -13,6 +13,7 @@
   co = checkout
   dc = diff --word-diff --cached --color-words
   df = diff --word-diff --color-words
+  djts = ! git branch -D `git branch | grep -E 'jts-*'`
   glog = log -E -i --grep
   ls = log --oneline
   dup = !git checkout development && git pull && git checkout -
@@ -46,3 +47,5 @@
   email = johnschoeman1617@gmail.com
 [http]
 	postBuffer = 1572864000
+[init]
+	defaultBranch = main
