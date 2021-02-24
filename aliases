@@ -34,3 +34,7 @@ alias vi="nvim"
 
 # Pretty print the path
 alias path='echo $PATH | tr -s ":" "\n"'
+
+# React Native
+alias rns='npx react-native start'
+alias rnsc='npx react-native start --resetCache'
