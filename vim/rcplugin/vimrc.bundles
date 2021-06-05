@@ -15,16 +15,14 @@ let g:has_async = v:version >= 800 || has('nvim')
 call plug#begin('~/.vim/bundle')
 
 " Define bundles via Github repos
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-Plug 'morhetz/gruvbox'
-Plug 'HerringtonDarkholme/yats.vim' " TS syntax
+" Tooling
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 Plug 'ctrlpvim/ctrlp.vim'
 Plug '/usr/local/opt/fzf/'
 Plug 'junegunn/fzf.vim'
-
-Plug 'janko-m/vim-test'
+Plug 'vim-test/vim-test'
 Plug 'pbrisbin/vim-mkdir'
 Plug 'slim-template/vim-slim'
 
@@ -37,20 +35,26 @@ Plug 'tpope/vim-rake'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-surround'
-Plug 'vim-ruby/vim-ruby'
 Plug 'vim-scripts/tComment'
 
-Plug 'elmcast/elm-vim'
+Plug 'christoomey/vim-run-interactive'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'dkprice/vim-easygrep'
 
+Plug 'codota/tabnine-vim'
+
+Plug 'morhetz/gruvbox'
+
+" Languages
+Plug 'vim-ruby/vim-ruby'
+Plug 'HerringtonDarkholme/yats.vim' " TS syntax
+Plug 'elmcast/elm-vim'
+Plug 'evanleck/vim-svelte', {'branch': 'main'}
 Plug 'leafgarland/typescript-vim'
 Plug 'pangloss/vim-javascript'
 Plug 'peitalin/vim-jsx-typescript'
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 Plug 'jparise/vim-graphql'
 
-Plug 'christoomey/vim-run-interactive'
-Plug 'christoomey/vim-tmux-navigator'
-
-Plug 'dkprice/vim-easygrep'
 
 call plug#end()
