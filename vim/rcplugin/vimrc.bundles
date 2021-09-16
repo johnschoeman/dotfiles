@@ -17,7 +17,10 @@ call plug#begin('~/.vim/bundle')
 " Define bundles via Github repos
 
 " Tooling
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
+
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
 
 Plug 'ctrlpvim/ctrlp.vim'
 Plug '/usr/local/opt/fzf/'
