@@ -70,16 +70,34 @@ export EDITOR="$VISUAL"
 # aliases
 [[ -f ~/.aliases ]] && source ~/.aliases
 
+
+# For the system Java wrappers to find this JDK, symlink it with
+# sudo ln -sfn /usr/local/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk
+#
+# openjdk is keg-only, which means it was not symlinked into /usr/local,
+# because macOS provides similar software and installing this software in
+# parallel can cause all kinds of trouble.
+#
+# If you need to have openjdk first in your PATH, run:
+#   echo 'export PATH="/usr/local/opt/openjdk/bin:$PATH"' >> ~/.zshrc
+#
+# For compilers to find openjdk you may need to set:
+#   export CPPFLAGS="-I/usr/local/opt/openjdk/include"
+
 # paths
+# -----
+
 export PATH=$PATH:/usr/bin
-export JAVA_HOME="$(/usr/libexec/java_home)"
 
 export ANDROID_HOME=$HOME/Library/Android/sdk
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH="/usr/local/opt/openjdk/bin:$PATH"
+
 export PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
 
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+. /usr/local/opt/asdf/libexec/asdf.sh

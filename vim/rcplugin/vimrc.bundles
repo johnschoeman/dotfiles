@@ -23,8 +23,11 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 
 Plug 'ctrlpvim/ctrlp.vim'
+
 Plug '/usr/local/opt/fzf/'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+
 Plug 'vim-test/vim-test'
 Plug 'pbrisbin/vim-mkdir'
 Plug 'slim-template/vim-slim'
