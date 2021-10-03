@@ -3,6 +3,7 @@
 
 "General
 "-------
+
 colorscheme gruvbox
 set background=dark
 
@@ -100,6 +101,7 @@ set list listchars=tab:»·,trail:·,nbsp:·
 set nojoinspaces
 
 "Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
+
 if executable('ag')
   " Use Ag over Grep
   set grepprg=ag\ --nogroup\ --nocolor
@@ -115,6 +117,7 @@ if executable('ag')
     nnoremap \ :Ag<SPACE>
   endif
 endif
+
 
 "Make it obvious where 80 characters is
 set textwidth=80
@@ -265,6 +268,9 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
+" Codeaction
+nmap <silent> gk <Plug>(coc-codeaction-selected)
+
 " Use K to show documentation in preview window.
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 
@@ -369,10 +375,11 @@ nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 "--------------
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
+"Telescope
+"---------
+
 nnoremap <c-p> :Telescope find_files<cr>
 nnoremap \ :Telescope live_grep<cr>
-
-" Telescope
 
 lua << EOF
 require('telescope').setup{
@@ -400,7 +407,11 @@ require('telescope').setup{
       vertical = { mirror = false }
     },
     file_sorter =  require'telescope.sorters'.get_fuzzy_file,
-    file_ignore_patterns = { "node_modules" },
+    file_ignore_patterns = {
+      "node_modules",
+      "cypress/screenshots",
+      "cypress/videos"
+    },
     generic_sorter =  require'telescope.sorters'.get_generic_fuzzy_sorter,
     path_display = {},
     winblend = 0,
