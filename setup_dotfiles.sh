@@ -21,10 +21,14 @@ echo
 echo "Done setting shell"
 echo
 
-# Install nvim
-echo "---Installing nvim---"
+# Install Programs
+echo "---Installing programs---" 
+
 brew install neovim
-echo "Done installing nvim"
+brew install ack
+# Kitty
+# Tmux
+# add gruvbox colors
 
 # Make symlinks for relevant files
 
@@ -36,13 +40,9 @@ links=(
   ~/.config/nvim/init.vim
   ~/.config/nvim/coc-settings.json
   ~/.ctags
-  ~/.gemrc
   ~/.gitconfig
   ~/.gitmessage
-  ~/.hushlogin
   ~/.psqlrc
-  ~/.rcrc
-  ~/.rspec
   ~/.tmux.conf
   ~/.vim/rcfiles/general
   ~/.vim/rcfiles/search-and-replace
@@ -50,7 +50,6 @@ links=(
   ~/.zsh
   ~/.zshenv
   ~/.zshrc
-  ~/.config/nvim/init.vim
 )
 
 files=(
@@ -61,13 +60,9 @@ files=(
   ~/dotfiles/vim/init.vim
   ~/dotfiles/vim/coc-settings.json
   ~/dotfiles/ctags
-  ~/dotfiles/gemrc
   ~/dotfiles/gitconfig
   ~/dotfiles/gitmessage
-  ~/dotfiles/hushlogin
   ~/dotfiles/psqlrc
-  ~/dotfiles/rcrc
-  ~/dotfiles/rspec
   ~/dotfiles/tmux.conf
   ~/dotfiles/vim/rcfiles/general
   ~/dotfiles/vim/rcfiles/search-and-replace
@@ -75,7 +70,6 @@ files=(
   ~/dotfiles/zsh
   ~/dotfiles/zshenv
   ~/dotfiles/zshrc
-  ~/dotfiles/init.vim
 )
 
 # Get okay to overwrite files from user
@@ -111,7 +105,7 @@ echo
 # Source config files
 echo "---Sourcing Config Files---"
 echo
-config_files=(~/.aliases ~/.rcrc)
+config_files=(~/.aliases ~/.zshrc)
 
 for file in "${config_files[@]}"
 do
@@ -128,13 +122,8 @@ curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 echo
 
+# Run PlugInstall from neovim
 
-# Source zsh files
-# source ~/.zshrc
-# Create .config folder and add symlink between config/nvim/init.vim and dotfiles/initi.vim
-# run PlugInstall from neovim
-# add gruvbox colors
-
-
-echo "-------------------------"
-echo "Done with dotfiles setup!"
+echo "-----------------------------"
+echo "---Dotfiles Setup Complete---"
+echo "-----------------------------"

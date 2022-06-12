@@ -14,7 +14,7 @@ let g:has_async = v:version >= 800 || has('nvim')
 
 call plug#begin('~/.vim/bundle')
 
-" Define bundles via Github repos
+Plug 'morhetz/gruvbox'
 
 " Tooling
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -22,6 +22,12 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 
+Plug 'christoomey/vim-run-interactive'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'dkprice/vim-easygrep'
+
+" Search
+Plug 'mileszs/ack.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 
 Plug '/usr/local/opt/fzf/'
@@ -36,23 +42,12 @@ Plug 'tpope/vim-bundler'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-projectionist'
-Plug 'tpope/vim-rails'
-Plug 'tpope/vim-rake'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-surround'
 Plug 'vim-scripts/tComment'
 
-Plug 'christoomey/vim-run-interactive'
-Plug 'christoomey/vim-tmux-navigator'
-Plug 'dkprice/vim-easygrep'
-
-Plug 'codota/tabnine-vim'
-
-Plug 'morhetz/gruvbox'
-
 " Languages
-Plug 'vim-ruby/vim-ruby'
 Plug 'HerringtonDarkholme/yats.vim' " TS syntax
 Plug 'elmcast/elm-vim'
 Plug 'evanleck/vim-svelte', {'branch': 'main'}
