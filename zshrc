@@ -101,3 +101,6 @@ export PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 . /usr/local/opt/asdf/libexec/asdf.sh
+
+# Created by `pipx` on 2021-10-18 17:15:15
+export PATH="$PATH:/Users/johnschoeman/.local/bin"

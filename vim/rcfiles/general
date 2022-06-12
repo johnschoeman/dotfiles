@@ -269,7 +269,7 @@ nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
 " Codeaction
-nmap <silent> gk <Plug>(coc-codeaction-selected)
+nmap <silent> gf <Plug>(coc-codeaction-selected)
 
 " Use K to show documentation in preview window.
 nnoremap <silent> K :call <SID>show_documentation()<CR>

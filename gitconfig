@@ -1,5 +1,5 @@
 [push]
- default = upstream
+  default = upstream
 [color]
   ui = auto
 [alias]
@@ -27,12 +27,12 @@
   unstage = reset
   wlog = log --pretty=format:'%C(yellow)%h%C(reset) - %an [%C(green)%ar%C(reset)] %s'
 [core]
-  excludesfile = ~/.gitignore
+	excludesfile = /Users/johnschoeman/.gitignore_global
   autocrlf = input
 [merge]
   ff = only
 [commit]
-  template = ~/.gitmessage
+	template = ~/.gitmessage
 [fetch]
   prune = true
 [rebase]
@@ -42,9 +42,15 @@
 [diff]
   colorMoved = zebra
 [user]
-  name = John Schoeman
-  email = johnschoeman1617@gmail.com
+	name = John Schoeman
+	email = johnschoeman1617@gmail.com
 [http]
 	postBuffer = 1572864000
 [init]
 	defaultBranch = main
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
