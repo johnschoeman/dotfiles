@@ -3,7 +3,6 @@
 ###########
 
 # Unix
-
 alias ls="ls -FGh"
 alias ll="ls -al"
 alias ln="ln -v"
@@ -16,17 +15,8 @@ alias du="du -cksh"
 alias df="df -h"
 alias sed="sed -E"
 
-# Bundler
-alias b="bundle"
-alias be="bundle exec"
-
-# RSpec
-alias ber="bundle exec rspec"
-
 # Yarn
-alias yarp="yarn run prettier"
 alias y="yarn install"
-alias yp="yarn install && cd ios && pod install && cd .."
 
 # Vim
 alias vim="nvim"

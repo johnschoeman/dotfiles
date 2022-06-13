@@ -1,56 +1,54 @@
 [push]
-  default = upstream
+  default       = upstream
 [color]
-  ui = auto
+  ui            = auto
 [alias]
-  aa = add --all
-  alias = config --get-regexp ^alias\\.
-  ap = add --patch
-  branches = for-each-ref --sort=-committerdate --format=\"%(color:blue)%(authordate:relative)\t%(color:red)%(authorname)\t%(color:white)%(color:bold)%(refname:short)\" refs/remotes
-  cam = commit -am
-  car = commit --amend --no-edit
-  ci = commit -v
-  co = checkout
-  dc = diff --word-diff --cached --color-words
-  df = diff --word-diff --color-words
-  djts = ! git branch -D `git branch | grep -E 'jts-*'`
-  glog = log -E -i --grep
-  ls = log --oneline
-  dup = !git checkout development && git pull && git checkout -
-  gud = git add --all && git commit --amend --no-edit
-  mup = !git checkout master && git pull && git checkout -
-  pf = push --force-with-lease
-  sla = log --oneline --decorate --graph --all -20
-  slah = log --oneline --decorate --graph -40
-  st = status
-  uncommit = reset --soft HEAD^
-  unstage = reset
-  wlog = log --pretty=format:'%C(yellow)%h%C(reset) - %an [%C(green)%ar%C(reset)] %s'
+  aa            = add --all
+  alias         = config --get-regexp ^alias\\.
+  ap            = add --patch
+  b             = branch
+  bb            = checkout -b
+  bd            = branch -d
+  bdf           = branch -D
+  c             = commit
+  cc            = commit -am
+  ca            = commit --amend
+  can           = commit -a --amend --no-edit
+  cw            = commit -am "wip"
+  ci            = commit -v
+  co            = checkout
+  dc            = diff --word-diff --cached --color-words
+  df            = diff --word-diff --color-words
+  djts          = ! git branch -D `git branch | grep -E 'jts-*'`
+  l             = log --oneline
+  ll            = log --oneline --decorate --graph --all -40
+  lah           = log --oneline --decorate --graph -40
+  lg            = log -E -i --grep
+  ls            = log --oneline
+  mup           = !git checkout main && git pull && git checkout -
+  pf            = push --force-with-lease
+  rup           = rebase -i main
+  uncommit      = reset --soft HEAD^
+  unstage       = reset
 [core]
-	excludesfile = /Users/johnschoeman/.gitignore_global
-  autocrlf = input
+	excludesfile  = /Users/johnschoeman/.gitignore_global
+  autocrlf      = input
 [merge]
-  ff = only
+  ff            = only
 [commit]
-	template = ~/.gitmessage
+	template      = ~/.gitmessage
 [fetch]
-  prune = true
+  prune         = true
 [rebase]
-  autosquash = true
+  autosquash    = true
 [include]
-  path = ~/.gitconfig.local
+  path          = ~/.gitconfig.local
 [diff]
-  colorMoved = zebra
+  colorMoved    = zebra
 [user]
-	name = John Schoeman
-	email = johnschoeman1617@gmail.com
+	name          = John Schoeman
+	email         = johnschoeman1617@gmail.com
 [http]
-	postBuffer = 1572864000
+	postBuffer    = 1572864000
 [init]
 	defaultBranch = main
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
