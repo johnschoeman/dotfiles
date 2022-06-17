@@ -5,8 +5,6 @@ These dotfiles were started with a clone from thoughtbot's dotfiles:
 
 [thoughtbot/dotfiles](https://github.com/thoughtbot/dotfiles)
 
-Thank you to all the [contributors](https://github.com/thoughtbot/dotfiles/contributors)
-
 Requirements
 ------------
 
@@ -47,6 +45,8 @@ What's in it?
 * [Ctrl-P](https://github.com/ctrlpvim/ctrlp.vim) for fuzzy file/buffer/tag finding.
 * Set `<leader>` to a single space.
 
+[ack](https://beyondgrep.com/) for grepping.
+
 [tmux](http://robots.thoughtbot.com/a-tmux-crash-course)
 configuration:
 
@@ -61,10 +61,8 @@ Shell aliases and scripts:
 
 * `g` with no arguments is `git status` and with arguments acts like `git`.
 
-Thanks
-------
 
-Thank you, [contributors](https://github.com/thoughtbot/dotfiles/contributors)!
-Also, thank you to Corey Haines, Gary Bernhardt, and others for sharing your
-dotfiles and other shell scripts from which we derived inspiration for items
-in this project.
+Thank you, [contributors](https://github.com/thoughtbot/dotfiles/contributors)
+Also, thank you to Corey Haines, Gary Bernhardt, Chris Toomey, and others for
+sharing your dotfiles and other shell scripts from which we derived inspiration
+for items in this project.

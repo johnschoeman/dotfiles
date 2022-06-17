@@ -1,0 +1,7 @@
+--ignore-dir=build
+--ignore-dir=node_modules
+--ignore-dir=.git
+--ignore-dir=tags
+--ignore-dir=tmp
+--ignore-dir=vendor
+--ignore-dir=assemble

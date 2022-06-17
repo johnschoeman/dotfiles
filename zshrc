@@ -85,8 +85,6 @@ export EDITOR="$VISUAL"
 #   export CPPFLAGS="-I/usr/local/opt/openjdk/include"
 
 # paths
-# -----
-
 export PATH=$PATH:/usr/bin
 
 export ANDROID_HOME=$HOME/Library/Android/sdk

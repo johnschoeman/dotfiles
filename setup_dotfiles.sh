@@ -22,18 +22,32 @@ echo "Done setting shell"
 echo
 
 # Install Programs
-echo "---Installing programs---" 
+echo "---Install Programs (MacOS only)---" 
+echo
+echo "Programs: kitty, neovim, tmux, ack, vim-plug"
+read -p "Okay to install programs using brew? (y/n) " -n 1 -r
 
-brew install neovim
-brew install ack
-# Kitty
-# Tmux
-# add gruvbox colors
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+  echo
+  echo "Installing programs..."
+  curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
+  brew install neovim
+  brew install tmux
+  brew install ack
+  curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+      https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+else
+  echo
+  echo "Okay, some settings may not work."
+fi
+echo
+echo "Done intalling programs"
+echo
 
 # Make symlinks for relevant files
 
 links=(
-  ~/.aginore
+  ~/.ackrc
   ~/.aliases
   ~/.bin
   ~/.config/kitty/kitty.conf
@@ -44,8 +58,6 @@ links=(
   ~/.gitmessage
   ~/.psqlrc
   ~/.tmux.conf
-  ~/.vim/rcfiles/general
-  ~/.vim/rcfiles/search-and-replace
   ~/.vimrc
   ~/.zsh
   ~/.zshenv
@@ -53,7 +65,7 @@ links=(
 )
 
 files=(
-  ~/dotfiles/agignore
+  ~/dotfiles/ackrc
   ~/dotfiles/aliases
   ~/dotfiles/bin
   ~/dotfiles/kitty.conf
@@ -64,8 +76,6 @@ files=(
   ~/dotfiles/gitmessage
   ~/dotfiles/psqlrc
   ~/dotfiles/tmux.conf
-  ~/dotfiles/vim/rcfiles/general
-  ~/dotfiles/vim/rcfiles/search-and-replace
   ~/dotfiles/vim/vimrc
   ~/dotfiles/zsh
   ~/dotfiles/zshenv
@@ -114,16 +124,6 @@ do
 done
 
 echo
-
-# Install Plug for neovim
-echo "---Installing Plug for neovim---"
-echo
-curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-echo
-
-# Run PlugInstall from neovim
-
 echo "-----------------------------"
 echo "---Dotfiles Setup Complete---"
 echo "-----------------------------"
