@@ -3,7 +3,6 @@ for function in ~/.zsh/functions/*; do
   source $function
 done
 
-
 # extra files in ~/.zsh/configs/pre , ~/.zsh/configs , and ~/.zsh/configs/post
 # these are loaded first, second, and third, respectively.
 _load_settings() {
@@ -70,7 +69,6 @@ export EDITOR="$VISUAL"
 # aliases
 [[ -f ~/.aliases ]] && source ~/.aliases
 
-
 # For the system Java wrappers to find this JDK, symlink it with
 # sudo ln -sfn /usr/local/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk
 #
@@ -95,8 +93,6 @@ export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH="/usr/local/opt/openjdk/bin:$PATH"
 
 export PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 . /usr/local/opt/asdf/libexec/asdf.sh
 

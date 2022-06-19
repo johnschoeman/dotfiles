@@ -24,7 +24,7 @@ echo
 # Install Programs
 echo "---Install Programs (MacOS only)---" 
 echo
-echo "Programs: kitty, neovim, tmux, ack, vim-plug"
+echo "Programs: kitty, neovim, tmux, ack, asdf, vim-plug"
 read -p "Okay to install programs using brew? (y/n) " -n 1 -r
 
 if [[ $REPLY =~ ^[Yy]$ ]]; then
@@ -34,6 +34,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
   brew install neovim
   brew install tmux
   brew install ack
+  brew install asdf
   curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 else

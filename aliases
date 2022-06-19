@@ -4,7 +4,7 @@
 
 # Unix
 alias ls="ls -FGh"
-alias ll="ls -al"
+alias ll="ls -la"
 alias ln="ln -v"
 alias mkdir="mkdir -p"
 alias e="$EDITOR"
@@ -15,16 +15,24 @@ alias du="du -cksh"
 alias df="df -h"
 alias sed="sed -E"
 
-# Yarn
-alias y="yarn install"
+## pretty print the path
+alias path='echo $PATH | tr -s ":" "\n"'
 
-# Vim
+# Tooling
+
+## Vim
 alias vim="nvim"
 alias vi="nvim"
 
-# Pretty print the path
-alias path='echo $PATH | tr -s ":" "\n"'
+##  Git
+### pretty print all the git aliases (assumes git alias is defined)
+alias galias="git alias | \
+  sed -E 's/^alias\.([^[:space:]]+) (.+)/\1:\2/' | \
+  awk 'BEGIN { FS = \":\" } { printf(\"%-8s : %s\n\",\$1,\$2) }'"
 
-# React Native
+## Yarn
+alias y="yarn install"
+
+## React Native
 alias rns='npx react-native start'
 alias rnsc='npx react-native start --resetCache'
