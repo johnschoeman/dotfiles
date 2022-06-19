@@ -3,9 +3,10 @@
 [color]
   ui            = auto
 [alias]
+  a             = add
   aa            = add --all
-  alias         = config --get-regexp ^alias\\.
   ap            = add --patch
+  alias         = config --get-regexp ^alias\\.
   b             = branch
   bb            = checkout -b
   bd            = branch -d
@@ -18,8 +19,11 @@
   cap           = commit -ap --amend
   cm            = commit -m
   cwip          = commit -am "wip"
+  cw            = commit -am "wip"
   cv            = commit -v
   co            = checkout
+  d             = diff
+  dh            = diff HEAD~1..HEAD
   dc            = diff --word-diff --cached --color-words
   df            = diff --word-diff --color-words
   l             = log --oneline
@@ -28,11 +32,12 @@
   lg            = log -E -i --grep
   ls            = log --oneline
   mup           = !git checkout main && git pull && git checkout -
+  p             = push
   pf            = push --force-with-lease
   rup           = rebase main
   rupi          = rebase -i main
-  uncommit      = reset --soft HEAD^
-  unstage       = reset
+  ua            = reset
+  uc            = reset --soft HEAD^
 [core]
 	excludesfile  = /Users/johnschoeman/.gitignore_global
   autocrlf      = input
