@@ -53,7 +53,6 @@ links=(
   ~/.bin
   ~/.config/kitty/kitty.conf
   ~/.config/nvim/init.vim
-  ~/.config/nvim/coc-settings.json
   ~/.ctags
   ~/.gitconfig
   ~/.gitmessage
@@ -71,7 +70,6 @@ files=(
   ~/dotfiles/bin
   ~/dotfiles/kitty.conf
   ~/dotfiles/vim/init.vim
-  ~/dotfiles/vim/coc-settings.json
   ~/dotfiles/ctags
   ~/dotfiles/gitconfig
   ~/dotfiles/gitmessage
@@ -99,14 +97,8 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
 
   for ((i = 0; i < ${#files[@]}; i++))
   do
-    if [ -L "${links[$i]}" ]; then
-      echo "overwriting ${links[$i]} to link to ${files[$i]}"
-      rm "${links[$i]}"
-      ln -s "${files[$i]}" "${links[$i]}"
-    else
-      echo "creating symbolic link from ${links[$i]} to ${files[$i]}"
-      ln -s "${files[$i]}" "${links[$i]}"
-    fi
+    echo "overwriting ${links[$i]} to link to ${files[$i]}"
+    ln -shf "${files[$i]}" "${links[$i]}"
   done
 else
   echo "Not making symlinks, you may need to link the relevant files manually"
@@ -116,7 +108,7 @@ echo
 # Source config files
 echo "---Sourcing Config Files---"
 echo
-config_files=(~/.aliases ~/.zshrc)
+config_files=(~/.zshrc)
 
 for file in "${config_files[@]}"
 do
