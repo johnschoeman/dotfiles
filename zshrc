@@ -1,45 +1,93 @@
-# load custom executable functions
+# ZSHRC
+
+# Load Fuctions
 for function in ~/.zsh/functions/*; do
   source $function
 done
 
-# extra files in ~/.zsh/configs/pre , ~/.zsh/configs , and ~/.zsh/configs/post
-# these are loaded first, second, and third, respectively.
-_load_settings() {
-  _dir="$1"
-  if [ -d "$_dir" ]; then
-    if [ -d "$_dir/pre" ]; then
-      for config in "$_dir"/pre/**/*(N-.); do
-        if [ ${config:e} = "zwc" ] ; then continue ; fi
-        . $config
-      done
-    fi
+# Colors
+# makes color constants available
+autoload -U colors
+colors
 
-    for config in "$_dir"/**/*(N-.); do
-      case "$config" in
-        "$_dir"/pre/*)
-          :
-          ;;
-        "$_dir"/post/*)
-          :
-          ;;
-        *)
-          if [[ -f $config && ${config:e} != "zwc" ]]; then
-            . $config
-          fi
-          ;;
-      esac
-    done
+# enable colored output from ls, etc. on FreeBSD-based systems
+export CLICOLOR=1
 
-    if [ -d "$_dir/post" ]; then
-      for config in "$_dir"/post/**/*(N-.); do
-        if [ ${config:e} = "zwc" ] ; then continue ; fi
-        . $config
-      done
-    fi
+# Editor
+export VISUAL=nvim
+export EDITOR="$VISUAL"
+
+# History
+setopt hist_ignore_all_dups inc_append_history
+HISTFILE=~/.zhistory
+HISTFILESIZE=1000000000
+HISTSIZE=1000000
+SAVEHIST=1000000
+
+export ERL_AFLAGS="-kernel shell_history enabled"
+
+# Keybindings
+# give us access to ^Q
+stty -ixon
+
+# vi mode
+bindkey -v
+bindkey "^F" vi-cmd-mode
+
+# handy keybindings
+bindkey "^A" beginning-of-line
+bindkey "^E" end-of-line
+bindkey "^K" kill-line
+bindkey "^R" history-incremental-search-backward
+bindkey "^P" history-search-backward
+bindkey "^Y" accept-and-hold
+bindkey "^N" insert-last-word
+bindkey "^Q" push-line-or-edit
+bindkey -s "^T" "^[Isudo ^[A" # "t" for "toughguy"
+
+# Options
+# awesome cd movements from zshkit
+setopt autocd autopushd pushdminus pushdsilent pushdtohome cdablevars
+DIRSTACKSIZE=5
+
+# Enable extended globbing
+setopt extendedglob
+
+# Allow [ or ] whereever you want
+unsetopt nomatch
+
+# Prompt
+# modify the prompt to contain git branch name if applicable
+git_prompt_info() {
+  current_branch=$(git current-branch 2> /dev/null)
+  if [[ -n $current_branch ]]; then
+    echo " %{$fg_bold[green]%}$current_branch%{$reset_color%}"
   fi
 }
-_load_settings "$HOME/.zsh/configs"
+
+setopt promptsubst
+
+# Allow exported PS1 variable to override default prompt.
+if ! env | grep -q '^PS1='; then
+  PS1='${SSH_CONNECTION+"%{$fg_bold[green]%}%n@%m:"}%{$fg_bold[blue]%}%c%{$reset_color%}$(git_prompt_info) %# '
+fi
+
+# Completion
+# load our own completion functions
+fpath=(~/.zsh/completion /usr/local/share/zsh/site-functions $fpath)
+
+# completion
+autoload -U compinit
+compinit
+
+# Path
+# ensure dotfiles bin directory is loaded first
+PATH="$HOME/.bin:/usr/local/sbin:$PATH"
+
+# mkdir .git/safe in the root of repositories you trust
+PATH=".git/safe/../../bin:$PATH"
+
+export -U PATH
 
 # terminal prompt
 setopt prompt_subst
@@ -62,9 +110,6 @@ fi
 precmd () { vcs_info }
 PROMPT='%F{5}[%F{2}%n%F{5}] %F{3}%3~ ${vcs_info_msg_0_} %f%# '
 
-# set nvim to default editor
-export VISUAL=nvim
-export EDITOR="$VISUAL"
 
 # aliases
 [[ -f ~/.aliases ]] && source ~/.aliases
