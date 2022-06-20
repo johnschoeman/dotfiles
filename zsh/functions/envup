@@ -1,3 +1,5 @@
+# envup
+#
 # Load .env file into shell session for environment variables
 
 function envup() {

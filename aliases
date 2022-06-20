@@ -4,7 +4,8 @@
 
 # Unix
 alias ls="ls -FGh"
-alias ll="ls -la"
+alias la="ls -oa"
+alias lr="ls -R"
 alias ln="ln -v"
 alias mkdir="mkdir -p"
 alias e="$EDITOR"
