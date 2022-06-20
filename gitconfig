@@ -34,6 +34,7 @@
   mup           = !git checkout main && git pull && git checkout -
   p             = push
   pf            = push --force-with-lease
+  pu            = push -u origin HEAD
   rup           = rebase main
   rupi          = rebase -i main
   ua            = reset
