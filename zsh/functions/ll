@@ -2,9 +2,27 @@
 #
 # List all in long format in directory, executable, file order.
 
-ll() {
-  ls -FGHoa | grep -E '/' | sort -k 8
-  ls -FGHoa | grep -E '\*' | sort -k 8
-  ls -FGHoa | awk '!/\/$/ && !/\*$/ && !/^total/' | sort -k 8
+printDir() {
+  awk 'NF==8 { printf "%13-s" "%s" "%6s" " " "%4-s" "%3-s" "%5s" " " "\033[1;34m" "%s" "\033[0m" "\n", $1, $3, $4, $5, $6, $7, $8 }'  $1
 }
+
+printExe() {
+  awk 'NF==8 { printf "%13-s" "%s" "%6s" " " "%4-s" "%3-s" "%5s" " " "\033[1;31m" "%s" "\033[0m" "\n", $1, $3, $4, $5, $6, $7, $8 }'  $1
+}
+
+printSymlink() {
+  awk 'NF==8 { printf "%13-s" "%s" "%6s" " " "%4-s" "%3-s" "%5s" " " "\033[1;31m" "%s" "\033[0m" "\n", $1, $3, $4, $5, $6, $7, $8 }'  $1
+}
+
+printFile() {
+  awk 'NF==8 { printf "%13-s" "%s" "%6s" " " "%4-s" "%3-s" "%5s" " " "%s" "\n", $1, $3, $4, $5, $6, $7, $8 }'
+}
+
+ll() {
+  ls -FGHoa | grep -E '/' | sort -k 8 | printDir
+  ls -FGHoa | grep -E '\*' | sort -k 8 | printExe
+  ls -FGHoa | grep -E '@' | sort -k 8 | printSymlink
+  ls -FGHoa | awk '!/\/$/ && !/\*$/ && !/^total/' | sort -k 8 | printFile
+}
+
 
