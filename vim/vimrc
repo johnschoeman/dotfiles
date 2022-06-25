@@ -84,6 +84,8 @@ set diffopt+=vertical " Always use vertical diffs
 "Neovim Config
 "-------------
 
+"" ---- General ----
+
 "keep highlighting in sync for js
 autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
 autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
@@ -107,7 +109,7 @@ nmap k gk
 imap jk <esc>
 imap kj <esc>
 
-"" Colors
+"" ---- Colors ----
 set background=dark
 colorscheme gruvbox-material
 
@@ -124,6 +126,7 @@ endfunction
 
 nnoremap <silent> <leader>sz :call ToggleBackground()<cr>
 
+"" ---- Resizing Panes ----
 "automatically rebalance windows on vim resize
 autocmd VimResized * :wincmd =
 
@@ -177,8 +180,6 @@ set list listchars=tab:»·,trail:·,nbsp:·
 
 "Use one space, not two, after punctuation.
 set nojoinspaces
-
-"Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
 
 if executable('ack')
   " Use Ack over Grep
