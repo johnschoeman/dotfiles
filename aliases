@@ -19,8 +19,10 @@ alias sed="sed -E"
 ## pretty print the path
 alias path='echo $PATH | tr -s ":" "\n"'
 
-## pretty print all aliases
+## Aliases
 alias aa="alias | awk 'BEGIN { FS = \"=\" } { printf(\"%-8s : %s\n\", \$1, \$2) }' | sed -E \"s/\'//g\""
+alias va="vim ~/.aliases"
+alias sa="source ~/.aliases"
 
 # Tooling
 
@@ -30,7 +32,7 @@ alias vi="nvim"
 
 ##  Git
 ### pretty print all the git aliases (assumes git alias is defined)
-alias galias="git alias | \
+alias ga="git alias | \
 sed -E 's/^alias\.([^[:space:]]+) (.+)/\1:\2/' | \
 awk 'BEGIN { FS = \":\" } { printf(\"%-8s : %s\n\",\$1,\$2) }'"
 
@@ -38,11 +40,19 @@ awk 'BEGIN { FS = \":\" } { printf(\"%-8s : %s\n\",\$1,\$2) }'"
 alias y="yarn install"
 
 ## NPM
+alias n="npm run"
+alias ni="npm install"
 alias nr="npm run"
-alias nrb="npm run build"
-alias nrp="npm run prep"
-alias nrs="npm run serve"
-alias nrv="npm run validate"
+alias nb="npm run build"
+alias np="npm run prep"
+alias ns="npm run start"
+alias nt="npm run tsc"
+alias ntw="npm run tsc -- --watch"
+alias nv="npm run validate"
+
+## Node
+alias nodep="ps aux | grep node"
+alias nodepkill="ps aux | grep node | awk '{ print \$2 }' | xargs kill -9"
 
 ## React Native
 alias rns='npx react-native start'

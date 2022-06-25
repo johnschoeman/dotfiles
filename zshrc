@@ -1,32 +1,21 @@
-# ZSHRC
+# ---- ZSHRC ----
 
-# Load Fuctions
-for function in ~/.zsh/functions/*; do
-  source $function
-done
+# ---- Options -----
+# https://zsh.sourceforge.io/Doc/Release/Options.htm
 
-# Colors
-# makes color constants available
-autoload -U colors
-colors
+# cd options
+setopt autocd autopushd pushdminus pushdsilent pushdtohome cdablevars
+DIRSTACKSIZE=5
 
-# enable colored output from ls, etc. on FreeBSD-based systems
-export CLICOLOR=1
+# glob options
+setopt extendedglob
 
-# Editor
-export VISUAL=nvim
-export EDITOR="$VISUAL"
+# expansion options
+# allow [ or ] whereever you want
+unsetopt nomatch
 
-# History
-setopt hist_ignore_all_dups inc_append_history
-HISTFILE=~/.zhistory
-HISTFILESIZE=1000000000
-HISTSIZE=1000000
-SAVEHIST=1000000
+# ---- Keybindings ----
 
-export ERL_AFLAGS="-kernel shell_history enabled"
-
-# Keybindings
 # give us access to ^Q
 stty -ixon
 
@@ -45,18 +34,28 @@ bindkey "^N" insert-last-word
 bindkey "^Q" push-line-or-edit
 bindkey -s "^T" "^[Isudo ^[A" # "t" for "toughguy"
 
-# Options
-# awesome cd movements from zshkit
-setopt autocd autopushd pushdminus pushdsilent pushdtohome cdablevars
-DIRSTACKSIZE=5
+# ---- Colors ----
 
-# Enable extended globbing
-setopt extendedglob
+# makes color constants available
+autoload -U colors
+colors
 
-# Allow [ or ] whereever you want
-unsetopt nomatch
+# enable colored output from ls, etc. on FreeBSD-based systems
+export CLICOLOR=1
 
-# Prompt
+# ---- History ----
+
+setopt hist_ignore_all_dups inc_append_history
+
+HISTFILE=~/.zhistory
+HISTFILESIZE=1000000000
+HISTSIZE=1000000
+SAVEHIST=1000000
+
+export ERL_AFLAGS="-kernel shell_history enabled"
+
+# ---- Prompt ----
+
 # modify the prompt to contain git branch name if applicable
 git_prompt_info() {
   current_branch=$(git current-branch 2> /dev/null)
@@ -72,26 +71,10 @@ if ! env | grep -q '^PS1='; then
   PS1='${SSH_CONNECTION+"%{$fg_bold[green]%}%n@%m:"}%{$fg_bold[blue]%}%c%{$reset_color%}$(git_prompt_info) %# '
 fi
 
-# Completion
-# load our own completion functions
-fpath=(~/.zsh/completion /usr/local/share/zsh/site-functions $fpath)
-
-# completion
-autoload -U compinit
-compinit
-
-# Path
-# ensure dotfiles bin directory is loaded first
-PATH="$HOME/.bin:/usr/local/sbin:$PATH"
-
-# mkdir .git/safe in the root of repositories you trust
-PATH=".git/safe/../../bin:$PATH"
-
-export -U PATH
-
-# terminal prompt
 setopt prompt_subst
+
 autoload -Uz vcs_info
+
 zstyle ':vcs_info:*' stagedstr 'M' 
 zstyle ':vcs_info:*' unstagedstr 'M' 
 zstyle ':vcs_info:*' check-for-changes true
@@ -110,9 +93,37 @@ fi
 precmd () { vcs_info }
 PROMPT='%F{5}[%F{2}%n%F{5}] %F{3}%3~ ${vcs_info_msg_0_} %f%# '
 
+# ---- Completion ----
 
-# aliases
+# load our own completion functions
+fpath=(~/.zsh/completion /usr/local/share/zsh/site-functions $fpath)
+autoload -U compinit
+compinit
+
+# ---- Editor ----
+
+export VISUAL=nvim
+export EDITOR="$VISUAL"
+
+# ---- Aliases ----
+
 [[ -f ~/.aliases ]] && source ~/.aliases
+
+# ---- Fuctions ----
+
+for function in ~/.zsh/functions/*; do
+  source $function
+done
+
+# ---- Path ----
+
+# ensure dotfiles bin directory is loaded first
+PATH="$HOME/.bin:/usr/local/sbin:$PATH"
+# mkdir .git/safe in the root of repositories you trust
+PATH=".git/safe/../../bin:$PATH"
+export -U PATH
+
+export PATH=$PATH:/usr/bin
 
 # For the system Java wrappers to find this JDK, symlink it with
 # sudo ln -sfn /usr/local/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk
@@ -127,9 +138,6 @@ PROMPT='%F{5}[%F{2}%n%F{5}] %F{3}%3~ ${vcs_info_msg_0_} %f%# '
 # For compilers to find openjdk you may need to set:
 #   export CPPFLAGS="-I/usr/local/opt/openjdk/include"
 
-# paths
-export PATH=$PATH:/usr/bin
-
 export ANDROID_HOME=$HOME/Library/Android/sdk
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
@@ -140,6 +148,3 @@ export PATH="/usr/local/opt/openjdk/bin:$PATH"
 export PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
 
 . /usr/local/opt/asdf/libexec/asdf.sh
-
-# Created by `pipx` on 2021-10-18 17:15:15
-export PATH="$PATH:/Users/johnschoeman/.local/bin"
