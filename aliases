@@ -16,12 +16,18 @@ alias du="du -cksh"
 alias df="df -h"
 alias sed="sed -E"
 
+alias ll="~/dotfiles/ll.lua"
+
+# Dad
+alias dad="curl https://icanhazdadjoke.com/ && echo"
+
 ## pretty print the path
 alias path='echo $PATH | tr -s ":" "\n"'
 
 ## Aliases
 alias aa="alias | awk 'BEGIN { FS = \"=\" } { printf(\"%-8s : %s\n\", \$1, \$2) }' | sed -E \"s/\'//g\""
 alias va="vim ~/.aliases"
+alias vgc="vim ~/.gitconfig"
 alias sa="source ~/.aliases"
 
 # Tooling
@@ -41,14 +47,15 @@ alias y="yarn install"
 
 ## NPM
 alias n="npm run"
-alias ni="npm install"
-alias nr="npm run"
 alias nb="npm run build"
+alias ni="npm install"
 alias np="npm run prep"
+alias nr="npm run"
 alias ns="npm run start"
 alias nt="npm run tsc"
 alias ntw="npm run tsc -- --watch"
 alias nv="npm run validate"
+alias nw="npm run watch"
 
 ## Node
 alias nodep="ps aux | grep node"

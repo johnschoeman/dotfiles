@@ -10,13 +10,16 @@
   b             = branch
   bb            = checkout -b
   bd            = branch -d
-  bdf           = branch -D
+  bdd           = branch -D
   bdjts         = ! git branch -D `git branch | grep -E 'jts-*'`
   c             = commit
   cc            = commit -am
   ca            = commit --amend
-  can           = commit -a --amend --no-edit
-  cap           = commit -ap --amend
+  cam           = commit -a
+  can           = commit --amend --no-edit
+  caan          = commit -a --amend --no-edit
+  cap           = commit -p --amend
+  caap          = commit -ap --amend
   cm            = commit -m
   cwip          = commit -am "wip"
   cw            = commit -am "wip"
@@ -34,6 +37,7 @@
   mup           = !git checkout main && git pull && git checkout -
   p             = push
   pf            = push --force-with-lease
+  pfu           = push -fu origin HEAD
   pu            = push -u origin HEAD
   rup           = rebase main
   rupi          = rebase -i main
