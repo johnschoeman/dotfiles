@@ -21,8 +21,8 @@
   cap           = commit -p --amend
   caap          = commit -ap --amend
   cm            = commit -m
-  cwip          = commit -am "wip"
-  cw            = commit -am "wip"
+  caw           = commit -am "wip"
+  cw            = commit -m "wip"
   cv            = commit -v
   co            = checkout
   d             = diff

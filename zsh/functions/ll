@@ -2,7 +2,7 @@
 #
 # List all in long format in directory, executable, file order.
 
-ll() {
+ll_old() {
   ls -FGHoa | grep -E '/' | sort -k 8
   ls -FGHoa | grep -E '\*' | sort -k 8
   ls -FGHoa | awk '!/\/$/ && !/\*$/ && !/^total/' | sort -k 8

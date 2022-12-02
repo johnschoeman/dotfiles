@@ -147,4 +147,8 @@ export PATH="/usr/local/opt/openjdk/bin:$PATH"
 
 export PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
 
+export PATH=$PATH:$HOME/.reasonml
+[ -f "/Users/johnschoeman/.ghcup/env" ] && source "/Users/johnschoeman/.ghcup/env" # ghcup-env
+
 . /usr/local/opt/asdf/libexec/asdf.sh
+
