@@ -17,6 +17,7 @@ alias df="df -h"
 alias sed="sed -E"
 
 alias ll="~/dotfiles/ll.lua"
+alias sak="~/dotfiles/sak.sh"
 
 # Dad
 alias dad="curl https://icanhazdadjoke.com/ && echo"
