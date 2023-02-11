@@ -1,5 +1,13 @@
 #!/Users/johnschoeman/.asdf/shims/lua
 
+-- ll.lua
+--
+-- List directory contents sorted by file type and then by filename.
+--
+-- usage:
+--
+-- ./ll.lua
+
 function scandir(directory)
   local i, t, popen = 0, {}, io.popen
   local pfile = popen('ls -Ghla "'..directory..'"')
