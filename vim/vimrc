@@ -452,8 +452,8 @@ nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
 "Coc Extensions
 "--------------
-command! -nargs=0 Prettier :CocCommand prettier.formatFile
-command! -nargs=0 LintFix :CocCommand eslint.executeAutofix
+command! -nargs=0 P  :CocCommand prettier.formatFile
+command! -nargs=0 LF :CocCommand eslint.executeAutofix
 
 "Telescope
 "---------
