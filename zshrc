@@ -150,5 +150,15 @@ export PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
 export PATH=$PATH:$HOME/.reasonml
 [ -f "/Users/johnschoeman/.ghcup/env" ] && source "/Users/johnschoeman/.ghcup/env" # ghcup-env
 
+# elastic beanstalk cli
+export PATH="/Users/johnschoeman/.ebcli-virtual-env/executables:$PATH"
+
 . /usr/local/opt/asdf/libexec/asdf.sh
 
+
+# bun completions
+[ -s "/Users/johnschoeman/.bun/_bun" ] && source "/Users/johnschoeman/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"

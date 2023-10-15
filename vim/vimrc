@@ -32,13 +32,6 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'christoomey/vim-run-interactive'
 Plug 'christoomey/vim-tmux-navigator'
 
-" Search
-Plug 'mileszs/ack.vim'
-Plug 'ctrlpvim/ctrlp.vim'
-
-Plug 'pbrisbin/vim-mkdir'
-Plug 'slim-template/vim-slim'
-
 Plug 'tpope/vim-bundler'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
@@ -48,6 +41,13 @@ Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-surround'
 Plug 'vim-scripts/tComment'
 
+" Search
+Plug 'mileszs/ack.vim'
+Plug 'ctrlpvim/ctrlp.vim'
+
+Plug 'pbrisbin/vim-mkdir'
+Plug 'slim-template/vim-slim'
+
 " Languages
 Plug 'HerringtonDarkholme/yats.vim' " TS syntax
 Plug 'elmcast/elm-vim'
@@ -55,9 +55,10 @@ Plug 'evanleck/vim-svelte', {'branch': 'main'}
 Plug 'leafgarland/typescript-vim'
 Plug 'pangloss/vim-javascript'
 Plug 'peitalin/vim-jsx-typescript'
-Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 Plug 'jparise/vim-graphql'
-Plug 'reasonml-editor/vim-reason-plus'
+
+" CoPoliot
+Plug 'github/copilot.vim'
 
 call plug#end()
 
