@@ -16,12 +16,10 @@ alias du="du -cksh"
 alias df="df -h"
 alias sed="sed -E"
 
+# Functions
 alias ll="~/dotfiles/ll.lua"
 alias sak="~/dotfiles/sak.sh"
-
-# Git
-# - expected to be used after `git log --pretty=tformat: --numstat`
-alias git_loc="awk '{ adds += \$1; subs += \$2; loc += \$1 - \$2 } END { printf \"added: %s, removed: %s, total: %s\n\", adds, subs, loc }'"
+alias cmplx="~/dotfiles/complexity_sort.sh"
 
 # Dad
 alias dad="curl https://icanhazdadjoke.com/ && echo"
@@ -42,10 +40,15 @@ alias vim="nvim"
 alias vi="nvim"
 
 ##  Git
-### pretty print all the git aliases (assumes git alias is defined)
+# - ga: pretty print all the git aliases (assumes git alias is defined)
 alias ga="git alias | \
 sed -E 's/^alias\.([^[:space:]]+) (.+)/\1:\2/' | \
 awk 'BEGIN { FS = \":\" } { printf(\"%-8s : %s\n\",\$1,\$2) }'"
+# - git_loc: expected to be used after `git log --pretty=tformat: --numstat`
+alias git_loc="awk '{ adds += \$1; subs += \$2; loc += \$1 - \$2 } END { printf \"added: %s, removed: %s, total: %s\n\", adds, subs, loc }'"
+
+## Awk
+alias sum_first="awk '{ sum += \$1 } END { print sum }'"
 
 ## Yarn
 alias y="yarn install"
