@@ -19,13 +19,17 @@ alias sed="sed -E"
 alias ll="~/dotfiles/ll.lua"
 alias sak="~/dotfiles/sak.sh"
 
+# Git
+# - expected to be used after `git log --pretty=tformat: --numstat`
+alias git_loc="awk '{ adds += \$1; subs += \$2; loc += \$1 - \$2 } END { printf \"added: %s, removed: %s, total: %s\n\", adds, subs, loc }'"
+
 # Dad
 alias dad="curl https://icanhazdadjoke.com/ && echo"
 
 ## pretty print the path
 alias path='echo $PATH | tr -s ":" "\n"'
 
-## Aliases
+## Alias Management
 alias aa="alias | awk 'BEGIN { FS = \"=\" } { printf(\"%-8s : %s\n\", \$1, \$2) }' | sed -E \"s/\'//g\""
 alias va="vim ~/.aliases"
 alias vgc="vim ~/.gitconfig"
@@ -65,3 +69,4 @@ alias nodepkill="ps aux | grep node | awk '{ print \$2 }' | xargs kill -9"
 ## React Native
 alias rns='npx react-native start'
 alias rnsc='npx react-native start --resetCache'
+alias rnp='npx pod-install'

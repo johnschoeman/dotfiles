@@ -34,7 +34,9 @@
   ll            = log --oneline --decorate --graph -40
   lla           = log --oneline --decorate --graph --all -40
   lg            = log -E -i --grep
+  lnumstat      = log --pretty=tformat: --numstat
   ls            = log --oneline
+  lw            = log --date=relative --since='1 week ago' --oneline
   mup           = !git checkout main && git pull && git checkout -
   p             = push
   pf            = push --force-with-lease
