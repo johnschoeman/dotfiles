@@ -52,7 +52,7 @@ links=(
   ~/.aliases
   ~/.bin
   ~/.config/kitty/kitty.conf
-  ~/.config/nvim/init.vim
+  ~/.config/nvim/init.lua
   ~/.ctags
   ~/.gitconfig
   ~/.gitmessage
@@ -69,7 +69,7 @@ files=(
   ~/dotfiles/aliases
   ~/dotfiles/bin
   ~/dotfiles/kitty.conf
-  ~/dotfiles/vim/init.vim
+  ~/dotfiles/vim/init.lua
   ~/dotfiles/ctags
   ~/dotfiles/gitconfig
   ~/dotfiles/gitmessage
