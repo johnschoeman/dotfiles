@@ -7,3 +7,5 @@
 --ignore-dir=tmp
 --ignore-dir=vendor
 --ignore-dir=webroot
+--ignore-dir=ios
+--ignore-dir=android
