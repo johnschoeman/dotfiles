@@ -33,6 +33,7 @@
   l             = log --oneline
   ll            = log --oneline --decorate --graph -40
   lla           = log --oneline --decorate --graph --all -40
+  llg           = log --oneline --decorate --graph --first-parent main -40
   lg            = log -E -i --grep
   lnumstat      = log --pretty=tformat: --numstat
   ls            = log --oneline
