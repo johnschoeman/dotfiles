@@ -58,6 +58,8 @@ vim.keymap.set({'n', 'x'}, 'X', '"_d')
 
 -- Commands
 vim.keymap.set('n', '<leader>w', '<cmd>write<cr>', {desc = 'Save'})
+vim.keymap.set('n', '<leader>f', '<cmd>Format<cr>')
+
 
 -- File Navigation
 vim.keymap.set('n', '<F2>', '<cmd>Lexplore<cr>', {desc = 'Open file exlorer'})
@@ -78,19 +80,6 @@ vim.keymap.set('n', '<leader>=', '<C-w>=', {desc = 'Equalize window sizes'})
 
 vim.api.nvim_create_user_command('ReloadConfig', 'source $MYVIMRC', {})
 vim.keymap.set('n', '<leader>so', '<cmd>ReloadConfig<cr>')
-
-vim.api.nvim_create_user_command("Format", function(args)
-  local range = nil
-  if args.count ~= -1 then
-    local end_line = vim.api.nvim_buf_get_lines(0, args.line2 - 1, args.line2, true)[1]
-    range = {
-      start = { args.line1, 0 },
-      ["end"] = { args.line2, end_line:len() },
-    }
-  end
-  require("conform").format({ async = true, lsp_fallback = true, range = range })
-end, { range = true })
-vim.keymap.set('n', 'ff', '<cmd>Format<cr>')
 
 local augroup = vim.api.nvim_create_augroup('user_cmds', {clear = true})
 
@@ -115,7 +104,7 @@ vim.api.nvim_create_autocmd({ "BufWritePost" }, {
   end,
 })
 
--- TODO: Prettier and lint:fix
+-- TODO: lint:fix
 
 -- ========================================================================== --
 -- ==                               PLUGINS                                == --
@@ -125,7 +114,7 @@ local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
     'git',
-    'clone', 
+    'clone',
     '--filter=blob:none',
     'https://github.com/folke/lazy.nvim.git',
     '--branch=stable', -- latest stable release
@@ -151,7 +140,9 @@ plugins = {
   { 'nvim-treesitter/nvim-treesitter-textobjects' },
   { 'wellle/targets.vim' },
   { 'numToStr/Comment.nvim', opts = {}, lazy = false },
-  { 'stevearc/conform.nvim', opts = {}, },
+  { 'mhartington/formatter.nvim' },
+
+  -- Linting
   { 'mfussenegger/nvim-lint' },
 
   -- Fuzzy finding
@@ -170,14 +161,10 @@ plugins = {
 
   -- LSP support
   { 'neovim/nvim-lspconfig' },
-  {
-    "pmizio/typescript-tools.nvim",
-    dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
-    opts = {},
-  },
+  { "pmizio/typescript-tools.nvim", dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" }, opts = {} },
 
   -- Auto complete
-  { 'hrsh7th/nvim-compe' }, 
+  { 'hrsh7th/nvim-compe' },
   { 'hrsh7th/cmp-nvim-lsp' },
   { 'hrsh7th/cmp-buffer' },
   { 'hrsh7th/cmp-path' },
@@ -230,9 +217,12 @@ vim.g.netrw_winsize = 30
 -- indent-blankline
 ---
 require('ibl').setup({
-  indent = {
-    char = '|',
-  },
+  indent = { char = '|' },
+  scope = {
+    show_start = false,
+    show_end = false,
+    highlight = { "Function", "Label" },
+  }
 })
 
 
@@ -505,16 +495,31 @@ vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(
 )
 
 
---- 
--- Formatting (conform)
----
-require("conform").setup({
-  formatters_by_ft = {
-    lua = { "stylua" },
-    python = { "isort", "black" },
-    javascript = { { "prettierd", "prettier" } },
-  },
-})
+-- ---
+-- -- Formatting (formatter)
+-- ---
+local prettierConfig = function()
+  return {
+    exe = "prettier",
+    args = {"--stdin-filepath", vim.fn.shellescape(vim.api.nvim_buf_get_name(0)), "--single-quote"},
+    stdin = true
+  }
+end
+
+require("formatter").setup {
+  logging = true,
+  log_level = vim.log.levels.WARN,
+  filetype = {
+    json = {prettierConfig},
+    html = {prettierConfig},
+    javascript = {prettierConfig},
+    typescript = {prettierConfig},
+    typescriptreact = {prettierConfig},
+    ["*"] = {
+      require("formatter.filetypes.any").remove_trailing_whitespace
+    }
+  }
+}
 
 ---
 -- Linting (nvim-lint)
