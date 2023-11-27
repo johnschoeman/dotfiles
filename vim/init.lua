@@ -79,6 +79,19 @@ vim.keymap.set('n', '<leader>=', '<C-w>=', {desc = 'Equalize window sizes'})
 vim.api.nvim_create_user_command('ReloadConfig', 'source $MYVIMRC', {})
 vim.keymap.set('n', '<leader>so', '<cmd>ReloadConfig<cr>')
 
+vim.api.nvim_create_user_command("Format", function(args)
+  local range = nil
+  if args.count ~= -1 then
+    local end_line = vim.api.nvim_buf_get_lines(0, args.line2 - 1, args.line2, true)[1]
+    range = {
+      start = { args.line1, 0 },
+      ["end"] = { args.line2, end_line:len() },
+    }
+  end
+  require("conform").format({ async = true, lsp_fallback = true, range = range })
+end, { range = true })
+vim.keymap.set('n', 'ff', '<cmd>Format<cr>')
+
 local augroup = vim.api.nvim_create_augroup('user_cmds', {clear = true})
 
 vim.api.nvim_create_autocmd('FileType', {
@@ -96,21 +109,11 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end
 })
 
-vim.api.nvim_create_user_command("Format", function(args)
-  local range = nil
-  if args.count ~= -1 then
-    local end_line = vim.api.nvim_buf_get_lines(0, args.line2 - 1, args.line2, true)[1]
-    range = {
-      start = { args.line1, 0 },
-      ["end"] = { args.line2, end_line:len() },
-    }
-  end
-  require("conform").format({ async = true, lsp_fallback = true, range = range })
-end, { range = true })
-
-vim.keymap.set('n', 'ff', '<cmd>Format<cr>')
-
-
+vim.api.nvim_create_autocmd({ "BufWritePost" }, {
+  callback = function()
+    require("lint").try_lint()
+  end,
+})
 
 -- TODO: Prettier and lint:fix
 
@@ -149,6 +152,7 @@ plugins = {
   { 'wellle/targets.vim' },
   { 'numToStr/Comment.nvim', opts = {}, lazy = false },
   { 'stevearc/conform.nvim', opts = {}, },
+  { 'mfussenegger/nvim-lint' },
 
   -- Fuzzy finding
   { 'nvim-telescope/telescope.nvim' },
@@ -511,3 +515,11 @@ require("conform").setup({
     javascript = { { "prettierd", "prettier" } },
   },
 })
+
+---
+-- Linting (nvim-lint)
+--
+require('lint').linters_by_ft = {
+  typescript = {'eslint_d', 'eslint',},
+  javascript = {'eslint_d', 'eslint' },
+}
