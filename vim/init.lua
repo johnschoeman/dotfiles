@@ -20,6 +20,7 @@ vim.opt.list = true
 vim.opt.listchars = 'tab:»·,trail:·,nbsp:·'
 vim.opt.splitbelow = true
 vim.opt.splitright = true
+vim.opt.linebreak = true
 
 -- search substitute
 vim.opt.hlsearch = false
@@ -58,6 +59,7 @@ vim.keymap.set({'n', 'x'}, 'X', '"_d')
 
 -- Commands
 vim.keymap.set('n', '<leader>w', '<cmd>write<cr>', {desc = 'Save'})
+vim.keymap.set('n', '<leader>q', '<cmd>quit<cr>', {desc = 'Quit'})
 vim.keymap.set('n', '<leader>f', '<cmd>Format<cr>')
 
 
@@ -217,6 +219,7 @@ vim.g.netrw_winsize = 30
 -- indent-blankline
 ---
 require('ibl').setup({
+  enabled = false,
   indent = { char = '|' },
   scope = {
     show_start = false,
@@ -501,7 +504,7 @@ vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(
 local prettierConfig = function()
   return {
     exe = "prettier",
-    args = {"--stdin-filepath", vim.fn.shellescape(vim.api.nvim_buf_get_name(0)), "--single-quote"},
+    args = {"--stdin-filepath", vim.fn.shellescape(vim.api.nvim_buf_get_name(0))},
     stdin = true
   }
 end
