@@ -15,6 +15,8 @@ alias rm="rm -iv"
 alias du="du -cksh"
 alias df="df -h"
 alias sed="sed -E"
+alias h="history"
+alias hg="history -500 | grep"
 
 # Functions
 alias ll="~/dotfiles/ll.lua"

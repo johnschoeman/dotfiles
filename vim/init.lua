@@ -53,18 +53,13 @@ vim.keymap.set('n', '<leader>a', ':keepjumps normal! ggVG<cr>')
 vim.keymap.set({'n', 'x'}, 'gp', '"+p')
 vim.keymap.set({'n', 'x'}, 'gy', '"+y')
 
--- Delete Text
-vim.keymap.set({'n', 'x'}, 'x', '"_x')
-vim.keymap.set({'n', 'x'}, 'X', '"_d')
-
 -- Commands
 vim.keymap.set('n', '<leader>w', '<cmd>write<cr>', {desc = 'Save'})
 vim.keymap.set('n', '<leader>q', '<cmd>quit<cr>', {desc = 'Quit'})
 vim.keymap.set('n', '<leader>f', '<cmd>Format<cr>')
 
-
 -- File Navigation
-vim.keymap.set('n', '<F2>', '<cmd>Lexplore<cr>', {desc = 'Open file exlorer'})
+vim.keymap.set('n', '<F2>', '<cmd>e .<cr>', {desc = 'Open file exlorer'})
 vim.keymap.set('n', '<space><space>', '<F2>', {remap = true, desc = 'Open file explorer'})
 vim.keymap.set('n', '<leader>p', '<C-^>', {desc = 'Go to last file'})
 
@@ -457,14 +452,13 @@ vim.api.nvim_create_autocmd('LspAttach', {
     bufmap('n', 'gn', '<cmd>lua vim.lsp.buf.rename()<cr>')
     bufmap({'n', 'x'}, '<F3>', '<cmd>lua vim.lsp.buf.format({async = true})<cr>')
     bufmap('n', 'gl', '<cmd>lua vim.diagnostic.open_float()<cr>')
-    bufmap('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<cr>')
-    bufmap('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<cr>')
+    bufmap('n', 'gj', '<cmd>lua vim.diagnostic.goto_next()<cr>')
+    bufmap('n', 'gk', '<cmd>lua vim.diagnostic.goto_prev()<cr>')
 
     bufmap('n', '<F4>', '<cmd>lua vim.lsp.buf.code_action()<cr>')
     bufmap('x', '<F4>', '<cmd>lua vim.lsp.buf.code_action()<cr>')
   end
 })
-
 
 ---
 -- LSP servers
