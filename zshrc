@@ -1,6 +1,11 @@
-# ---- ZSHRC ----
+## ========================================================================== ##
+## ==                             ZSH SETTINGS                             == ##
+## ========================================================================== ##
 
-# ---- Options -----
+#
+# Options
+#
+
 # https://zsh.sourceforge.io/Doc/Release/Options.htm
 
 # cd options
@@ -14,7 +19,13 @@ setopt extendedglob
 # allow [ or ] whereever you want
 unsetopt nomatch
 
-# ---- Keybindings ----
+# editor
+export VISUAL=nvim
+export EDITOR="$VISUAL"
+
+#
+# Keybindings
+#
 
 # give us access to ^Q
 stty -ixon
@@ -34,7 +45,9 @@ bindkey "^N" insert-last-word
 bindkey "^Q" push-line-or-edit
 bindkey -s "^T" "^[Isudo ^[A" # "t" for "toughguy"
 
-# ---- Colors ----
+#
+# Colors
+#
 
 # makes color constants available
 autoload -U colors
@@ -43,7 +56,9 @@ colors
 # enable colored output from ls, etc. on FreeBSD-based systems
 export CLICOLOR=1
 
-# ---- History ----
+#
+# History
+#
 
 setopt hist_ignore_all_dups inc_append_history
 
@@ -63,7 +78,9 @@ bindkey "${terminfo[kcud1]}" history-beginning-search-forward-end
 
 bindkey ' ' magic-space
 
-# ---- Prompt ----
+#
+# Prompt
+#
 
 # modify the prompt to contain git branch name if applicable
 git_prompt_info() {
@@ -102,57 +119,55 @@ fi
 precmd () { vcs_info }
 PROMPT='%F{5}[%F{2}%n%F{5}] %F{3}%3~ ${vcs_info_msg_0_} %f%# '
 
-# ---- Completion ----
+#
+# Completion
+#
 
 # load our own completion functions
 fpath=(~/.zsh/completion /usr/local/share/zsh/site-functions $fpath)
 autoload -U compinit
 compinit
 
-# ---- Editor ----
+#
+# Base Settings
+#
 
-export VISUAL=nvim
-export EDITOR="$VISUAL"
-
-# ---- Aliases ----
-
+# Aliases
 [[ -f ~/.aliases ]] && source ~/.aliases
 
-# ---- Fuctions ----
-
+# Fuctions
 for function in ~/.zsh/functions/*; do
   source $function
 done
 
-# ---- Path ----
+#
+# Path
+#
 
-# ensure dotfiles bin directory is loaded first
+# dotfiles
 PATH="$HOME/.bin:/usr/local/sbin:$PATH"
+
 # mkdir .git/safe in the root of repositories you trust
 PATH=".git/safe/../../bin:$PATH"
 export -U PATH
 
 export PATH=$PATH:/usr/bin
 
-# For the system Java wrappers to find this JDK, symlink it with
-# sudo ln -sfn /usr/local/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk
-#
-# openjdk is keg-only, which means it was not symlinked into /usr/local,
-# because macOS provides similar software and installing this software in
-# parallel can cause all kinds of trouble.
-#
-# If you need to have openjdk first in your PATH, run:
-#   echo 'export PATH="/usr/local/opt/openjdk/bin:$PATH"' >> ~/.zshrc
-#
-# For compilers to find openjdk you may need to set:
-#   export CPPFLAGS="-I/usr/local/opt/openjdk/include"
+# Java
 
+# Using homebrew for JDK
+# when updating, need to set the JAVA_HOME to actual exe path.
+#
+# Find java exe path:
+# java -XshowSettings:properties -version 2>&1 > /dev/null | grep 'java.home'
+
+export JAVA_HOME=/usr/local/Cellar/openjdk@17/17.0.9/libexec/openjdk.jdk/Contents/Home
 export ANDROID_HOME=$HOME/Library/Android/sdk
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 export PATH=$PATH:$ANDROID_HOME/emulator
-export PATH="/usr/local/opt/openjdk/bin:$PATH"
+export PATH="/usr/local/opt/openjdk@17/bin:$PATH"
 
 export PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
 
@@ -167,7 +182,6 @@ export PATH="/Users/johnschoeman/.ebcli-virtual-env/executables:$PATH"
 
 # bun completions
 [ -s "/Users/johnschoeman/.bun/_bun" ] && source "/Users/johnschoeman/.bun/_bun"
-
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
