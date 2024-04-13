@@ -1,12 +1,8 @@
-## ========================================================================== ##
-## ==                             ZSH SETTINGS                             == ##
-## ========================================================================== ##
+## ========================================================================== --
+## ==                             ZSH SETTINGS                             == --
+## ========================================================================== --
 
-#
-# Options
-#
-
-# https://zsh.sourceforge.io/Doc/Release/Options.htm
+# https://zsh.sourceforge.io/Doc/Release/Options.html
 
 # cd options
 setopt autocd autopushd pushdminus pushdsilent pushdtohome cdablevars
@@ -23,9 +19,9 @@ unsetopt nomatch
 export VISUAL=nvim
 export EDITOR="$VISUAL"
 
-#
-# Keybindings
-#
+## ========================================================================== --
+## ==                             KEY BINDINGS                             == --
+## ========================================================================== --
 
 # give us access to ^Q
 stty -ixon
@@ -45,9 +41,10 @@ bindkey "^N" insert-last-word
 bindkey "^Q" push-line-or-edit
 bindkey -s "^T" "^[Isudo ^[A" # "t" for "toughguy"
 
-#
-# Colors
-#
+
+## ========================================================================== --
+## ==                               COLORS                                 == --
+## ========================================================================== --
 
 # makes color constants available
 autoload -U colors
@@ -56,9 +53,10 @@ colors
 # enable colored output from ls, etc. on FreeBSD-based systems
 export CLICOLOR=1
 
-#
-# History
-#
+
+## ========================================================================== --
+## ==                               HISTORY                                == --
+## ========================================================================== --
 
 setopt hist_ignore_all_dups inc_append_history
 
@@ -78,9 +76,9 @@ bindkey "${terminfo[kcud1]}" history-beginning-search-forward-end
 
 bindkey ' ' magic-space
 
-#
-# Prompt
-#
+## ========================================================================== --
+## ==                               PROMPT                                 == --
+## ========================================================================== --
 
 # modify the prompt to contain git branch name if applicable
 git_prompt_info() {
@@ -117,20 +115,24 @@ fi
 }
 
 precmd () { vcs_info }
+# Full Prompt - [username] directory [git_info]
 PROMPT='%F{5}[%F{2}%n%F{5}] %F{3}%3~ ${vcs_info_msg_0_} %f%# '
 
-#
-# Completion
-#
+# Simple Prompt - directory [git_info]
+# PROMPT='%F{5} %F{3}%2~ ${vcs_info_msg_0_} %f%# '
+
+## ========================================================================== --
+## ==                               COMPLETION                             == --
+## ========================================================================== --
 
 # load our own completion functions
 fpath=(~/.zsh/completion /usr/local/share/zsh/site-functions $fpath)
 autoload -U compinit
 compinit
 
-#
-# Base Settings
-#
+## ========================================================================== --
+## ==                               BASE                                   == --
+## ========================================================================== --
 
 # Aliases
 [[ -f ~/.aliases ]] && source ~/.aliases
@@ -140,9 +142,9 @@ for function in ~/.zsh/functions/*; do
   source $function
 done
 
-#
-# Path
-#
+## ========================================================================== --
+## ==                               PATH                                   == --
+## ========================================================================== --
 
 # dotfiles
 PATH="$HOME/.bin:/usr/local/sbin:$PATH"
