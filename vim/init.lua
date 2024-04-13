@@ -70,7 +70,6 @@ vim.keymap.set('n', '<leader>>', '<C-w>>', {desc = 'Increase window width'})
 vim.keymap.set('n', '<leader><', '<C-w><', {desc = 'Decrease window width'})
 vim.keymap.set('n', '<leader>=', '<C-w>=', {desc = 'Equalize window sizes'})
 
-
 -- ========================================================================== --
 -- ==                               COMMANDS                               == --
 -- ========================================================================== --
@@ -184,10 +183,17 @@ require('lazy').setup(plugins, opts)
 -- Colorscheme
 ---
 vim.opt.termguicolors = true
--- vim.cmd [[ set background=light ]]
 vim.cmd [[ colorscheme rose-pine ]]
 
--- TODO: toggle between light and dark theme
+local function vim_opt_toggle_background()
+  if vim.opt.background:get() == "dark" then
+    vim.opt.background = "light"
+  else
+    vim.opt.background = "dark"
+  end
+end
+
+vim.keymap.set('n', '<leader>b', function() vim_opt_toggle_background() end, {desc = 'Set background dark'})
 
 
 ---
