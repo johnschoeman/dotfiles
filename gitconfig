@@ -7,8 +7,8 @@
   aa            = add --all
   ap            = add --patch
   alias         = config --get-regexp ^alias\\.
-  b             = branch
-  bb            = checkout -b
+  b             = checkout -b
+  bb            = branch
   bd            = branch -d
   bdd           = branch -D
   bdjts         = ! git branch -D `git branch | grep -E 'jts-*'`
@@ -43,8 +43,8 @@
   pf            = push --force-with-lease
   pfu           = push -fu origin HEAD
   pu            = push -u origin HEAD
-  rup           = rebase main
-  rupi          = rebase -i main
+  r             = rebase main
+  ri            = rebase -i main
   ua            = reset
   uc            = reset --soft HEAD^
 [core]

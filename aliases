@@ -74,4 +74,5 @@ alias nodepkill="ps aux | grep node | awk '{ print \$2 }' | xargs kill -9"
 ## React Native
 alias rns='npx react-native start'
 alias rnsc='npx react-native start --resetCache'
+alias rnnuke='rm -rf $TMPDIR/react-* && rm -rf $TMPDIR/react-native-packager-cache-* && rm -rf $TMPDIR/metro-bundler-cache-* && npm cache clean && watchman watch-del-all && react-native start --reset-cache'
 alias rnp='npx pod-install'
