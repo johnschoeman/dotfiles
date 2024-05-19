@@ -38,8 +38,8 @@ alias sa="source ~/.aliases"
 # Tooling
 
 ## Vim
+alias v="nvim"
 alias vim="nvim"
-alias vi="nvim"
 
 ##  Git
 # - ga: pretty print all the git aliases (assumes git alias is defined)

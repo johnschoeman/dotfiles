@@ -181,8 +181,7 @@ export PATH=$PATH:$HOME/.reasonml
 # elastic beanstalk cli
 export PATH="/Users/johnschoeman/.ebcli-virtual-env/executables:$PATH"
 
-. /usr/local/opt/asdf/libexec/asdf.sh
-
+. "$HOME/.asdf/asdf.sh"
 
 # bun completions
 [ -s "/Users/johnschoeman/.bun/_bun" ] && source "/Users/johnschoeman/.bun/_bun"

@@ -33,10 +33,6 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
   curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
   brew install neovim
   brew install tmux
-  brew install ack
-  brew install asdf
-  curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
-      https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 else
   echo
   echo "Okay, some settings may not work."
@@ -120,3 +116,22 @@ echo
 echo "-----------------------------"
 echo "---Dotfiles Setup Complete---"
 echo "-----------------------------"
+
+# Ubuntu Setup
+###
+
+# install gnome tweak tool:
+# sudo apt install gnome-tweak-tool
+# https://wiki.gnome.org/action/show/Apps/Tweaks?action=show&redirect=Apps%2FGnomeTweakTool
+# and adjust caps to ctrl
+
+# install i3
+
+# install kitty
+
+# install asdf
+
+# install lua
+# ln -s $(which lua) /bin/lua
+
+
