@@ -155,6 +155,8 @@ export -U PATH
 
 export PATH=$PATH:/usr/bin
 
+export PATH=$HOME/.local/bin:$PATH
+
 # Java
 
 # Using homebrew for JDK
