@@ -1,5 +1,23 @@
 #!/bin/bash
 
+# Ubuntu Setup
+
+# install i3
+
+# Install neovim, make sure it's above v5.0
+
+# Set caps to control on ubuntu
+# setxkbmap -option caps:ctrl_modifier
+
+# install kitty
+
+# install asdf
+
+# install lua via asdf
+# since we are using asdf for lua, we should add a link for shebang lines
+# ln -s $(which lua) /bin/lua
+
+
 echo "----------------------------"
 echo "---Running Dotfiles Setup---"
 echo "----------------------------"
@@ -22,17 +40,13 @@ echo "Done setting shell"
 echo
 
 # Install Programs
-echo "---Install Programs (MacOS only)---" 
+echo "---Install Programs---" 
 echo
-echo "Programs: kitty, neovim, tmux, ack, asdf, vim-plug"
-read -p "Okay to install programs using brew? (y/n) " -n 1 -r
+echo "Programs: kitty, neovim, tmux, asdf"
 
 if [[ $REPLY =~ ^[Yy]$ ]]; then
   echo
   echo "Installing programs..."
-  curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
-  brew install neovim
-  brew install tmux
 else
   echo
   echo "Okay, some settings may not work."
@@ -44,9 +58,9 @@ echo
 # Make symlinks for relevant files
 
 links=(
-  ~/.ackrc
   ~/.aliases
   ~/.bin
+  ~/.config/i3/config
   ~/.config/kitty/kitty.conf
   ~/.config/nvim/init.lua
   ~/.ctags
@@ -54,16 +68,15 @@ links=(
   ~/.gitmessage
   ~/.psqlrc
   ~/.tmux.conf
-  ~/.vimrc
   ~/.zsh
   ~/.zshenv
   ~/.zshrc
 )
 
 files=(
-  ~/dotfiles/ackrc
   ~/dotfiles/aliases
   ~/dotfiles/bin
+  ~/dotfiles/i3/config
   ~/dotfiles/kitty.conf
   ~/dotfiles/vim/init.lua
   ~/dotfiles/ctags
@@ -71,7 +84,6 @@ files=(
   ~/dotfiles/gitmessage
   ~/dotfiles/psqlrc
   ~/dotfiles/tmux.conf
-  ~/dotfiles/vim/vimrc
   ~/dotfiles/zsh
   ~/dotfiles/zshenv
   ~/dotfiles/zshrc
@@ -116,22 +128,4 @@ echo
 echo "-----------------------------"
 echo "---Dotfiles Setup Complete---"
 echo "-----------------------------"
-
-# Ubuntu Setup
-###
-
-# install gnome tweak tool:
-# sudo apt install gnome-tweak-tool
-# https://wiki.gnome.org/action/show/Apps/Tweaks?action=show&redirect=Apps%2FGnomeTweakTool
-# and adjust caps to ctrl
-
-# install i3
-
-# install kitty
-
-# install asdf
-
-# install lua
-# ln -s $(which lua) /bin/lua
-
 
