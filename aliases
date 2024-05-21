@@ -38,7 +38,6 @@ alias sa="source ~/.aliases"
 # Tooling
 
 ## Vim
-alias nvim="~/nvim-linux64/bin/nvim"
 alias v="nvim"
 alias vim="nvim"
 

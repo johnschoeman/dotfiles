@@ -41,6 +41,8 @@ bindkey "^N" insert-last-word
 bindkey "^Q" push-line-or-edit
 bindkey -s "^T" "^[Isudo ^[A" # "t" for "toughguy"
 
+# set caps a ctrl for linux
+setxkbmap -option caps:ctrl_modifier
 
 ## ========================================================================== --
 ## ==                               COLORS                                 == --
@@ -52,7 +54,6 @@ colors
 
 # enable colored output from ls, etc. on FreeBSD-based systems
 export CLICOLOR=1
-
 
 ## ========================================================================== --
 ## ==                               HISTORY                                == --
@@ -188,3 +189,9 @@ export PATH="/Users/johnschoeman/.ebcli-virtual-env/executables:$PATH"
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+# gh
+export PATH=$PATH:$HOME/gh_2.49.2_linux_386/bin/
+
+# neovim
+export PATH=$PATH:$HOME/nvim-linux64/bin/

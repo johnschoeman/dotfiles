@@ -6,8 +6,17 @@
 
 # Install neovim, make sure it's above v5.0
 
+# grep tool, used for neovim telescope, and cli
+# install ripgrep 
+# sudo apt-get install ripgrep
+
+# screenshot capture dependencies:
+# install maim xclip xdotool
+# sudo apt install main xclip xdotool
+
 # Set caps to control on ubuntu
 # setxkbmap -option caps:ctrl_modifier
+# (added to zshrc)
 
 # install kitty
 
@@ -42,11 +51,12 @@ echo
 # Install Programs
 echo "---Install Programs---" 
 echo
-echo "Programs: kitty, neovim, tmux, asdf"
+echo "Programs: ripgrep"
 
 if [[ $REPLY =~ ^[Yy]$ ]]; then
   echo
   echo "Installing programs..."
+  sudo apt-get install ripgrep
 else
   echo
   echo "Okay, some settings may not work."
