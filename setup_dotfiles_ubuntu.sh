@@ -2,6 +2,16 @@
 
 # Ubuntu Setup
 
+# install 1Password via .deb
+# install gh cli and auth ssh
+# git clone dotfiles
+
+# run dotfiles linking script
+
+# run install programs script
+
+# kitty, tmux, i3, neovim,
+
 # install i3
 
 # Install neovim, make sure it's above v5.0
@@ -56,7 +66,7 @@ echo "Programs: ripgrep"
 if [[ $REPLY =~ ^[Yy]$ ]]; then
   echo
   echo "Installing programs..."
-  sudo apt-get install ripgrep
+#  sudo apt-get install ripgrep
 else
   echo
   echo "Okay, some settings may not work."
@@ -70,14 +80,9 @@ echo
 links=(
   ~/.aliases
   ~/.bin
-  ~/.config/i3/config
-  ~/.config/kitty/kitty.conf
-  ~/.config/nvim/init.lua
   ~/.ctags
   ~/.gitconfig
   ~/.gitmessage
-  ~/.psqlrc
-  ~/.tmux.conf
   ~/.zsh
   ~/.zshenv
   ~/.zshrc
@@ -86,14 +91,9 @@ links=(
 files=(
   ~/dotfiles/aliases
   ~/dotfiles/bin
-  ~/dotfiles/i3/config
-  ~/dotfiles/kitty.conf
-  ~/dotfiles/vim/init.lua
   ~/dotfiles/ctags
   ~/dotfiles/gitconfig
   ~/dotfiles/gitmessage
-  ~/dotfiles/psqlrc
-  ~/dotfiles/tmux.conf
   ~/dotfiles/zsh
   ~/dotfiles/zshenv
   ~/dotfiles/zshrc
