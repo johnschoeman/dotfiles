@@ -41,7 +41,7 @@ bindkey "^N" insert-last-word
 bindkey "^Q" push-line-or-edit
 bindkey -s "^T" "^[Isudo ^[A" # "t" for "toughguy"
 
-# set caps a ctrl for linux
+# set caps a ctrl for i3 linux
 setxkbmap -option caps:ctrl_modifier
 
 ## ========================================================================== --
