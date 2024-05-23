@@ -2,8 +2,13 @@
 
 # Ubuntu Setup
 
+# install zsh
+# chsh -s $(which zsh)
+# log out and back in
+
 # install 1Password via .deb
 # install gh cli and auth ssh
+# add git config --global user.email user.name
 # git clone dotfiles
 
 # run dotfiles linking script
@@ -116,7 +121,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
   for ((i = 0; i < ${#files[@]}; i++))
   do
     echo "overwriting ${links[$i]} to link to ${files[$i]}"
-    ln -shf "${files[$i]}" "${links[$i]}"
+    ln -sf "${files[$i]}" "${links[$i]}"
   done
 else
   echo "Not making symlinks, you may need to link the relevant files manually"
