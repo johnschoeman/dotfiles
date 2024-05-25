@@ -23,6 +23,13 @@ alias ll="~/dotfiles/ll.lua"
 alias sak="~/dotfiles/sak.sh"
 alias cmplx="~/dotfiles/complexity_sort.sh"
 
+# i3
+alias aspect="xrandr -s 2560x1600"
+
+# clipboard
+alias copy="xclip -selection clipboard"
+alias paste="xclip -o -selection clipboard"
+
 # Dad
 alias dad="curl https://icanhazdadjoke.com/ && echo"
 
@@ -38,8 +45,8 @@ alias sa="source ~/.aliases"
 # Tooling
 
 ## Vim
+alias v="nvim"
 alias vim="nvim"
-alias vi="nvim"
 
 ##  Git
 # - ga: pretty print all the git aliases (assumes git alias is defined)

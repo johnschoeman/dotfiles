@@ -47,6 +47,7 @@
   ri            = rebase -i main
   ua            = reset
   uc            = reset --soft HEAD^
+  undo          = co
 [core]
 	excludesfile  = /Users/johnschoeman/.gitignore_global
   autocrlf      = input

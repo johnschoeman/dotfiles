@@ -1,4 +1,4 @@
-#!/Users/johnschoeman/.asdf/shims/lua
+#!/bin/lua
 
 -- ll.lua
 --

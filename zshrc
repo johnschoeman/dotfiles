@@ -41,6 +41,8 @@ bindkey "^N" insert-last-word
 bindkey "^Q" push-line-or-edit
 bindkey -s "^T" "^[Isudo ^[A" # "t" for "toughguy"
 
+# set caps a ctrl for i3 linux
+setxkbmap -option caps:ctrl_modifier
 
 ## ========================================================================== --
 ## ==                               COLORS                                 == --
@@ -52,7 +54,6 @@ colors
 
 # enable colored output from ls, etc. on FreeBSD-based systems
 export CLICOLOR=1
-
 
 ## ========================================================================== --
 ## ==                               HISTORY                                == --
@@ -155,6 +156,8 @@ export -U PATH
 
 export PATH=$PATH:/usr/bin
 
+export PATH=$HOME/.local/bin:$PATH
+
 # Java
 
 # Using homebrew for JDK
@@ -179,11 +182,16 @@ export PATH=$PATH:$HOME/.reasonml
 # elastic beanstalk cli
 export PATH="/Users/johnschoeman/.ebcli-virtual-env/executables:$PATH"
 
-. /usr/local/opt/asdf/libexec/asdf.sh
-
+. "$HOME/.asdf/asdf.sh"
 
 # bun completions
 [ -s "/Users/johnschoeman/.bun/_bun" ] && source "/Users/johnschoeman/.bun/_bun"
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+# gh
+export PATH=$PATH:$HOME/gh_2.49.2_linux_386/bin/
+
+# neovim
+export PATH=$PATH:$HOME/nvim-linux64/bin/
