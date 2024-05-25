@@ -45,6 +45,13 @@ asdf global lua latest
 # since we are using asdf for lua, we add a link for shebang lines
 ln -s $(which lua) /bin/lua
 
+log "nerd font"
+wget -P ~/.local/share/fonts https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/JetBrainsMono.zip \
+&& cd ~/.local/share/fonts \
+&& unzip JetBrainsMono.zip \
+&& rm JetBrainsMono.zip \
+&& fc-cache -fv
+
 # Programming Languages
 
 log "python3"
