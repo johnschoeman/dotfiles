@@ -66,6 +66,10 @@ sudo apt-get install make
 sudo apt-get install linux-headers-$(uname -r) build-essential
 sudo apt install cmake
 
+log "clangd"
+sudo apt-get install clangd-12
+sudo update-alternatives --install /usr/bin/clangd clangd /usr/clangd-12 100
+
 # Developer Contributing Tools
 
 log "JFrog"
