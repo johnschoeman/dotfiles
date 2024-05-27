@@ -23,8 +23,27 @@ alias ll="~/dotfiles/ll.lua"
 alias sak="~/dotfiles/sak.sh"
 alias cmplx="~/dotfiles/complexity_sort.sh"
 
-# i3
+# ----i3
+# -- Dislay Resolution
 alias aspect="xrandr -s 2560x1600"
+
+# -- Volume
+alias mute="~/dotfiles/i3/toggle_mute.sh"
+alias volume="~/dotfiles/i3/set_vol.sh"
+alias loud="~/dotfiles/i3/set_vol.sh 100%"
+alias med="~/dotfiles/i3/set_vol.sh 60%"
+alias low="~/dotfiles/i3/set_vol.sh 30%"
+alias volUp="~/dotfiles/i3/set_vol.sh +10%"
+alias volDown="~/dotfiles/i3/set_vol.sh -10%"
+
+# -- Screen
+alias warm="~/dotfiles/i3/set_color_temp.sh warm"
+alias cool="~/dotfiles/i3/set_color_temp.sh cool"
+alias neutral="~/dotfiles/i3/set_color_temp.sh neutral"
+alias brightness="~/dotfiles/i3/set_brightness.sh"
+alias bright="~/dotfiles/i3/set_brightness.sh 1.0"
+alias dim="~/dotfiles/i3/set_brightness.sh 0.7"
+alias dimmer="~/dotfiles/i3/set_brightness.sh 0.5"
 
 # clipboard
 alias copy="xclip -selection clipboard"

@@ -24,6 +24,9 @@ sudo apt install i3
 log "xclip"
 sudo apt-get install xclip
 
+log "brightnessctl"
+sudo apt install brightnessctl
+
 # Base Dev Tools
 
 log "tmux"
