@@ -20,6 +20,7 @@
   caan          = commit -a --amend --no-edit
   cap           = commit -p --amend
   caap          = commit -ap --amend
+  cdate         = ! git commit -m `date "+%Y-%m-%d_%H:%M:%S" | awk '{ print $1 }'`
   cm            = commit -m
   caw           = commit -am "wip"
   cp            = commit -p
@@ -47,6 +48,8 @@
   ri            = rebase -i main
   ua            = reset
   uc            = reset --soft HEAD^
+  ustage        = reset HEAD --
+  us            = reset HEAD --
   undo          = co
 [core]
 	excludesfile  = /Users/johnschoeman/.gitignore_global
