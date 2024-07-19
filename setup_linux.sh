@@ -5,7 +5,10 @@
 # Install dependencies for linux. Notes:
 #
 # Expected to have sourced .zshrc prior to running script
-
+#
+# Installed Dependencies
+#
+# i3, xclip, brightnessctl, maim, xdotool
 # Installed Programs
 #
 # kitty, tmux, i3, neovim, asdf, lua
@@ -15,19 +18,21 @@ function log() {
   echo "[Setup Linux] $1"
 }
 
-
-# Environment setup tools
+# ---- i3
 
 log "i3"
 sudo apt install i3
-
-log "xclip"
 sudo apt-get install xclip
 
-log "brightnessctl"
+# -- i3 screen brightness
 sudo apt install brightnessctl
 
-# Base Dev Tools
+# -- i3 Screenshots
+sudo apt install maim
+sudo apt install xdotool
+
+
+# ---- Base Dev Tools
 
 log "tmux"
 sudo apt install tmux
@@ -55,7 +60,7 @@ wget -P ~/.local/share/fonts https://github.com/ryanoasis/nerd-fonts/releases/do
 && rm JetBrainsMono.zip \
 && fc-cache -fv
 
-# Programming Languages
+# ---- Programming Languages
 
 log "python3"
 sudo apt install libffi-dev libncurses5-dev zlib1g zlib1g-dev libssl-dev libreadline-dev libbz2-dev libsqlite3-dev

@@ -192,15 +192,20 @@ bar {
         status_command i3status
 }
 
-# ## Screenshots
-# bindsym Print exec --no-startup-id maim "/home/$USER/Pictures/$(date)"
-# bindsym $mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) "/home/$USER/Pictures/$(date)"
-# bindsym Shift+Print exec --no-startup-id maim --select "/home/$USER/Pictures/$(date)"
+## Screenshots
 
-# ## Clipboard Screenshots
-# bindsym Ctrl+Print exec --no-startup-id maim | xclip -selection clipboard -t image/png
-# bindsym Ctrl+$mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
-# bindsym Ctrl+Shift+Print exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
+# full screen
+bindsym Print exec --no-startup-id maim "/home/$USER/screenshots/$(date).png"
+bindsym Ctrl+Print exec --no-startup-id maim | xclip -selection clipboard -t image/png
+
+# active window
+bindsym Mod1+Print exec --no-startup-id maim --window $(xdotool getactivewindow) "/home/$USER/screenshots/$(date).png"
+bindsym Ctrl+Mod1+Print exec --no-startup-id maim --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
+
+# selection
+bindsym Shift+Print exec --no-startup-id maim --select "/home/$USER/screenshots/$(date).png"
+bindsym Ctrl+Shift+Print exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
+
 
 #######################################################################
 # automatically start i3-config-wizard to offer the user to create a
