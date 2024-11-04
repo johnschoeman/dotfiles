@@ -1,0 +1,15 @@
+# cat all
+#
+# cats all files in a directory, with filename
+# does not traverse nested folders
+
+cat_all() {
+  DIR=$1
+
+  find "$DIR" -type f | while read -r file; do
+    echo "Context File: $(basename "$file")"
+    echo ""
+    cat "$file"
+    echo "\n---"
+  done
+}

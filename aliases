@@ -2,7 +2,7 @@
 # ALIASES #
 ###########
 
-# Unix
+# -- Unix
 alias ls="ls -FGh"
 alias la="ls -oa"
 alias lr="ls -R"
@@ -18,14 +18,20 @@ alias sed="sed -E"
 alias h="history"
 alias hg="history -500 | grep"
 
-# Functions
+alias memory="~/dotfiles/memory.sh"
+
+# -- Functions
 alias ll="~/dotfiles/ll.lua"
 alias sak="~/dotfiles/sak.sh"
 alias cmplx="~/dotfiles/complexity_sort.sh"
 
+# -- Applications
+alias cursor="/opt/cursor.appimage"
+
 # ----i3
 # -- Dislay Resolution
-alias aspect="xrandr -s 2560x1600"
+alias aspect1="xrandr -s 2560x1600"
+alias aspect2="xrandr -s 1920x1080"
 
 # -- Volume
 alias mute="~/dotfiles/i3/toggle_mute.sh"
@@ -75,11 +81,8 @@ awk 'BEGIN { FS = \":\" } { printf(\"%-8s : %s\n\",\$1,\$2) }'"
 # - git_loc: expected to be used after `git log --pretty=tformat: --numstat`
 alias git_loc="awk '{ adds += \$1; subs += \$2; loc += \$1 - \$2 } END { printf \"added: %s, removed: %s, total: %s\n\", adds, subs, loc }'"
 
-## Awk
-alias sum_first="awk '{ sum += \$1 } END { print sum }'"
-
-## Yarn
-alias y="yarn install"
+## AI
+alias aider="python -m aider"
 
 ## NPM
 alias n="npm run"
