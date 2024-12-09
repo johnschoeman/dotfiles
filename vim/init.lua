@@ -145,7 +145,6 @@ plugins = {
   { 'nvim-telescope/telescope.nvim' },
   { 'nvim-telescope/telescope-fzf-native.nvim', build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' },
 
-
   -- Git
   { 'tpope/vim-fugitive' },
 
@@ -498,6 +497,33 @@ vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(
   vim.lsp.handlers.signature_help,
   {border = 'rounded'}
 )
+
+-- rust
+local on_attach = function(client)
+  requre'completion'.on_attach(client)
+end
+
+lspconfig.rust_analyzer.setup({
+  on_attach = on_attach,
+  settings = {
+    ['rust-analyzer'] = {
+      imports = {
+        granularity = {
+          group = 'module',
+        },
+        prefix = 'self',
+      },
+      cargo = {
+        buildScripts = {
+          enable = true,
+        }
+      },
+      procMarco = {
+        enable = true,
+      }
+    }
+  }
+})
 
 
 -- ---
