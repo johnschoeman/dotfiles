@@ -51,6 +51,7 @@
   ustage        = reset HEAD --
   us            = reset HEAD --
   undo          = co
+  ; author        = log --oneline --author="Author Name" --pretty=format:"%h - %an, %ar : %s"
 [core]
 	excludesfile  = /Users/johnschoeman/.gitignore_global
   autocrlf      = input

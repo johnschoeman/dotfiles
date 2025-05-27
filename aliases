@@ -81,6 +81,10 @@ awk 'BEGIN { FS = \":\" } { printf(\"%-8s : %s\n\",\$1,\$2) }'"
 # - git_loc: expected to be used after `git log --pretty=tformat: --numstat`
 alias git_loc="awk '{ adds += \$1; subs += \$2; loc += \$1 - \$2 } END { printf \"added: %s, removed: %s, total: %s\n\", adds, subs, loc }'"
 
+alias gactivity="~/dotfiles/git_activity.sh"
+alias gaa="~/dotfiles/git_activity_all.sh"
+alias gap="~/dotfiles/git_activity_project.sh"
+
 ## AI
 alias aider="python -m aider"
 
