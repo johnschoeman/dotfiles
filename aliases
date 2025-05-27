@@ -109,3 +109,15 @@ alias rns='npx react-native start'
 alias rnsc='npx react-native start --resetCache'
 alias rnnuke='rm -rf $TMPDIR/react-* && rm -rf $TMPDIR/react-native-packager-cache-* && rm -rf $TMPDIR/metro-bundler-cache-* && npm cache clean && watchman watch-del-all && react-native start --reset-cache'
 alias rnp='npx pod-install'
+
+## Cargo
+alias c="cargo"
+alias cb="cargo build"
+alias cbp="cargo build --release"
+alias cr="cargo run"
+alias ct="cargo test"
+alias cc="cargo check"
+alias cf="cargo fmt"
+alias cwr="cargo watch -x run"
+alias cwt="cargo watch -x test"
+alias cwb="cargo watch -x check"
