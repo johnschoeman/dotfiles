@@ -202,3 +202,5 @@ export PATH=$PATH:$HOME/gh_2.49.2_linux_386/bin/
 
 # neovim
 export PATH=$PATH:$HOME/nvim-linux64/bin/
+
+alias python=python3

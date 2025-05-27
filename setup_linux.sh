@@ -13,7 +13,6 @@
 #
 # kitty, tmux, i3, neovim, asdf, lua
 
-
 function log() {
   echo "[Setup Linux] $1"
 }
@@ -62,11 +61,11 @@ wget -P ~/.local/share/fonts https://github.com/ryanoasis/nerd-fonts/releases/do
 
 # ---- Programming Languages
 
-log "python3"
-sudo apt install libffi-dev libncurses5-dev zlib1g zlib1g-dev libssl-dev libreadline-dev libbz2-dev libsqlite3-dev
-asdf plugin add python
-asdf install python 3.10.14
-asdf global python 3.10.14
+# log "python3"
+# sudo apt install libffi-dev libncurses5-dev zlib1g zlib1g-dev libssl-dev libreadline-dev libbz2-dev libsqlite3-dev
+# asdf plugin add python
+# asdf install python 3.10.14
+# asdf global python 3.10.14
 
 log "c++"
 # ansi c compiler and build tools
