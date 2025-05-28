@@ -36,8 +36,17 @@ sudo apt install xdotool
 log "tmux"
 sudo apt install tmux
 
-log "ripgrep"
+log "ripgrep" # https://github.com/BurntSushi/ripgrep
 sudo apt-get install ripgrep
+
+log "fd" # https://github.com/sharkdp/fd
+sudo apt install fd-find
+ln -s $(which fdfind)
+
+log "bat" # https://github.com/sharkdp/bat
+sudo apt install bat
+mkdir -p ~/.local/bin
+ln -s /usr/bin/batcat ~/.local/bin/bat
 
 log "kitty"
 curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
