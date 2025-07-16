@@ -1,10 +1,7 @@
 dotfiles
 -----------
 
-These dotfiles were started with a clone from thoughtbot's dotfiles:
-
-[thoughtbot/dotfiles](https://github.com/thoughtbot/dotfiles)
-
+These are my personal dotfiles
 
 Install
 -------
@@ -15,19 +12,24 @@ Install
 git clone git://github.com/johnschoeman/dotfiles.git ~/dotfiles
 ```
 
-2. Run the setup scripts:
+2. Run the setup script for the desired os:
 
-```bash
-bash ~/dotfiles/setup_shell.sh
+### NixOS
 
-bash ~/dotfiles/setup_ubuntu.sh
-
-# or
-
-bash ~/dotfiles/setup_mac.sh
+```
+~/dotfiles/setup_nixos.sh
 ```
 
-Thank you, [contributors](https://github.com/thoughtbot/dotfiles/contributors)
-Also, thank you to Corey Haines, Gary Bernhardt, Chris Toomey, and others for
-sharing your dotfiles and other shell scripts from which we derived inspiration
-for items in this project.
+### Ubuntu
+
+```
+~/dotfiles/setup_shell.sh
+
+~/dotfiles/setup_ubuntu.sh
+```
+
+### MacOS
+
+```
+~/dotfiles/setup_mac.sh
+```

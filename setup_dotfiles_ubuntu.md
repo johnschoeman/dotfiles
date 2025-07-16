@@ -38,7 +38,6 @@ mkdir ~/.config/nvim
 ln -sf ~/dotfiles/vim/vim.lua ~/.config/nvim/init.lua
 ```
 
-
 # Setup ssh keys for bitbucket
 
 https://support.atlassian.com/bitbucket-cloud/docs/set-up-personal-ssh-keys-on-linux/

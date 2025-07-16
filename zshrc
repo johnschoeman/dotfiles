@@ -1,6 +1,6 @@
-## ========================================================================== --
-## ==                             ZSH SETTINGS                             == --
-## ========================================================================== --
+## ============================================================== --
+## ==                 ZSH SETTINGS                             == --
+## ============================================================== --
 
 # https://zsh.sourceforge.io/Doc/Release/Options.html
 
@@ -19,9 +19,9 @@ unsetopt nomatch
 export VISUAL=nvim
 export EDITOR="$VISUAL"
 
-## ========================================================================== --
-## ==                             KEY BINDINGS                             == --
-## ========================================================================== --
+## ============================================================== --
+## ==                 KEY BINDINGS                             == --
+## ============================================================== --
 
 # give us access to ^Q
 stty -ixon
@@ -41,19 +41,19 @@ bindkey "^N" insert-last-word
 bindkey "^Q" push-line-or-edit
 bindkey -s "^T" "^[Isudo ^[A" # "t" for "toughguy"
 
+# TODO: switch on i3 somehow rather than Linux as NixOS / Hyperland would also hit Linux
+# case `uname` in
+#   Linux)
+#   # set caps a ctrl for i3 linux
+#   setxkbmap -option caps:ctrl_modifier
+#   ;;
+#   Darwin)
+#   ;;
+# esac
 
-case `uname` in
-  Linux)
-  # set caps a ctrl for i3 linux
-  setxkbmap -option caps:ctrl_modifier
-  ;;
-  Darwin)
-  ;;
-esac
-
-## ========================================================================== --
-## ==                               COLORS                                 == --
-## ========================================================================== --
+## ============================================================== --
+## ==                   COLORS                                 == --
+## ============================================================== --
 
 # makes color constants available
 autoload -U colors
@@ -62,9 +62,9 @@ colors
 # enable colored output from ls, etc. on FreeBSD-based systems
 export CLICOLOR=1
 
-## ========================================================================== --
-## ==                               HISTORY                                == --
-## ========================================================================== --
+## ============================================================== --
+## ==                   HISTORY                                == --
+## ============================================================== --
 
 setopt hist_ignore_all_dups inc_append_history
 
@@ -84,9 +84,9 @@ bindkey "${terminfo[kcud1]}" history-beginning-search-forward-end
 
 bindkey ' ' magic-space
 
-## ========================================================================== --
-## ==                               PROMPT                                 == --
-## ========================================================================== --
+## ============================================================== --
+## ==                   PROMPT                                 == --
+## ============================================================== --
 
 # modify the prompt to contain git branch name if applicable
 git_prompt_info() {
@@ -129,18 +129,18 @@ PROMPT='%F{5}[%F{2}%n%F{5}] %F{3}%3~ ${vcs_info_msg_0_} %f%# '
 # Simple Prompt - directory [git_info]
 # PROMPT='%F{5} %F{3}%2~ ${vcs_info_msg_0_} %f%# '
 
-## ========================================================================== --
-## ==                               COMPLETION                             == --
-## ========================================================================== --
+## ============================================================== --
+## ==                   COMPLETION                             == --
+## ============================================================== --
 
 # load our own completion functions
 fpath=(~/.zsh/completion /usr/local/share/zsh/site-functions $fpath)
 autoload -U compinit
 compinit
 
-## ========================================================================== --
-## ==                               BASE                                   == --
-## ========================================================================== --
+## ============================================================== --
+## ==                   BASE                                   == --
+## ============================================================== --
 
 # Aliases
 [[ -f ~/.aliases ]] && source ~/.aliases
@@ -150,57 +150,49 @@ for function in ~/.zsh/functions/*; do
   source $function
 done
 
-## ========================================================================== --
-## ==                               PATH                                   == --
-## ========================================================================== --
+## ============================================================== --
+## ==                   PATH                                   == --
+## ============================================================== --
 
 # dotfiles
 PATH="$HOME/.bin:/usr/local/sbin:$PATH"
-
-# mkdir .git/safe in the root of repositories you trust
-PATH=".git/safe/../../bin:$PATH"
-export -U PATH
-
 export PATH=$PATH:/usr/bin
-
 export PATH=$HOME/.local/bin:$PATH
 
-# Java
+# NixOS
+export NIX_PATH="nixos-config=~/dotfiles/nixos/configuration.nix"
 
-# Using homebrew for JDK
-# when updating, need to set the JAVA_HOME to actual exe path.
+# TODO: Setup gh cli
+# # gh
+# export PATH=$PATH:$HOME/gh_2.49.2_linux_386/bin/
+
+# TODO: Conditionally include paths based on on if the application / tool is
+# available so this config can be used on different machines?
+
+# # Java
 #
-# Find java exe path:
-# java -XshowSettings:properties -version 2>&1 > /dev/null | grep 'java.home'
+# # Using homebrew for JDK
+# # when updating, need to set the JAVA_HOME to actual exe path.
+# #
+# # Find java exe path:
+# # java -XshowSettings:properties -version 2>&1 > /dev/null | grep 'java.home'
+#
+# export JAVA_HOME=/usr/local/Cellar/openjdk@17/17.0.9/libexec/openjdk.jdk/Contents/Home
+# export ANDROID_HOME=$HOME/Library/Android/sdk
+# export PATH=$PATH:$ANDROID_HOME/tools
+# export PATH=$PATH:$ANDROID_HOME/tools/bin
+# export PATH=$PATH:$ANDROID_HOME/platform-tools
+# export PATH=$PATH:$ANDROID_HOME/emulator
+# export PATH="/usr/local/opt/openjdk@17/bin:$PATH"
 
-export JAVA_HOME=/usr/local/Cellar/openjdk@17/17.0.9/libexec/openjdk.jdk/Contents/Home
-export ANDROID_HOME=$HOME/Library/Android/sdk
-export PATH=$PATH:$ANDROID_HOME/tools
-export PATH=$PATH:$ANDROID_HOME/tools/bin
-export PATH=$PATH:$ANDROID_HOME/platform-tools
-export PATH=$PATH:$ANDROID_HOME/emulator
-export PATH="/usr/local/opt/openjdk@17/bin:$PATH"
+# # Postgres
+# export PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
 
-export PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
+# # asdf
+# . "$HOME/.asdf/asdf.sh"
 
-export PATH=$PATH:$HOME/.reasonml
-[ -f "/Users/johnschoeman/.ghcup/env" ] && source "/Users/johnschoeman/.ghcup/env" # ghcup-env
-
-# elastic beanstalk cli
-export PATH="/Users/johnschoeman/.ebcli-virtual-env/executables:$PATH"
-
-. "$HOME/.asdf/asdf.sh"
-
-# bun completions
-[ -s "/Users/johnschoeman/.bun/_bun" ] && source "/Users/johnschoeman/.bun/_bun"
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
-
-# gh
-export PATH=$PATH:$HOME/gh_2.49.2_linux_386/bin/
-
-# neovim
-export PATH=$PATH:$HOME/nvim-linux64/bin/
-
-alias python=python3
+# # bun completions
+# [ -s "/Users/johnschoeman/.bun/_bun" ] && source "/Users/johnschoeman/.bun/_bun"
+# # bun
+# export BUN_INSTALL="$HOME/.bun"
+# export PATH="$BUN_INSTALL/bin:$PATH"
