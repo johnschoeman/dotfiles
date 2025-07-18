@@ -132,8 +132,8 @@ plugins = {
   { 'tpope/vim-surround' },
   { 'tpope/vim-repeat' },
   { 'lukas-reineke/indent-blankline.nvim', main = "ibl", opts = {} },
-  { 'nvim-treesitter/nvim-treesitter' },
-  { 'nvim-treesitter/nvim-treesitter-textobjects' },
+  -- { 'nvim-treesitter/nvim-treesitter' },
+  -- { 'nvim-treesitter/nvim-treesitter-textobjects' },
   { 'wellle/targets.vim' },
   { 'numToStr/Comment.nvim', opts = {}, lazy = false },
   { 'mhartington/formatter.nvim' },
@@ -141,9 +141,9 @@ plugins = {
   -- Linting
   { 'mfussenegger/nvim-lint' },
 
-  -- Fuzzy finding
-  { 'nvim-telescope/telescope.nvim' },
-  { 'nvim-telescope/telescope-fzf-native.nvim', build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' },
+  -- -- Fuzzy finding
+  -- { 'nvim-telescope/telescope.nvim' },
+  -- { 'nvim-telescope/telescope-fzf-native.nvim', build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' },
 
   -- Git
   { 'tpope/vim-fugitive' },
@@ -230,43 +230,43 @@ require('ibl').setup({
 })
 
 
----
--- text-objects (treesitter)
----
-require('nvim-treesitter.configs').setup({
-  highlight = {
-    enable = true,
-  },
-  textobjects = {
-    select = {
-      enable = true,
-      lookahead = true,
-      keymaps = {
-        ['af'] = '@function.outer',
-        ['if'] = '@function.inner',
-        ['ac'] = '@class.outer',
-        ['ic'] = '@class.inner',
-      }
-    },
-    swap = {
-      enable = true,
-      swap_next = {
-        ["<leader>a"] = "@parameter.inner",
-      },
-      swap_previous = {
-        ["<leader>A"] = "@parameter.inner",
-      },
-    },
-  },
-  ensure_installed = {
-    'javascript',
-    'typescript',
-    'tsx',
-    'css',
-    'json',
-    'lua',
-  },
-})
+-- ---
+-- -- text-objects (treesitter)
+-- ---
+-- require('nvim-treesitter.configs').setup({
+--   highlight = {
+--     enable = true,
+--   },
+--   textobjects = {
+--     select = {
+--       enable = true,
+--       lookahead = true,
+--       keymaps = {
+--         ['af'] = '@function.outer',
+--         ['if'] = '@function.inner',
+--         ['ac'] = '@class.outer',
+--         ['ic'] = '@class.inner',
+--       }
+--     },
+--     swap = {
+--       enable = true,
+--       swap_next = {
+--         ["<leader>a"] = "@parameter.inner",
+--       },
+--       swap_previous = {
+--         ["<leader>A"] = "@parameter.inner",
+--       },
+--     },
+--   },
+--   ensure_installed = {
+--     'javascript',
+--     'typescript',
+--     'tsx',
+--     'css',
+--     'json',
+--     'lua',
+--   },
+-- })
 
 
 ---
@@ -275,17 +275,16 @@ require('nvim-treesitter.configs').setup({
 require('Comment').setup({})
 
 
----
--- Fuzzy Finder (telescope)
----
-vim.keymap.set('n', '<leader>o', '<cmd>Telescope buffers<cr>')
-vim.keymap.set('n', '<leader>?', '<cmd>Telescope oldfiles<cr>')
-vim.keymap.set('n', '<leader>ff', '<cmd>Telescope find_files<cr>')
-vim.keymap.set('n', '<leader>fg', '<cmd>Telescope live_grep<cr>')
-vim.keymap.set('n', '<leader>fd', '<cmd>Telescope diagnostics<cr>')
-vim.keymap.set('n', '<leader>fs', '<cmd>Telescope current_buffer_fuzzy_find<cr>')
-
-require('telescope').load_extension('fzf')
+-- ---
+-- -- Fuzzy Finder (telescope)
+-- ---
+-- vim.keymap.set('n', '<leader>o', '<cmd>Telescope buffers<cr>')
+-- vim.keymap.set('n', '<leader>?', '<cmd>Telescope oldfiles<cr>')
+-- vim.keymap.set('n', '<leader>ff', '<cmd>Telescope find_files<cr>')
+-- vim.keymap.set('n', '<leader>fg', '<cmd>Telescope live_grep<cr>')
+-- vim.keymap.set('n', '<leader>fd', '<cmd>Telescope diagnostics<cr>')
+-- vim.keymap.set('n', '<leader>fs', '<cmd>Telescope current_buffer_fuzzy_find<cr>')
+-- require('telescope').load_extension('fzf')
 
 
 ---
