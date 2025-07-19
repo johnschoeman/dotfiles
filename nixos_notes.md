@@ -26,7 +26,8 @@ sudo nixos-rebuild switch
 
 # TODO
 
-[ ] check out zaneyos
+[x] check out zaneyos (not going to use directly, just as a reference)
+[ ] use nh cli helper
 [ ] gnome -> hyprland
 [ ] move home.nix to ~/dotfiles/nixos
 [x] map capslock to ctrl (gnome)
@@ -67,6 +68,7 @@ sudo nixos-rebuild switch
 
 [ ] Fish
 [ ] Nushell
+[ ] nh
 [x] Ripgrep (rg -h)
 [x] Fd
 [x] fzf
