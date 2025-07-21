@@ -1,5 +1,4 @@
 { config, pkgs, ...}:
-
 {
   home.username = "john";
   home.homeDirectory = "/home/john";
@@ -12,9 +11,13 @@
     };
   };
 
-  # imports = [
-  #   ./bash.nix
-  # ];
+  imports = [
+    /home/john/dotfiles/nixos/home/alacritty.nix
+    /home/john/dotfiles/nixos/home/bash.nix
+    /home/john/dotfiles/nixos/home/neovim.nix
+    /home/john/dotfiles/nixos/home/nh.nix
+    /home/john/dotfiles/nixos/home/yazi.nix
+  ];
 
   # # hyprland
   # programs.kitty.enable = true;
@@ -41,53 +44,11 @@
   #     );
   # };
 
-  programs.bash = {
-    enable = true;
-    shellAliases = {
-      # NixOS
-      ninfo = "nh os info";
-      nrs = "nh os switch /home/john/dotfiles/nixos -- --impure";
-      nclean = "nh clean all --keep-since 14d";
-      # Utilities
-      ls = "eza -la";
-      cat = "bat";
-      cd = "z";
-    };
-    initExtra = ''
-      EDITOR=nvim
-      eval "$(starship init bash)"
-      eval "$(zoxide init bash)"
-    '';
-  };
-
-  programs.alacritty = {
-    enable = true;
-    settings = {
-      window.opacity = 0.9;
-    };
-  };
-
-  programs.nh = {
-    enable = true;
-    clean.enable = true;
-    clean.extraArgs = "--keep-since 4d --keep 3";
-    flake = "/home/john/dotfiles/nixos"; # sets NH_OS_FLAKE
-  };
-
-  programs.yazi = {
-    enable = true;
-  };
-
-  # nvim config
-  xdg.configFile.nvim.source = /home/john/dotfiles/vim;
-
   home.packages = with pkgs; [
     # fonts
     pkgs.nerd-fonts.jetbrains-mono
 
     # programs
-    neovim
-    alacritty
     git
     zellij
 
@@ -106,6 +67,5 @@
     neofetch
     starship
     htop-vim
-    yazi
   ];
 }
