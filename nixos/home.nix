@@ -12,6 +12,10 @@
     };
   };
 
+  # imports = [
+  #   ./bash.nix
+  # ];
+
   # # hyprland
   # programs.kitty.enable = true;
   # wayland.windowManager.hyprland.enable = true; 
@@ -40,15 +44,17 @@
   programs.bash = {
     enable = true;
     shellAliases = {
-      hello = "echo 'hello from home.nix 5'";
-      nrsetc = "sudo nixos-rebuild switch --impure --flake /etc/nixos#nixos";
-      nrs = "sudo nixos-rebuild switch --impure --flake /home/john/dotfiles/nixos#nixos";
-      nixclean = "sudo nix-collect-garbage --delete-older-than 15d";
+      # NixOS
+      ninfo = "nh os info";
+      nrs = "nh os switch /home/john/dotfiles/nixos -- --impure";
+      nclean = "nh clean all --keep-since 14d";
+      # Utilities
       ls = "eza -la";
       cat = "bat";
       cd = "z";
     };
     initExtra = ''
+      EDITOR=nvim
       eval "$(starship init bash)"
       eval "$(zoxide init bash)"
     '';
@@ -59,6 +65,17 @@
     settings = {
       window.opacity = 0.9;
     };
+  };
+
+  programs.nh = {
+    enable = true;
+    clean.enable = true;
+    clean.extraArgs = "--keep-since 4d --keep 3";
+    flake = "/home/john/dotfiles/nixos"; # sets NH_OS_FLAKE
+  };
+
+  programs.yazi = {
+    enable = true;
   };
 
   # nvim config
@@ -89,5 +106,6 @@
     neofetch
     starship
     htop-vim
+    yazi
   ];
 }

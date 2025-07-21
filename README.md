@@ -6,7 +6,7 @@ These are my personal dotfiles
 Install
 -------
 
-1. Clone onto your laptop:
+1. Clone:
 
 ```bash
 git clone git://github.com/johnschoeman/dotfiles.git ~/dotfiles
