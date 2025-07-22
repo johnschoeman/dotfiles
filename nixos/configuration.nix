@@ -51,19 +51,19 @@
   };
 
   # # Enable the GNOME Desktop Environment.
-  services.displayManager.gdm.enable = true;
-  services.desktopManager.gnome.enable = true;
+  # services.displayManager.gdm.enable = true;
+  # services.desktopManager.gnome.enable = true;
 
-  # # SDDM
-  # services.displayManager = {
-  #   sddm = {
-  #     package = pkgs.kdePackages.sddm;
-  #     # extraPackages = [sddm-astronaut];
-  #     enable = true;
-  #     wayland.enable = true;
-  #     # theme = "sddm-astronaut-theme";
-  #   };
-  # };
+  # SDDM
+  services.displayManager = {
+    sddm = {
+      package = pkgs.kdePackages.sddm;
+      # extraPackages = [sddm-astronaut];
+      enable = true;
+      wayland.enable = true;
+      # theme = "sddm-astronaut-theme";
+    };
+  };
 
 
   # Enable CUPS to print documents.

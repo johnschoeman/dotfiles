@@ -4,12 +4,12 @@
   home.homeDirectory = "/home/john";
   home.stateVersion = "25.05";
 
-  # gnome settings
-  dconf.settings = {
-    "org/gnome/desktop/input-sources" = {
-      xkb-options = [ "ctrl:nocaps" ];
-    };
-  };
+  # # gnome settings
+  # dconf.settings = {
+  #   "org/gnome/desktop/input-sources" = {
+  #     xkb-options = [ "ctrl:nocaps" ];
+  #   };
+  # };
 
   imports = [
     /home/john/dotfiles/nixos/home/alacritty.nix
