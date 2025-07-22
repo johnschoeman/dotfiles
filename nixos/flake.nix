@@ -36,8 +36,8 @@
 
             # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
           }
-          hyprland.nixosModules.default
-          { programs.hyprland.enable = true; }
+          # hyprland.nixosModules.default
+          # { programs.hyprland.enable = true; }
         ];
       };
     };
