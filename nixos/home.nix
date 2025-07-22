@@ -26,8 +26,9 @@
     pkgs.nerd-fonts.jetbrains-mono
 
     # window manager
-    wev       # wayland event viewer
-    libinput  # inputs for hyprland
+    libinput     # inputs for hyprland
+    libxkbcommon # keyboard descriptions, for wev
+    wev          # wayland event viewer
 
     # programs
     git
