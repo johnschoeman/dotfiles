@@ -55,7 +55,6 @@
   };
 
   # SDDM
-  services.xserver.displayManager.sddm.enable = true;
   services.displayManager = {
     sddm = {
       package = pkgs.kdePackages.sddm;
@@ -69,7 +68,7 @@
 
 
   # Drivers
-  drivers.intel.enable = true;
+  # drivers.intel.enable = true;
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
