@@ -33,6 +33,7 @@
     # programs
     git
     zellij
+    kitty
 
     # utilities
     libgccjit
