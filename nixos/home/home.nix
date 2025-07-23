@@ -29,6 +29,7 @@
     # programs
     git
     zellij
+    spotify
 
     # utilities
     libgccjit
@@ -44,6 +45,7 @@
     dua
     neofetch
     starship
+    btop
     htop-vim
   ];
 }

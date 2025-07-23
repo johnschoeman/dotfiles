@@ -43,16 +43,16 @@ Add the SSH public key to your account on GitHub .
 [x] Fix font
 [x] use git to track nix os config
 [ ] script to commit dotfiles and then build nix and rollback commit if build fails and resource terminal shell
-[ ] automatically start zellij when opening terminal
+[x] automatically start zellij when opening terminal
 
 ## Window Manager - Hyprland
 
 [ ] move hyprland.conf to nix (or use a symlink?)
-[ ] replicate omarchy bindings
+[x] replicate omarchy bindings
 [x] setup waybar
 [ ] rofi configuration
 [ ] checkout hyprpaper and other related packages
-[ ] set theme to cappucine (or something else)
+[ ] set theme to catpucine (or something else)
 [ ] use more neutral cursor
 
 ## Git
@@ -68,8 +68,8 @@ Add the SSH public key to your account on GitHub .
     [ ] tree-sitter
     [ ] telescope
   [ ] same config for sudo and login shell
-[ ] navigate pane shortcuts
-[ ] setup spellchecker
+[ ] navigate pane shortcuts (https://github.com/hiasr/vim-zellij-navigator?tab=readme-ov-file)
+[x] setup spellchecker (z=)
 
 ## Aliases
 
@@ -101,28 +101,28 @@ Add the SSH public key to your account on GitHub .
 [x] rofi       # application launcher
 [x] waybar     # window status bar
 [x] hwg-look   # GTK settings editor
-[x] hyprcursor # cursor for hyprland
+[ ] hyprcursor # cursor for hyprland
 
-[x] Ripgrep   # (rg -h)
-[x] Fd        # find replacement
-[x] fzf       # fuzzy file finder
-[x] Bat       # cat with wings
-[x] Eza       # ls replacement
-[x] Zoxide    # cd replacement
-[x] Xh        # http requests
-[x] Zellij    # terminal multiplexer
-[x] Gitui     # git tui
-[x] du-dust   # disk usage
-[x] dua       # disk usage also
-[x] yazi      # terminal file navigator
+[x] Ripgrep    # (rg -h)
+[x] Fd         # find replacement
+[x] fzf        # fuzzy file finder
+[x] Bat        # cat with wings
+[x] Eza        # ls replacement
+[x] Zoxide     # cd replacement
+[x] Xh         # http requests
+[x] Zellij     # terminal multiplexer
+[x] Gitui      # git tui
+[x] du-dust    # disk usage
+[x] dua        # disk usage also
+[x] yazi       # terminal file navigator
 
 [ ] tree
 [x] neofetch
 [x] htop-vim
 
-[ ] xremap    # maybe not: depends on if need more remaps than caps -> ctrl
+[ ] xremap     # maybe not: depends on if need more remaps than caps -> ctrl
 
-[x] starship  # terminal prompt
+[x] starship   # terminal prompt
 [ ] hyperfine
 [ ] evil-helix
 [ ] bacon
@@ -144,6 +144,10 @@ Add the SSH public key to your account on GitHub .
 [ ] espanso
 
 
+[ ] 1password
+[ ] spotify
+
+
 # archives
 [ ] zip
 [ ] xz
@@ -151,20 +155,18 @@ Add the SSH public key to your account on GitHub .
 [ ] p7zip
 
 # utils
-[ ] jq # A lightweight and flexible command-line JSON processor
-[ ] yq-go # yaml processor https://github.com/mikefarah/yq
-[ ] eza # A modern replacement for ‘ls’
-[ ] fzf # A command-line fuzzy finder
+[ ] jq         # A lightweight and flexible command-line JSON processor
+[ ] yq-go      # yaml processor https://github.com/mikefarah/yq
 
 # networking tools
-[ ] mtr # A network diagnostic tool
+[ ] mtr        # A network diagnostic tool
 [ ] iperf3
-[ ] dnsutils  # `dig` + `nslookup`
-[ ] ldns # replacement of `dig`, it provide the command `drill`
-[ ] aria2 # A lightweight multi-protocol & multi-source command-line download utility
-[ ] socat # replacement of openbsd-netcat
-[ ] nmap # A utility for network discovery and security auditing
-[ ] ipcalc  # it is a calculator for the IPv4/v6 addresses
+[ ] dnsutils   # `dig` + `nslookup`
+[ ] ldns       # replacement of `dig`, it provide the command `drill`
+[ ] aria2      # A lightweight multi-protocol & multi-source command-line download utility
+[ ] socat      # replacement of openbsd-netcat
+[ ] nmap       # A utility for network discovery and security auditing
+[ ] ipcalc     # it is a calculator for the IPv4/v6 addresses
 
 # misc
 [ ] cowsay
@@ -176,19 +178,19 @@ Add the SSH public key to your account on GitHub .
 [ ] zstd
 [ ] gnupg
 
-[ ] btop  # replacement of htop/nmon
-[ ] iotop # io monitoring
-[ ] iftop # network monitoring
+[ ] btop       # replacement of htop/nmon
+[ ] iotop      # io monitoring
+[ ] iftop      # network monitoring
 
 # system call monitoring
-[ ] strace # system call monitoring
-[ ] ltrace # library call monitoring
-[ ] lsof # list open files
+[ ] strace     # system call monitoring
+[ ] ltrace     # library call monitoring
+[ ] lsof       # list open files
 
 # system tools
 [ ] sysstat
 [ ] lm_sensors # for `sensors` command
 [ ] ethtool
-[ ] pciutils # lspci
-[ ] usbutils # lsusb
+[ ] pciutils   # lspci
+[ ] usbutils   # lsusb
 
