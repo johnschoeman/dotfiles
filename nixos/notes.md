@@ -36,14 +36,22 @@ Add the SSH public key to your account on GitHub .
 
 [x] check out zaneyos (not going to use directly, just as a reference)
 [x] use nh cli helper
-[ ] gnome -> hyprland
+[x] gnome -> hyprland
 [x] move home.nix to ~/dotfiles/nixos
 [x] map capslock to ctrl (gnome)
-[ ] map capslock to ctrl (hyprland)
+[x] map capslock to ctrl (hyprland)
 [x] Fix font
 [x] use git to track nix os config
-[ ] script to commit dotfiles and then build nix and rollback commit if build
-fails and resource terminal shell
+[ ] script to commit dotfiles and then build nix and rollback commit if build fails and resource terminal shell
+
+## Window Manager - Hyprland
+
+[ ] move hyprland.conf to nix
+[ ] replicate omarchy bindings
+[ ] setup waybar
+[ ] rofi configuration
+[ ] checkout hyprpaper and other related packages
+[ ] set theme to capucine
 
 ## Git
 
@@ -59,6 +67,7 @@ fails and resource terminal shell
     [ ] telescope
   [ ] same config for sudo and login shell
 [ ] navigate pane shortcuts
+[ ] setup spellchecker
 
 ## Aliases
 
@@ -85,6 +94,10 @@ fails and resource terminal shell
 [ ] Nushell
 
 [x] nh        # nix cli
+
+[x] hyprland  # tiling window manager
+[x] rofi      # application launcher
+[ ] waybar    # window status bar
 
 [x] Ripgrep   # (rg -h)
 [x] Fd        # find replacement
