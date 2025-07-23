@@ -43,15 +43,17 @@ Add the SSH public key to your account on GitHub .
 [x] Fix font
 [x] use git to track nix os config
 [ ] script to commit dotfiles and then build nix and rollback commit if build fails and resource terminal shell
+[ ] automatically start zellij when opening terminal
 
 ## Window Manager - Hyprland
 
-[ ] move hyprland.conf to nix
+[ ] move hyprland.conf to nix (or use a symlink?)
 [ ] replicate omarchy bindings
-[ ] setup waybar
+[x] setup waybar
 [ ] rofi configuration
 [ ] checkout hyprpaper and other related packages
-[ ] set theme to capucine
+[ ] set theme to cappucine (or something else)
+[ ] use more neutral cursor
 
 ## Git
 
@@ -93,11 +95,13 @@ Add the SSH public key to your account on GitHub .
 [ ] Fish
 [ ] Nushell
 
-[x] nh        # nix cli
+[x] nh         # nix cli
 
-[x] hyprland  # tiling window manager
-[x] rofi      # application launcher
-[ ] waybar    # window status bar
+[x] hyprland   # tiling window manager
+[x] rofi       # application launcher
+[x] waybar     # window status bar
+[x] hwg-look   # GTK settings editor
+[x] hyprcursor # cursor for hyprland
 
 [x] Ripgrep   # (rg -h)
 [x] Fd        # find replacement

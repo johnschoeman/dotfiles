@@ -4,6 +4,7 @@
     rofi
     waybar
     xdg-utils
+    hyprcursor
   ];
 
   wayland.windowManager.hyprland = {
