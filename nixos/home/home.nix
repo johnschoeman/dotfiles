@@ -4,20 +4,13 @@
   home.homeDirectory = "/home/john";
   home.stateVersion = "25.05";
 
-  # # gnome settings
-  # dconf.settings = {
-  #   "org/gnome/desktop/input-sources" = {
-  #     xkb-options = [ "ctrl:nocaps" ];
-  #   };
-  # };
-
   imports = [
     /home/john/dotfiles/nixos/home/alacritty.nix
     /home/john/dotfiles/nixos/home/bash.nix
     /home/john/dotfiles/nixos/home/hyprland.nix
     /home/john/dotfiles/nixos/home/neovim.nix
     /home/john/dotfiles/nixos/home/nh.nix
-    /home/john/dotfiles/nixos/home/waybar.nix
+    /home/john/dotfiles/nixos/home/waybar/waybar.nix
     /home/john/dotfiles/nixos/home/yazi.nix
   ];
 
@@ -43,7 +36,7 @@
     gitui
     dust
     dua
-    neofetch
+    fastfetch
     starship
     btop
     htop-vim

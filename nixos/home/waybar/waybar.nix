@@ -18,11 +18,9 @@
       modules-left = [
         "hyprland/workspaces"
         "custom/divider"
-        "custom/weather"
+        "memory"
         "custom/divider"
         "cpu"
-        "custom/divider"
-        "memory"
       ];
       modules-center = [ "hyprland/window" ];
       modules-right = [
@@ -38,11 +36,15 @@
         "clock"
       ];
       "hyprland/window" = { format = "{}"; };
-      "wlr/workspaces" = {
-        on-scroll-up = "hyprctl dispatch workspace e+1";
-        on-scroll-down = "hyprctl dispatch workspace e-1";
-        all-outputs = true;
-        on-click = "activate";
+      "hyprland/workspaces" = {
+          format = "<span>{icon}</span>";
+          on-click = "activate";
+          format-icons = {
+              active = "●";
+              default = "○";
+          };
+          icon-size = 10;
+          sort-by-number = true;
       };
       battery = { format = "󰁹 {}%"; };
       cpu = {
@@ -61,12 +63,6 @@
         format = "󰖨 {}";
         device = "acpi_video0";
       };
-      "custom/weather" = {
-        tooltip = true;
-        format = "{}";
-        restart-interval = 300;
-        exec = "/home/roastbeefer/.cargo/bin/weather";
-      };
       tray = {
         icon-size = 13;
         tooltip = false;
@@ -77,7 +73,7 @@
         format-disconnected = "󰖪 disconnected";
       };
       clock = {
-        format = " {:%I:%M %p   %m/%d} ";
+        format = "{:%H:%M %m.%d} ";
         tooltip-format = ''
           <big>{:%Y %B}</big>
           <tt><small>{calendar}</small></tt>'';
@@ -97,7 +93,7 @@
           phone = "";
           portable = "";
           car = "";
-          default = [ "" "" "" ];
+          default = [ "" "" " " ];
         };
       };
       "pulseaudio#microphone" = {

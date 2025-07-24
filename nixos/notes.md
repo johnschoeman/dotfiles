@@ -52,8 +52,17 @@ Add the SSH public key to your account on GitHub .
 [x] setup waybar
 [ ] rofi configuration
 [ ] checkout hyprpaper and other related packages
-[ ] set theme to catpucine (or something else)
 [ ] use more neutral cursor
+
+## Theme
+
+[ ] select theme (catppucine or nord or tokyonight)
+    [ ] nvim
+    [ ] waybar
+    [ ] zellij
+    [ ] alacritty / kitty
+    [ ] firefox / chrome / brave
+[ ] toggle from light to dark
 
 ## Git
 
