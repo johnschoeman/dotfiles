@@ -56,10 +56,10 @@ Add the SSH public key to your account on GitHub .
 
 ## Theme
 
-[ ] select theme (catppucine or nord or tokyonight)
+[x] select theme (catppuccine)
     [ ] nvim
-    [ ] waybar
-    [ ] zellij
+    [x] waybar
+    [x] zellij
     [ ] alacritty / kitty
     [ ] firefox / chrome / brave
 [ ] toggle from light to dark

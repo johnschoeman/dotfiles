@@ -1,0 +1,32 @@
+@import "/home/john/dotfiles/waybar/frappe.css";
+
+* {
+  border: none;
+  border-radius: 0;
+  font-family: JetBrains Mono Nerd Font, monospace;
+  font-weight: 900;
+  font-size: 14px;
+  min-height: 0;
+}
+
+window#waybar {
+  background: @mantle;
+  color: @text;
+}
+
+tooltip {
+  background: @base;
+  color: @subtext2;
+}
+
+#workspaces button {
+  color: @text;
+}
+
+#workspaces button.active {
+  color: @rosewater;
+}
+
+#workspaces button.focused {
+  color: @flamingo;
+}

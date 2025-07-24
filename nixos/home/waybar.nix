@@ -6,7 +6,7 @@
 
   programs.waybar = {
     enable = true;
-    style = builtins.readFile ../waybar/style.css;
+    style = builtins.readFile /home/john/dotfiles/waybar/style.css;
     settings = [{
       layer = "top";
       position = "top";
@@ -73,7 +73,7 @@
         format-disconnected = "󰖪 disconnected";
       };
       clock = {
-        format = "{:%H:%M %m.%d} ";
+        format = " {:%H:%M %m.%d} ";
         tooltip-format = ''
           <big>{:%Y %B}</big>
           <tt><small>{calendar}</small></tt>'';
