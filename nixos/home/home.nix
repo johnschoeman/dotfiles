@@ -12,6 +12,7 @@
     /home/john/dotfiles/nixos/home/nh.nix
     /home/john/dotfiles/nixos/home/waybar/waybar.nix
     /home/john/dotfiles/nixos/home/yazi.nix
+    /home/john/dotfiles/nixos/home/zellij.nix
   ];
 
 
@@ -21,7 +22,6 @@
 
     # programs
     git
-    zellij
     spotify
 
     # utilities
