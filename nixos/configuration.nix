@@ -131,6 +131,7 @@
      nh
      wget
      wl-clipboard
+     brightnessctl
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
