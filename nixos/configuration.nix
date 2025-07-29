@@ -132,6 +132,9 @@
      wget
      wl-clipboard
      brightnessctl
+
+     # rust
+     rustup
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
