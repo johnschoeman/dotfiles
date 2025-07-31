@@ -135,6 +135,9 @@
 
      # rust
      rustup
+     clang
+     libgccjit
+     llvmPackages.bintools
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
