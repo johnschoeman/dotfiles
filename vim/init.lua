@@ -525,6 +525,17 @@ lspconfig.rust_analyzer.setup({
 })
 
 
+--- nix
+lspconfig.nixd.setup({
+   settings = {
+      nixd = {
+         formatting = {
+            command = { "nixfmt" },
+         },
+      },
+   },
+})
+
 -- ---
 -- -- Formatting (formatter)
 -- ---

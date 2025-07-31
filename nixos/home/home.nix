@@ -17,6 +17,9 @@
 
 
   home.packages = with pkgs; [
+    # nix
+    nixfmt-rfc-style
+
     # fonts
     pkgs.nerd-fonts.jetbrains-mono
 
