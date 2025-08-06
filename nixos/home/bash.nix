@@ -12,6 +12,10 @@
       drun = "rofi -show drun";
       neofetch = "fastfetch";
 
+      # Vim
+      v = "nvim";
+      vim = "nvim";
+
       # Utilities
       ls = "eza -la";
       cat = "bat";
