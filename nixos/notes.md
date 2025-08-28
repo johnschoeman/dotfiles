@@ -66,7 +66,7 @@ Add the SSH public key to your account on GitHub .
 
 ## Git
 
-[ ] g alias
+[x] g function
 [ ] vim as commit editor
 [ ] try using gitui
 
