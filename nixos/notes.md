@@ -42,7 +42,7 @@ Add the SSH public key to your account on GitHub .
 [x] map capslock to ctrl (hyprland)
 [x] Fix font
 [x] use git to track nix os config
-[ ] script to commit dotfiles and then build nix and rollback commit if build fails and resource terminal shell
+[ ] script to commit dotfiles and then build nix and rollback commit if build fails and re-source terminal shell
 [x] automatically start zellij when opening terminal
 
 ## Window Manager - Hyprland
@@ -79,6 +79,8 @@ Add the SSH public key to your account on GitHub .
   [ ] same config for sudo and login shell
 [ ] navigate pane shortcuts (https://github.com/hiasr/vim-zellij-navigator?tab=readme-ov-file)
 [x] setup spellchecker (z=)
+[ ] global find and replace
+[ ] use lazy vim?
 
 ## Aliases
 
@@ -110,7 +112,7 @@ Add the SSH public key to your account on GitHub .
 [x] rofi       # application launcher
 [x] waybar     # window status bar
 [x] hwg-look   # GTK settings editor
-[ ] hyprcursor # cursor for hyprland
+[x] hyprcursor # cursor for hyprland
 
 [x] Ripgrep    # (rg -h)
 [x] Fd         # find replacement
@@ -153,8 +155,8 @@ Add the SSH public key to your account on GitHub .
 [ ] espanso
 
 
-[ ] 1password
-[ ] spotify
+[x] 1password
+[x] spotify
 
 
 # archives

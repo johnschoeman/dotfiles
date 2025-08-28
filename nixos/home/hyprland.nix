@@ -5,6 +5,13 @@
     waybar
     xdg-utils
     hyprcursor
+
+    # screenshot
+    hyprshot
+    grim
+    slurp
+    jq
+    libnotify
   ];
 
   wayland.windowManager.hyprland = {

@@ -128,17 +128,59 @@
   programs.steam.enable = true;
 
   environment.systemPackages = with pkgs; [
+     # nix
      nh
      wget
+
+     # desktop environment
      wl-clipboard
      brightnessctl
+
+     # essentials
+     openssl
+     pkg-config
+     libgit2
+
+     # # for fontconfig
+     # # https://discourse.nixos.org/t/libfontconfig-so/25415
+     # fontconfig
+     # freetype
+     # ftgl
+     # gperf
+     # pkgconf
+     # expat
+
+     # utilities
+     inotify-tools
+
+     # javascript
+     nodejs_24
+     pnpm
 
      # rust
      rustup
      clang
      libgccjit
      llvmPackages.bintools
+     cargo-watch
+     cargo-generate
+
+     # leptos
+     trunk # js build tool
+     leptosfmt
+
+     zola # rust static site generator
+
+     # applications
+     zoom
+     zoom-us
+
+
   ];
+
+  environment.variables = {
+    HYPRSHOT_DIR = "$HOME/Screenshots";
+  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
