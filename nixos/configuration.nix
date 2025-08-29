@@ -157,6 +157,9 @@
      nodejs_24
      pnpm
 
+     # css
+     tailwindcss_4
+
      # rust
      rustup
      clang
@@ -175,7 +178,8 @@
      zoom
      zoom-us
 
-
+     # LLM
+     claude-code
   ];
 
   environment.variables = {
