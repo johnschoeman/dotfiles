@@ -37,12 +37,13 @@
       ];
       "hyprland/window" = { format = "{}"; };
       "hyprland/workspaces" = {
-          format = "<span>{icon}</span>";
+          # format = "<span>{icon}</span>";
+          format = "{icon}";
           on-click = "activate";
-          format-icons = {
-              active = "●";
-              default = "○";
-          };
+          # format-icons = {
+              # active = "●";
+              # default = "○";
+          # };
           icon-size = 10;
           sort-by-number = true;
       };

@@ -30,11 +30,21 @@ git clone git@github.com:johnschoeman/dotfiles.git
 4. Build Initial NixOS
 
 ```
-sudo nixos-rebuild swith --impure --flake /home/john/dotfiles/nixos#nixos
+sudo nixos-rebuild switch --impure --flake /home/john/dotfiles/nixos#nixos
 ```
 
-5. Validate
+5. Restart System
+
+6. Validate
 
 ```
 ninfo
+```
+
+## Usage
+
+rebuild nixos
+
+```
+nrs
 ```

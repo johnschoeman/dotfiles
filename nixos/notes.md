@@ -49,9 +49,13 @@ Add the SSH public key to your account on GitHub .
 [ ] script to commit dotfiles and then build nix and rollback commit if build fails and re-source terminal shell
 [x] automatically start zellij when opening terminal
 
+## Setup
+
+[ ] move git config to nix so we don't have to do the symlinking step
+
 ## Window Manager - Hyprland
 
-[ ] move hyprland.conf to nix (or use a symlink?)
+[ ] ? move hyprland.conf to nix (or use a symlink?)
 [x] replicate omarchy bindings
 [x] setup waybar
 [ ] rofi configuration
@@ -113,10 +117,16 @@ Add the SSH public key to your account on GitHub .
 
 ## Programs
 
+### OS
+
+[x] nh         # nix cli
+
+### Shells
+
 [ ] Fish
 [ ] Nushell
 
-[x] nh         # nix cli
+### Window Manager
 
 [x] hyprland   # tiling window manager
 [x] rofi       # application launcher
@@ -124,6 +134,9 @@ Add the SSH public key to your account on GitHub .
 [x] hwg-look   # GTK settings editor
 [x] hyprcursor # cursor for hyprland
 
+### Terminal Tools
+
+[x] Zellij     # terminal multiplexer
 [x] Ripgrep    # (rg -h)
 [x] Fd         # find replacement
 [x] fzf        # fuzzy file finder
@@ -131,19 +144,18 @@ Add the SSH public key to your account on GitHub .
 [x] Eza        # ls replacement
 [x] Zoxide     # cd replacement
 [x] Xh         # http requests
-[x] Zellij     # terminal multiplexer
 [x] Gitui      # git tui
 [x] du-dust    # disk usage
 [x] dua        # disk usage also
 [x] yazi       # terminal file navigator
+[ ] atuin      # shell history
 
 [ ] tree
 [x] neofetch
 [x] htop-vim
 
-[ ] xremap     # maybe not: depends on if need more remaps than caps -> ctrl
-
 [x] starship   # terminal prompt
+
 [ ] hyperfine
 [ ] evil-helix
 [ ] bacon
@@ -164,22 +176,27 @@ Add the SSH public key to your account on GitHub .
 [ ] rtx
 [ ] espanso
 
+###  Applications
 
 [x] 1password
 [x] spotify
 
+## To Review
 
 # archives
+
 [ ] zip
 [ ] xz
 [ ] unzip
 [ ] p7zip
 
 # utils
+
 [ ] jq         # A lightweight and flexible command-line JSON processor
 [ ] yq-go      # yaml processor https://github.com/mikefarah/yq
 
 # networking tools
+
 [ ] mtr        # A network diagnostic tool
 [ ] iperf3
 [ ] dnsutils   # `dig` + `nslookup`
@@ -190,6 +207,7 @@ Add the SSH public key to your account on GitHub .
 [ ] ipcalc     # it is a calculator for the IPv4/v6 addresses
 
 # misc
+
 [ ] cowsay
 [ ] file
 [ ] which
@@ -204,11 +222,13 @@ Add the SSH public key to your account on GitHub .
 [ ] iftop      # network monitoring
 
 # system call monitoring
+
 [ ] strace     # system call monitoring
 [ ] ltrace     # library call monitoring
 [ ] lsof       # list open files
 
 # system tools
+
 [ ] sysstat
 [ ] lm_sensors # for `sensors` command
 [ ] ethtool
