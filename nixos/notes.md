@@ -148,7 +148,7 @@ Add the SSH public key to your account on GitHub .
 [x] du-dust    # disk usage
 [x] dua        # disk usage also
 [x] yazi       # terminal file navigator
-[ ] atuin      # shell history
+[x] atuin      # shell history
 
 [ ] tree
 [x] neofetch
