@@ -25,6 +25,7 @@ tooltip {
 
 #workspaces button.active {
   color: @rosewater;
+  border-bottom: 2px solid @rosewater;
 }
 
 #workspaces button.focused {

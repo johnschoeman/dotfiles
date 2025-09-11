@@ -9,41 +9,39 @@
     style = builtins.readFile /home/john/dotfiles/waybar/style.css;
     settings = [{
       layer = "top";
-      position = "top";
+      position = "bottom";
       mod = "dock";
       exclusive = true;
       passtrough = false;
       gtk-layer-shell = true;
       height = 0;
       modules-left = [
+        "custom/endleft"
+        "clock"
+        "custom/divider"
         "hyprland/workspaces"
-        "custom/divider"
-        "memory"
-        "custom/divider"
-        "cpu"
       ];
       modules-center = [ "hyprland/window" ];
       modules-right = [
         "tray"
+        "custom/divider"
         "network"
+        "custom/divider"
+        "memory"
+        "custom/divider"
+        "cpu"
         "custom/divider"
         "backlight"
         "custom/divider"
         "pulseaudio"
         "custom/divider"
         "battery"
-        "custom/divider"
-        "clock"
+        "custom/endright"
       ];
       "hyprland/window" = { format = "{}"; };
       "hyprland/workspaces" = {
-          # format = "<span>{icon}</span>";
           format = "{icon}";
           on-click = "activate";
-          # format-icons = {
-              # active = "●";
-              # default = "○";
-          # };
           icon-size = 10;
           sort-by-number = true;
       };
@@ -56,7 +54,7 @@
       };
       memory = {
         interval = 30;
-        format = "  {}%";
+        format = " {}%";
         format-alt = " {used:0.1f}G";
         max-length = 10;
       };
@@ -74,7 +72,7 @@
         format-disconnected = "󰖪 disconnected";
       };
       clock = {
-        format = " {:%H:%M %m.%d} ";
+        format = "{:%a %d %H:%M} ";
         tooltip-format = ''
           <big>{:%Y %B}</big>
           <tt><small>{calendar}</small></tt>'';
@@ -112,8 +110,13 @@
         interval = "once";
         tooltip = false;
       };
+      "custom/endleft" = {
+        format = " ";
+        interval = "once";
+        tooltip = false;
+      };
       "custom/endright" = {
-        format = "_";
+        format = " ";
         interval = "once";
         tooltip = false;
       };
