@@ -1,6 +1,8 @@
-# Notes
+# Ubutun Notes
 
 # TODO
 
-[ ] zsh -> fish
-[ ] tmux -> zellij
+[ ] Update programs to better match nixos/omarchy
+    [ ] zsh -> fish
+    [ ] tmux -> zellij
+    [ ] kitty -> alacritty

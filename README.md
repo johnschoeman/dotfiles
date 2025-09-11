@@ -1,35 +1,19 @@
-dotfiles
------------
+# dotfiles
 
 These are my personal dotfiles
 
-Install
--------
+# Setup
 
-1. Clone:
+## 1. Clone Repo:
 
 ```bash
 git clone git://github.com/johnschoeman/dotfiles.git ~/dotfiles
 ```
 
-2. Run the setup script for the desired os:
+##  2. Follow Setup for Desired OS:
 
-### NixOS
+[NixOS](nixos/README.md)
 
-```
-~/dotfiles/setup_nixos.sh
-```
+[Ubuntu](ubuntu/README.md)
 
-### Ubuntu
-
-```
-~/dotfiles/setup_shell.sh
-
-~/dotfiles/setup_ubuntu.sh
-```
-
-### MacOS
-
-```
-~/dotfiles/setup_mac.sh
-```
+[MacOS](mac/README.md)
