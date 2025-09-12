@@ -41,6 +41,7 @@ exit
 ## Theme
 
 - [x] select theme (catppuccine frappe)
+  - [ ] helix
   - [ ] nvim
   - [x] waybar
   - [x] zellij
@@ -51,7 +52,8 @@ exit
 ## Git
 
 - [x] g function
-- [ ] vim as commit editor
+- [x] vim as commit editor
+- [x] helix as commit editor
 - [ ] try using gitui
 
 ## neovim
@@ -66,7 +68,13 @@ exit
 - [ ] navigate pane shortcuts (https://github.com/hiasr/vim-zellij-navigator?tab=readme-ov-file)
 - [x] setup spellchecker (z=)
 
-#### Rust IDE
+## Helix
+
+- [x] install helix
+- [x] configure helix
+- [ ] learn helix
+
+- #### Rust IDE
 
 - [ ] rust-analyize
 - [ ] rust lsp

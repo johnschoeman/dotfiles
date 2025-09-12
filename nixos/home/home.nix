@@ -9,6 +9,7 @@
     /home/john/dotfiles/nixos/home/atuin.nix
     /home/john/dotfiles/nixos/home/bash.nix
     /home/john/dotfiles/nixos/home/fish.nix
+    /home/john/dotfiles/nixos/home/helix.nix
     /home/john/dotfiles/nixos/home/hyprland.nix
     /home/john/dotfiles/nixos/home/neovim.nix
     /home/john/dotfiles/nixos/home/nh.nix

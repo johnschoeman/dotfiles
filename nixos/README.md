@@ -99,7 +99,12 @@ nrs
 - [x] neofetch   # fetch system info
 - [x] htop-vim   # system process tui
 
-###  Applications
+### Editors
+
+- [x] neovim     # a modern text editor
+- [x] helix      # a post-modern text editor (set as default)
+
+### Applications
 
 - [x] 1password
 - [x] spotify
@@ -113,7 +118,6 @@ nrs
 - [ ] trash-cli    # rm replacement
 - [ ] tree
 - [ ] hyperfine
-- [ ] evil-helix
 - [ ] bacon
 - [ ] cargo-info
 - [ ] fselect

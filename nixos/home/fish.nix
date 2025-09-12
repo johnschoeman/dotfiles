@@ -8,7 +8,7 @@
       ## Setup
 
       function fish_greeting; end
-      set EDITOR nvim
+      set EDITOR helix
       starship init fish | source
       zoxide init fish | source
       atuin init fish | source
@@ -27,6 +27,10 @@
 
       alias v "nvim"
       alias vim "nvim"
+
+      #### Helix
+
+      alias h "hx"
 
       #### Utilities
       alias ls "eza -la"

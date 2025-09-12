@@ -56,7 +56,6 @@
 [core]
 	excludesfile  = /Users/johnschoeman/.gitignore_global
   autocrlf      = input
-	; editor = code --wait
 [merge]
   ff            = only
 [commit]
