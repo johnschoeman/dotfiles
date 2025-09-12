@@ -77,8 +77,8 @@ nrs
 
 ### Shells
 
-- [x] Bash
-- [ ] Fish
+- [x] Bash       # login shell
+- [x] Fish       # default interactive shell in zellij
 
 ### Terminal Tools
 
@@ -106,8 +106,11 @@ nrs
 
 ## To Review
 
+- [ ] dash         # alternative to bash, for minimal posix compliant login shell
+
 ### Termnial Tools
 
+- [ ] trash-cli    # rm replacement
 - [ ] tree
 - [ ] hyperfine
 - [ ] evil-helix

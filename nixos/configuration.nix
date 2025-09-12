@@ -107,7 +107,6 @@
 
   fonts.fontconfig.enable = true;
 
-
   # ==== User Account ====
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
@@ -118,13 +117,14 @@
     packages = with pkgs; [
     #  thunderbird
     ];
+    shell = pkgs.fish;
   };
-
 
   # ==== Packages ====
 
   nixpkgs.config.allowUnfree = true;
 
+  programs.fish.enable = true;
   programs.firefox.enable = true;
   programs._1password.enable = true;
   programs._1password-gui.enable = true;
