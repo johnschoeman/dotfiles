@@ -134,6 +134,8 @@
      # nix
      nh
      wget
+     nil
+     nixd
 
      # desktop environment
      wl-clipboard
@@ -144,21 +146,16 @@
      pkg-config
      libgit2
 
-     # # for fontconfig
-     # # https://discourse.nixos.org/t/libfontconfig-so/25415
-     # fontconfig
-     # freetype
-     # ftgl
-     # gperf
-     # pkgconf
-     # expat
+     # fish
+     fish-lsp
 
      # utilities
      inotify-tools
 
-     # javascript
+     # ecmascript
      nodejs_24
      pnpm
+     typescript-language-server
 
      # css
      tailwindcss_4
@@ -170,6 +167,7 @@
      llvmPackages.bintools
      cargo-watch
      cargo-generate
+     lldb
 
      # leptos
      trunk # js build tool
