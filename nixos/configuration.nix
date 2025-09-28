@@ -98,6 +98,10 @@
     "flakes"
   ];
 
+  # ==== Keyboard ====
+
+  hardware.keyboard.qmk.enable = true;
+
 
   # ==== Fonts ====
 
@@ -136,6 +140,7 @@
      wget
      nil
      nixd
+     direnv
 
      # desktop environment
      wl-clipboard
@@ -151,13 +156,14 @@
 
      # utilities
      inotify-tools
+     usbutils
 
-     # ecmascript
+     # web
      nodejs_24
      pnpm
      typescript-language-server
-
-     # css
+     vscode-langservers-extracted
+     superhtml
      tailwindcss_4
 
      # rust
@@ -174,6 +180,9 @@
      leptosfmt
 
      zola # rust static site generator
+
+     # qmk
+     qmk
 
      # applications
      zoom

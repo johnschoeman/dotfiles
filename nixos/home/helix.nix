@@ -11,9 +11,9 @@
             theme = "everforest_dark";
             editor = {
                 line-number = "relative";
-                lsp.display-messages = true;
-                lsp.display-inlay-hints = true;
-                inline-diagnostics.cursor-line = "hint";
+                # lsp.display-messages = true;
+                # lsp.display-inlay-hints = true;
+                # inline-diagnostics.cursor-line = "hint";
                 bufferline = "multiple";
                 cursorline = true;
             };
@@ -37,6 +37,13 @@
             language = [{
                 name = "rust";
                 auto-format = false;
+            }
+            {
+                name = "typescript";
+                language-servers = [
+                    "typescript-language-server"
+                    "vscode-eslint-language-server"
+                ];
             }];
             language-server.rust-analyzer = {
                  config = { procMacro = { ignored = { leptos_macro = [ "component" "server" ]; }; }; };

@@ -12,6 +12,7 @@
       starship init fish | source
       zoxide init fish | source
       atuin init fish | source
+      direnv hook fish | source
 
       ## Aliases
 
