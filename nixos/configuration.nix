@@ -157,6 +157,8 @@
      # utilities
      inotify-tools
      usbutils
+     unzip
+     zip
 
      # web
      nodejs_24
@@ -185,6 +187,7 @@
      qmk
 
      # applications
+     obsidian
      zoom
      zoom-us
 
