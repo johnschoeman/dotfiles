@@ -14,10 +14,13 @@
     /home/john/dotfiles/nixos/home/neovim.nix
     /home/john/dotfiles/nixos/home/nh.nix
     /home/john/dotfiles/nixos/home/waybar.nix
-    /home/john/dotfiles/nixos/home/yazi.nix
+    # /home/john/dotfiles/nixos/home/yazi.nix
     /home/john/dotfiles/nixos/home/zellij.nix
   ];
 
+  home.sessionVariables = {
+    EDITOR = "hx";
+  };
 
   home.packages = with pkgs; [
     # nix
@@ -46,5 +49,6 @@
     starship
     btop
     htop-vim
+    yazi
   ];
 }

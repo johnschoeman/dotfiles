@@ -8,7 +8,7 @@
       ## Setup
 
       function fish_greeting; end
-      set EDITOR helix
+      set EDITOR hx
       starship init fish | source
       zoxide init fish | source
       atuin init fish | source

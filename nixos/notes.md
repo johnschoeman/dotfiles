@@ -72,7 +72,8 @@ exit
 
 - [x] install helix
 - [x] configure helix
-- [ ] learn helix
+- [x] learn helix
+- [x] set helix as default editor
 
 - #### Rust IDE
 
@@ -97,4 +98,6 @@ exit
 ## Yazi
 
 - [x] vim as default editor
+- [x] helix as default editor
+- [ ] move yazi.toml to home manager (currently in .config/yazi/yazi.toml and not version controled)
 - [ ] setup y shell function

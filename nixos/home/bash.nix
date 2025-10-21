@@ -22,7 +22,7 @@
       find = "fd";
     };
     initExtra = ''
-      EDITOR=nvim
+      EDITOR=hx
       eval "$(starship init bash)"
       eval "$(zoxide init bash)"
 

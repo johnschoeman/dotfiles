@@ -159,6 +159,7 @@
      usbutils
      unzip
      zip
+     qpdf
 
      # web
      nodejs_24
