@@ -132,7 +132,6 @@
   programs.firefox.enable = true;
   programs._1password.enable = true;
   programs._1password-gui.enable = true;
-  programs.steam.enable = true;
 
   environment.systemPackages = with pkgs; [
      # nix
@@ -175,8 +174,12 @@
      libgccjit
      llvmPackages.bintools
      cargo-watch
+     clippy
      cargo-generate
      lldb
+
+     # shuttle rs
+     cargo-shuttle
 
      # leptos
      trunk # js build tool
@@ -189,6 +192,7 @@
 
      # applications
      obsidian
+     discord
      zoom
      zoom-us
 
