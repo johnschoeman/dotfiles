@@ -38,6 +38,7 @@
       alias cat "bat"
       alias cd "z"
       alias find "fd"
+      alias bell "aplay ~/dotfiles/media/bell.wav"
 
       ## Functions
 
@@ -51,6 +52,19 @@
               git status
           else
               git $argv
+          end
+      end
+
+      # pom
+      #
+      # No arguments: `timer 25m && bell`
+      # With arguments: `timer $argv && bell`
+
+      function pom
+          if test (count $argv) -eq 0
+              timer 25m && bell
+          else
+              timer $argv && bell
           end
       end
     '';

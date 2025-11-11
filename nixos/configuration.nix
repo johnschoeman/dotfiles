@@ -159,8 +159,10 @@
      unzip
      zip
      qpdf
+     timer
+     alsa-utils
 
-     # web
+     # web dev tools
      nodejs_24
      pnpm
      typescript-language-server
@@ -168,7 +170,7 @@
      superhtml
      tailwindcss_4
 
-     # rust
+     # rust dev tools
      rustup
      clang
      libgccjit
@@ -187,7 +189,7 @@
 
      zola # rust static site generator
 
-     # qmk
+     # keyboard firmware
      qmk
 
      # applications

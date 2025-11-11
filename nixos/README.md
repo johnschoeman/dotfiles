@@ -98,6 +98,8 @@ nrs
 - [x] starship   # terminal prompt
 - [x] neofetch   # fetch system info
 - [x] htop-vim   # system process tui
+- [x] timer      # cli timer with progress bar
+- [x] alsa-util  # linux sound utilities
 
 ### Editors
 
