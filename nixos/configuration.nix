@@ -161,7 +161,8 @@
      qpdf
      timer
      alsa-utils
-
+     wl-clipboard-rs
+     
      # web dev tools
      nodejs_24
      pnpm

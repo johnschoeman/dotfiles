@@ -39,6 +39,8 @@
       alias cd "z"
       alias find "fd"
       alias bell "aplay ~/dotfiles/media/bell.wav"
+      alias copy "wl-copy"
+      alias paste "wl-paste"
 
       ## Functions
 
