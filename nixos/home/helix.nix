@@ -44,13 +44,22 @@
                     "typescript-language-server"
                     "vscode-eslint-language-server"
                 ];
-            }];
+            }
+            {
+                name = "html";
+                language-servers = [ "vscode-html-language-server" ];
+            }
+        ];
             language-server.rust-analyzer = {
                  config = { procMacro = { ignored = { leptos_macro = [ "component" "server" ]; }; }; };
             };
             language-server.rust-analyzer.config.cargo = {
                  allFeatures = true;
             };
+            language-server.vscode-html-language-server = {
+                 command = "vscode-html-language-server";
+                 args = [ "--stdio" ];
+          };
         };
     };
 }

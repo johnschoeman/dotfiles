@@ -21,6 +21,8 @@
       alias ninfo "nh os info"
       alias nrs "nh os switch /home/john/dotfiles/nixos -- --impure"
       alias nclean "nh clean all --keep-since 14d"
+      alias nhsearch "nh search"
+      alias nupdate "nix flake update"
       alias drun "rofi -show drun"
       alias neofetch "fastfetch"
 

@@ -144,6 +144,7 @@
      # desktop environment
      wl-clipboard
      brightnessctl
+     swayidle
 
      # essentials
      openssl
@@ -162,6 +163,7 @@
      timer
      alsa-utils
      wl-clipboard-rs
+     dig
      
      # web dev tools
      nodejs_24
@@ -170,6 +172,7 @@
      vscode-langservers-extracted
      superhtml
      tailwindcss_4
+     zola # rust static site generator
 
      # rust dev tools
      rustup
@@ -180,15 +183,9 @@
      clippy
      cargo-generate
      lldb
-
-     # shuttle rs
-     cargo-shuttle
-
-     # leptos
-     trunk # js build tool
-     leptosfmt
-
-     zola # rust static site generator
+     trunk         # js build tool
+     leptosfmt     # web frontend framework
+     cargo-shuttle # shuttle rs cli
 
      # keyboard firmware
      qmk
@@ -198,6 +195,7 @@
      discord
      zoom
      zoom-us
+     anki
 
      # LLM
      claude-code
