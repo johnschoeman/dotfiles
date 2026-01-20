@@ -164,6 +164,9 @@
      alsa-utils
      wl-clipboard-rs
      dig
+
+     # python
+     python315
      
      # web dev tools
      nodejs_24
