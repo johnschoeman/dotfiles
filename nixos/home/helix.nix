@@ -17,12 +17,17 @@
                 bufferline = "multiple";
                 cursorline = true;
             };
+            editor.soft-wrap = {
+                enable = true;  
+                wrap-indicator = "";
+            };
             keys.normal = {
                 space.space = "file_picker";
                 space.w = ":w";
                 space.q = ":q";
                 space.o = "file_picker_in_current_buffer_directory";
                 esc = ["collapse_selection" "keep_primary_selection"];
+                A-z = ":toggle-option soft-wrap.enable";
             };
             keys.normal.z = {
                 j = "page_down";
