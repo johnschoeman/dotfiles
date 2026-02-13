@@ -199,6 +199,7 @@
      zoom
      zoom-us
      anki
+     google-chrome
 
      # LLM
      claude-code

@@ -56,18 +56,6 @@ exit
 - [x] helix as commit editor
 - [ ] try using gitui
 
-## neovim
-
-- [ ] use lazy vim?
-- [ ] global find and replace
-- [ ] fix configuration usage (moved neovim to user config)
-- [ ] lazy.nvim plugins
-  - [ ] tree-sitter
-  - [ ] telescope
-- [ ] same config for sudo and login shell
-- [ ] navigate pane shortcuts (https://github.com/hiasr/vim-zellij-navigator?tab=readme-ov-file)
-- [x] setup spellchecker (z=)
-
 ## Helix
 
 - [x] install helix
@@ -77,13 +65,13 @@ exit
 
 - #### Rust IDE
 
-- [ ] rust-analyize
-- [ ] rust lsp
+- [x] rust-analyize
+- [x] rust lsp
 - [ ] cargo fmt on save
 
 ## Aliases
 
-- [ ] move dot file aliases over
+- [x] move dot file aliases over
 - [x] cat -> bat
 - [x] eza -> ls -l
 - [x] cd -> z (zoxide)
