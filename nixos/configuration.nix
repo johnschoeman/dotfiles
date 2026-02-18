@@ -203,6 +203,7 @@
 
      # LLM
      claude-code
+     ollama
   ];
 
   environment.variables = {

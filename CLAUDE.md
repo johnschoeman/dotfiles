@@ -1,4 +1,8 @@
-# Dotfiles Repository
+# CLAUDE.md
+
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+
+## Overview
 
 Personal dotfiles for NixOS (primary), with legacy support for Ubuntu and macOS.
 
@@ -49,6 +53,40 @@ gitmessage             # Commit message template
 | Waybar | `waybar/style.css` | Status bar styling |
 | Git | `gitconfig` | Aliases, user info |
 
+## Session Log
+
+Update `.claude/SESSION_LOG.md` after significant work:
+- Add new entry at the top (most recent first)
+- Include: date, goal, key decisions, and outcomes
+- Focus on decisions and context that would help future sessions
+- Keep entries concise but informative
+
+## Git Workflow
+
+User manages all commits. You remind and suggest, never commit.
+
+**After significant work:**
+1. Update `.claude/SESSION_LOG.md` with session summary
+2. Run `git status` to see what's actually uncommitted
+3. Write commit message to `temp_commit_message.txt`
+4. Remind: "You may want to commit these changes"
+
+**Commit message format:**
+```
+Concise summary (one line)
+
+Why:
+
+[Brief motivation - what problem this solves]
+
+This commit:
+
+- [Bullet points of actual changes]
+- [Only include uncommitted changes, not already-committed work]
+```
+
+**Never:** Run git commands that modify history.
+
 ## Conventions
 
 **Commit messages:** Short imperative style (e.g., "Add soft wrap to helix config")
@@ -68,3 +106,5 @@ gitmessage             # Commit message template
 **Add a Hyprland keybinding:** Edit `hypr/hyprland.conf`, reload Hyprland
 
 **Modify shell aliases:** Edit `nixos/home/fish.nix`, then rebuild
+
+**Session log:** `.claude/SESSION_LOG.md`

@@ -1,3 +1,5 @@
 !bin
 vim/bundle/
 *.save
+
+temp_commit_message.txt
