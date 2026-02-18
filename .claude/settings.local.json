@@ -11,7 +11,8 @@
       "Bash(git branch *)",
       "Bash(git show)",
       "Bash(git show *)",
-      "Bash(git -C /home/john/dotfiles status -u)"
+      "Bash(git -C /home/john/dotfiles status -u)",
+      "Bash(git -C /home/john/dotfiles status)"
     ],
     "deny": [
       "Bash(git add *)",

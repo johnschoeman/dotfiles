@@ -68,6 +68,9 @@
   # Firmware for framework
   services.fwupd.enable = true;
 
+  # Ollama - local LLM inference
+  services.ollama.enable = true;
+
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
@@ -203,7 +206,6 @@
 
      # LLM
      claude-code
-     ollama
   ];
 
   environment.variables = {
