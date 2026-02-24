@@ -14,6 +14,25 @@
     libnotify
   ];
 
+  # notification daemon (required for notify-send / Claude Code hooks)
+  # Catppuccin Frappe colors
+  services.mako = {
+    enable = true;
+    settings = {
+      background-color = "#303446";
+      text-color = "#c6d0f5";
+      border-color = "#8caaee";
+      border-radius = 8;
+      border-size = 2;
+      default-timeout = 5000;
+
+      "urgency=critical" = {
+        border-color = "#e78284";
+        default-timeout = 10000;
+      };
+    };
+  };
+
   wayland.windowManager.hyprland = {
     enable = true;
     extraConfig = builtins.readFile /home/john/dotfiles/hypr/hyprland.conf;
