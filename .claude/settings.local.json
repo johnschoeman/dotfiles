@@ -20,7 +20,9 @@
       "Bash(lsof:*)",
       "Bash(cat:*)",
       "Bash(gh api:*)",
-      "Bash(nh os switch:*)"
+      "Bash(nh os switch:*)",
+      "Bash(python3:*)",
+      "Bash(ls:*)"
     ],
     "deny": [
       "Bash(git add *)",

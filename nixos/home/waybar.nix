@@ -127,6 +127,7 @@
       "custom/claude" = {
         exec = "~/.local/bin/claude-waybar.sh";
         return-type = "json";
+        format = "{} ";
         interval = 3;
         tooltip = true;
       };

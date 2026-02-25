@@ -1,5 +1,27 @@
 # Session Log
 
+## 2026-02-25 (4)
+
+**Goal:** Rework waybar Claude Code monitor: JSONL-based state detection, per-state counts, hybrid attention
+
+**What happened:**
+- Replaced CPU usage threshold (`ps -o %cpu`) with JSONL transcript parsing in `scripts/claude-waybar.sh`
+- Added `get_session_status()` that encodes CWD, finds most recent `.jsonl`, reads last 20 lines with `tail | jq`
+- Three states: idle (assistant text-only), processing (user event or pending tool_use), attention (pending tool_use + marker from hook)
+- Removed old PID-based attention file; replaced with lightweight marker files in `$XDG_RUNTIME_DIR/claude-attention/`
+- Notification hook (`claude-notify.sh`) touches a marker on `permission_prompt`; waybar checks for it and cleans up when session moves past the tool_use
+- Simplified `claude-notify.sh` — removed `find_claude_pid`, `add_attention`, `remove_attention`
+- Changed waybar text from single count to three per-state counts: idle/processing/attention (e.g., ` 1 0 1`)
+- Per-count Pango coloring: idle=blue (#8caaee), processing=default text, attention=peach (#ef9f76, only when > 0)
+- Removed per-state CSS class rules (`.processing`, `.attention`); added `format` to waybar module for Pango passthrough
+- Base widget color changed from `@overlay1` to `@text`
+
+**Decisions:**
+- Hybrid attention detection: hook marker for instant response + JSONL for state validation and cleanup — avoids the 10s delay of pure timestamp-based detection
+- No PID tracking needed — markers are per-project-path, cleaned up by waybar when JSONL shows session moved on
+- Pango markup chosen over CSS classes because we need mixed colors within a single widget
+- Known limitation: multiple sessions in the same project directory share a single JSONL lookup (no PID → session ID mapping available via fd, cmdline, or env)
+
 ## 2026-02-25 (3)
 
 **Goal:** Deconflict Zellij and Claude Code keybindings

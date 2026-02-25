@@ -33,16 +33,8 @@ tooltip {
 }
 
 #custom-claude {
-  color: @overlay1;
+  color: @text;
   padding: 0 4px;
-}
-
-#custom-claude.processing {
-  color: @lavender;
-}
-
-#custom-claude.attention {
-  color: @peach;
 }
 
 #custom-claude.empty {
