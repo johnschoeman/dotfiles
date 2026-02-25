@@ -1,5 +1,19 @@
 # Session Log
 
+## 2026-02-25 (6)
+
+**Goal:** Manage Claude Code global settings via home-manager
+
+**What happened:**
+- Created `claude/settings.json` with global Claude Code settings (plugins, hooks, statusline)
+- Created `nixos/home/claude.nix` home-manager module using `mkOutOfStoreSymlink` to keep the file mutable
+- Added import to `nixos/home/home.nix`
+- Updated CLAUDE.md repo structure to document `claude/` directory
+
+**Decisions:**
+- Used `claude/` (not `.claude/`) since `.claude/` already holds project-level settings
+- `mkOutOfStoreSymlink` instead of `home.file.source` so Claude Code can still write to its own settings file
+
 ## 2026-02-25 (5)
 
 **Goal:** Cleanup — CLAUDE.md repo structure, remove `bc` dependency from statusline

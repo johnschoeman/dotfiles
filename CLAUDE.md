@@ -35,6 +35,7 @@ hypr/                  # Hyprland window manager
 waybar/                # Status bar (Catppuccin Frappe theme)
 zellij/                # Terminal multiplexer
 
+claude/                 # Claude Code global settings (symlinked to ~/.claude/)
 scripts/               # Claude Code hooks & waybar integration
 .claude/               # Session log, memory, settings
 

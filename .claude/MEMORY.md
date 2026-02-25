@@ -26,3 +26,5 @@
 - Custom Rust packages: use `rustPlatform.buildRustPackage` + `fetchFromGitHub`
 - When upstream has no `Cargo.lock`: store one locally, use `cargoLock.lockFile`
 - Scope builds to specific crate with `cargoBuildFlags = ["-p" "crate-name"]`
+- **Mutable symlinks**: `config.lib.file.mkOutOfStoreSymlink` creates a direct symlink to a repo path — file stays mutable. Use for configs that apps write to (e.g., Claude Code `settings.json`). Regular `home.file.source` copies to the nix store (read-only).
+- **Directory convention**: `claude/` holds repo-managed global settings (symlinked to `~/.claude/`). `.claude/` holds project-level settings (session log, memory, local config).
