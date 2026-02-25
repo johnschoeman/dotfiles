@@ -2,7 +2,7 @@
 
 ## 2026-02-25 (4)
 
-**Goal:** Rework waybar Claude Code monitor: JSONL-based state detection, per-state counts, hybrid attention
+**Goal:** Rework waybar Claude Code monitor, add memory file, clean up script references
 
 **What happened:**
 - Replaced CPU usage threshold (`ps -o %cpu`) with JSONL transcript parsing in `scripts/claude-waybar.sh`
@@ -15,12 +15,17 @@
 - Per-count Pango coloring: idle=blue (#8caaee), processing=default text, attention=peach (#ef9f76, only when > 0)
 - Removed per-state CSS class rules (`.processing`, `.attention`); added `format` to waybar module for Pango passthrough
 - Base widget color changed from `@overlay1` to `@text`
+- Created `.claude/MEMORY.md` for cross-session knowledge; added Memory section to `CLAUDE.md`
+- Added `scripts/claude-statusline.sh` for Claude Code status line
+- Pointed all script references directly to `dotfiles/scripts/` paths — removed `~/.local/bin/` symlinks and their setup instructions from `nixos/README.md`
 
 **Decisions:**
 - Hybrid attention detection: hook marker for instant response + JSONL for state validation and cleanup — avoids the 10s delay of pure timestamp-based detection
 - No PID tracking needed — markers are per-project-path, cleaned up by waybar when JSONL shows session moved on
 - Pango markup chosen over CSS classes because we need mixed colors within a single widget
 - Known limitation: multiple sessions in the same project directory share a single JSONL lookup (no PID → session ID mapping available via fd, cmdline, or env)
+- Scripts referenced directly from repo paths — no need for symlinks since settings/configs can point to dotfiles/ directly
+- Memory file version-controlled in repo (not `~/.claude/projects/`) so it's available across machines
 
 ## 2026-02-25 (3)
 

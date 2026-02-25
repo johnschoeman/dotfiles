@@ -125,7 +125,7 @@
         tooltip = false;
       };
       "custom/claude" = {
-        exec = "~/.local/bin/claude-waybar.sh";
+        exec = "/home/john/dotfiles/scripts/claude-waybar.sh";
         return-type = "json";
         format = "{} ";
         interval = 3;

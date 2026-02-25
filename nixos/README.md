@@ -39,8 +39,6 @@ sudo nixos-rebuild switch --impure --flake /home/john/dotfiles/nixos#nixos
 ```
 ln -s ~/dotfiles/gitconfig ~/.gitconfig
 ln -s ~/dotfiles/gitmessage ~/.gitmessage
-ln -s ~/dotfiles/scripts/claude-notify.sh ~/.local/bin/claude-notify.sh
-ln -s ~/dotfiles/scripts/claude-waybar.sh ~/.local/bin/claude-waybar.sh
 ```
 
 6. Restart System
