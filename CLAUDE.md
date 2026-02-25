@@ -55,6 +55,15 @@ gitmessage             # Commit message template
 | Waybar | `waybar/style.css` | Status bar styling |
 | Git | `gitconfig` | Aliases, user info |
 
+## Memory
+
+`.claude/MEMORY.md` stores durable knowledge: architectural decisions, gotchas, discovered limitations, and conventions. Read it at the start of a session. Update it when you discover something that would be useful across sessions.
+
+- Organize by topic, not chronologically
+- Keep entries concise — facts and decisions, not narratives
+- Remove entries that become outdated
+- This is distinct from the session log: memory = stable knowledge, session log = what happened when
+
 ## Session Log
 
 Update `.claude/SESSION_LOG.md` after significant work:
