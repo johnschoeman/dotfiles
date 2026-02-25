@@ -1,5 +1,19 @@
 # Session Log
 
+## 2026-02-25 (3)
+
+**Goal:** Deconflict Zellij and Claude Code keybindings
+
+**What happened:**
+- Remapped all 9 Zellij mode-switching keybindings from `Ctrl` to `Alt` in `zellij/config.kdl`
+- Three modes needed different letters because their `Alt+<same letter>` was already taken: resize (`Alt+r`), session (`Alt+a`), move (`Alt+m`)
+- 16 total edits: toggle-off bindings inside each mode, activator bindings in `shared_except` blocks, and quit/locked in the shared block
+
+**Decisions:**
+- Fix applied on Zellij side since it intercepts keys before they reach terminal apps — remapping Claude Code wouldn't help
+- Preserved all non-mode-switch `Ctrl` bindings: `Ctrl+b/f` (vim page scroll), `Ctrl+c` (cancel), `Ctrl+b` in tmux (raw byte)
+- Letter choices for conflicts: `n→r` (resize), `o→a` (session/about), `h→m` (move) — mnemonics match the mode name
+
 ## 2026-02-25 (2)
 
 **Goal:** Add waybar Claude Code session monitor
