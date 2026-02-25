@@ -22,7 +22,9 @@
       "Bash(gh api:*)",
       "Bash(nh os switch:*)",
       "Bash(python3:*)",
-      "Bash(ls:*)"
+      "Bash(ls:*)",
+      "Bash(jq:*)",
+      "Bash(bc:*)"
     ],
     "deny": [
       "Bash(git add *)",

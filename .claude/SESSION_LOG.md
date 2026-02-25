@@ -1,5 +1,18 @@
 # Session Log
 
+## 2026-02-25 (5)
+
+**Goal:** Cleanup — CLAUDE.md repo structure, remove `bc` dependency from statusline
+
+**What happened:**
+- Updated CLAUDE.md repo structure: removed `vim/` (deleted in prior session), added `scripts/` and `.claude/`
+- Replaced `bc -l` float comparison in `scripts/claude-statusline.sh` with bash integer arithmetic (`${remaining%.*}`)
+- Verified all three color thresholds (green/yellow/red) work correctly without `bc`
+
+**Decisions:**
+- Kept `ubuntu/` and `mac/` in repo structure docs — they still exist as legacy references
+- Integer truncation is fine for the context percentage thresholds (20%, 50%) — no precision needed
+
 ## 2026-02-25 (4)
 
 **Goal:** Rework waybar Claude Code monitor, add memory file, clean up script references

@@ -34,7 +34,9 @@ hypr/                  # Hyprland window manager
 
 waybar/                # Status bar (Catppuccin Frappe theme)
 zellij/                # Terminal multiplexer
-vim/                   # Neovim config (init.lua)
+
+scripts/               # Claude Code hooks & waybar integration
+.claude/               # Session log, memory, settings
 
 ubuntu/                # Ubuntu setup scripts (legacy)
 mac/                   # macOS setup scripts (legacy)

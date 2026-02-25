@@ -7,7 +7,7 @@ input=$(cat)
 # Extract values
 cwd=$(echo "$input" | jq -r '.workspace.current_dir')
 model=$(echo "$input" | jq -r '.model.display_name')
-remaining=$(echo "$input" | jq -r '.context_window.remaining_percentage // empty')
+used=$(echo "$input" | jq -r '.context_window.remaining_percentage // empty')
 output_style=$(echo "$input" | jq -r '.output_style.name // "default"')
 
 # Get directory name
@@ -34,16 +34,17 @@ fi
 
 # Context info (only show if available)
 context_info=""
-if [ -n "$remaining" ]; then
-    # Color code based on remaining percentage
-    if (( $(echo "$remaining < 20" | bc -l) )); then
-        color="\033[2;31m"  # Red for low
-    elif (( $(echo "$remaining < 50" | bc -l) )); then
-        color="\033[2;33m"  # Yellow for medium
+if [ -n "$used" ]; then
+    # Convert remaining to used percentage
+    used_int=$(( 100 - ${used%.*} ))
+    if (( used_int > 80 )); then
+        color="\033[2;31m"  # Red for high usage
+    elif (( used_int > 50 )); then
+        color="\033[2;33m"  # Yellow for moderate
     else
-        color="\033[2;32m"  # Green for plenty
+        color="\033[2;32m"  # Green for low usage
     fi
-    context_info=" ${color}ctx:${remaining}%"
+    context_info=" ${color}ctx:${used_int}%"
 fi
 
 # Output style indicator (if not default)
