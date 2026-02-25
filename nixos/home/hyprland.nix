@@ -22,6 +22,7 @@
       background-color = "#303446";
       text-color = "#c6d0f5";
       border-color = "#8caaee";
+      width = 400;
       border-radius = 8;
       border-size = 2;
       default-timeout = 5000;

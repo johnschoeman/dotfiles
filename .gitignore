@@ -1,5 +1,8 @@
-!bin
-vim/bundle/
-*.save
-
+# Commit message 
 temp_commit_message.txt
+
+# temporary artifacts
+!bin
+*.save
+result
+tmp

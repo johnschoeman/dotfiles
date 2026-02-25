@@ -8,6 +8,7 @@
     /home/john/dotfiles/nixos/home/alacritty.nix
     /home/john/dotfiles/nixos/home/atuin.nix
     /home/john/dotfiles/nixos/home/bash.nix
+    /home/john/dotfiles/nixos/home/ccboard.nix
     /home/john/dotfiles/nixos/home/fish.nix
     /home/john/dotfiles/nixos/home/helix.nix
     /home/john/dotfiles/nixos/home/hyprland.nix

@@ -138,11 +138,11 @@
 
   environment.systemPackages = with pkgs; [
      # nix
-     nh
+     nh            # nixos cli
      wget
      nil
      nixd
-     direnv
+     direnv        # load env based on dir
 
      # desktop environment
      wl-clipboard
@@ -178,7 +178,7 @@
      vscode-langservers-extracted
      superhtml
      tailwindcss_4
-     zola # rust static site generator
+     zola                          # rust static site generator
 
      # rust dev tools
      rustup
@@ -189,9 +189,9 @@
      clippy
      cargo-generate
      lldb
-     trunk         # js build tool
-     leptosfmt     # web frontend framework
-     cargo-shuttle # shuttle rs cli
+     trunk                         # js build tool
+     leptosfmt                     # web frontend framework
+     cargo-shuttle                 # shuttle rs cli
 
      # keyboard firmware
      qmk

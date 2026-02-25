@@ -12,7 +12,15 @@
       "Bash(git show)",
       "Bash(git show *)",
       "Bash(git -C /home/john/dotfiles status -u)",
-      "Bash(git -C /home/john/dotfiles status)"
+      "Bash(git -C /home/john/dotfiles status)",
+      "WebSearch",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:api.github.com)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "Bash(lsof:*)",
+      "Bash(cat:*)",
+      "Bash(gh api:*)",
+      "Bash(nh os switch:*)"
     ],
     "deny": [
       "Bash(git add *)",
