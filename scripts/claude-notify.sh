@@ -27,9 +27,9 @@ case "$TYPE" in
     permission_prompt)
         mkdir -p "$ATTENTION_DIR"
         echo "$CWD" | tr '/' '-' | xargs -I{} touch "$ATTENTION_DIR/{}"
-        notify-send -t 15000 -a "Claude Code" "[$PROJECT]" "Needs Input"
+        notify-send -t 15000 -a "Claude Code" "Claude [$PROJECT]" "Needs Input"
         ;;
     *)
-        notify-send -t 15000 -a "Claude Code" "[$PROJECT]" "Task Complete"
+        notify-send -t 15000 -a "Claude Code" "Claude [$PROJECT]" "Task Complete"
         ;;
 esac

@@ -26,13 +26,9 @@
       alias drun "rofi -show drun"
       alias neofetch "fastfetch"
 
-      #### Vim
-
-      alias v "nvim"
-      alias vim "nvim"
-
       #### Helix
 
+      alias v "hx"
       alias h "hx"
 
       #### Utilities

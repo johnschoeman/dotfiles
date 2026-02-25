@@ -11,9 +11,8 @@
       drun = "rofi -show drun";
       neofetch = "fastfetch";
 
-      # Vim
-      v = "nvim";
-      vim = "nvim";
+      # Helix
+      v = "hx";
 
       # Utilities
       ls = "eza -la";
