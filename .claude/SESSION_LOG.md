@@ -1,5 +1,23 @@
 # Session Log
 
+## 2026-02-25 (2)
+
+**Goal:** Add waybar Claude Code session monitor
+
+**What happened:**
+- Created `scripts/claude-waybar.sh` — polling script that detects sessions via `pgrep`, determines idle/processing via CPU usage, reads attention state from marker file
+- Extended `scripts/claude-notify.sh` to write/clear PID-based attention markers in `$XDG_RUNTIME_DIR/claude-waybar-attention` alongside existing notifications
+- Added `custom/claude` module to `nixos/home/waybar.nix` (3s interval, JSON return type)
+- Added Catppuccin Frappe-themed CSS to `waybar/style.css`: idle (overlay1), processing (lavender), attention (peach)
+- Symlinked script to `~/.local/bin/claude-waybar.sh`
+
+**Decisions:**
+- Session detection via `pgrep -x claude` + `/proc/<pid>/cwd` for project names
+- CPU threshold >= 2% for "processing" vs "idle" distinction
+- Attention state tracked via hook writing PIDs to a runtime file; cleared on any non-permission notification
+- GTK CSS (waybar) doesn't support `@keyframes` — dropped pulse animation, using static color for attention state
+- Module hides itself (empty class, zero padding/margin) when no sessions are active
+
 ## 2026-02-25
 
 **Goal:** Package ccboard declaratively in NixOS

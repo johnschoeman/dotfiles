@@ -14,6 +14,8 @@ nh os switch /home/john/dotfiles/nixos -- --impure
 # or use the fish alias: nrs
 ```
 
+**Never** run `nh os switch` or `nrs` directly. The user runs rebuilds in a separate terminal. When a rebuild is needed, prompt: "You may want to run `nrs` to apply these changes." Then wait for the user to report the outcome.
+
 **Update flake dependencies:**
 ```bash
 nix flake update

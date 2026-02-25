@@ -4,6 +4,7 @@
     waybar
   ];
 
+  # Docs: https://github.com/Alexays/Waybar
   programs.waybar = {
     enable = true;
     style = builtins.readFile /home/john/dotfiles/waybar/style.css;
@@ -20,6 +21,8 @@
         "clock"
         "custom/divider"
         "hyprland/workspaces"
+        "custom/divider"
+        "custom/claude"
       ];
       modules-center = [ "hyprland/window" ];
       modules-right = [
@@ -42,7 +45,7 @@
       "hyprland/workspaces" = {
           format = "{icon}";
           on-click = "activate";
-          icon-size = 10;
+          icon-size = 9;
           sort-by-number = true;
       };
       battery = { format = "󰁹 {}%"; };
@@ -68,8 +71,9 @@
         spacing = 10;
       };
       network = {
-        format = "󰖩 {essid}";
-        format-disconnected = "󰖪 disconnected";
+        format = "󰖩 ";
+        format-disconnected = "󰖪 ";
+        tooltip-format = "󰖩 {essid}";
       };
       clock = {
         format = "{:%a %d %H:%M} ";
@@ -80,7 +84,7 @@
       pulseaudio = {
         format = "{icon} {volume}%";
         tooltip = false;
-        format-muted = " Muted";
+        format-muted = "";
         on-click = "pamixer -t";
         on-scroll-up = "pamixer -i 5";
         on-scroll-down = "pamixer -d 5";
@@ -119,6 +123,12 @@
         format = " ";
         interval = "once";
         tooltip = false;
+      };
+      "custom/claude" = {
+        exec = "~/.local/bin/claude-waybar.sh";
+        return-type = "json";
+        interval = 3;
+        tooltip = true;
       };
     }];
   };
