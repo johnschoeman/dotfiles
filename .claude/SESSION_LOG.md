@@ -16,8 +16,11 @@
 - Removed per-state CSS class rules (`.processing`, `.attention`); added `format` to waybar module for Pango passthrough
 - Base widget color changed from `@overlay1` to `@text`
 - Created `.claude/MEMORY.md` for cross-session knowledge; added Memory section to `CLAUDE.md`
-- Added `scripts/claude-statusline.sh` for Claude Code status line
+- Added `scripts/claude-statusline.sh` for Claude Code status line: project/, git branch (magenta modified, blue clean), model, context percentage (color-coded)
 - Pointed all script references directly to `dotfiles/scripts/` paths — removed `~/.local/bin/` symlinks and their setup instructions from `nixos/README.md`
+- Removed `i3/` directory — unused since Hyprland migration
+- Fixed statusline `printf` — `%s` doesn't interpret escape sequences, switched to `%b` for arguments with color codes
+- Replaced `git diff --quiet` with `git status --porcelain` for more reliable modification detection
 
 **Decisions:**
 - Hybrid attention detection: hook marker for instant response + JSONL for state validation and cleanup — avoids the 10s delay of pure timestamp-based detection
