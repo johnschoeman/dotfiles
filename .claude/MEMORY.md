@@ -28,3 +28,5 @@
 - Scope builds to specific crate with `cargoBuildFlags = ["-p" "crate-name"]`
 - **Mutable symlinks**: `config.lib.file.mkOutOfStoreSymlink` creates a direct symlink to a repo path — file stays mutable. Use for configs that apps write to (e.g., Claude Code `settings.json`). Regular `home.file.source` copies to the nix store (read-only).
 - **Directory convention**: `claude/` holds repo-managed global settings (symlinked to `~/.claude/`). `.claude/` holds project-level settings (session log, memory, local config).
+- **Package split**: `configuration.nix` = system-level (C toolchain, desktop env, system utils). `home.nix` = user-level (dev tools, LSPs, apps, languages).
+- **clippy conflict**: don't install standalone `clippy` alongside `rustup` — both provide `cargo-clippy`. Use `rustup component add clippy` instead.

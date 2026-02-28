@@ -109,10 +109,6 @@
 
   # ==== Fonts ====
 
-  fonts.packages = with pkgs; [
-    pkgs.nerd-fonts.jetbrains-mono
-  ];
-
   fonts.fontconfig.enable = true;
 
   # ==== User Account ====
@@ -139,11 +135,7 @@
 
   environment.systemPackages = with pkgs; [
      # nix
-     nh            # nixos cli
-     wget
-     nil
-     nixd
-     direnv        # load env based on dir
+     nh
 
      # desktop environment
      wl-clipboard
@@ -151,12 +143,13 @@
      swayidle
 
      # essentials
+     wget
      openssl
      pkg-config
      libgit2
-
-     # fish
-     fish-lsp
+     clang
+     libgccjit
+     llvmPackages.bintools
 
      # utilities
      inotify-tools
@@ -169,44 +162,8 @@
      wl-clipboard-rs
      dig
 
-     # python
-     python315
-     
-     # web dev tools
-     nodejs_24
-     pnpm
-     typescript-language-server
-     vscode-langservers-extracted
-     superhtml
-     tailwindcss_4
-     zola                          # rust static site generator
-
-     # rust dev tools
-     rustup
-     clang
-     libgccjit
-     llvmPackages.bintools
-     cargo-watch
-     clippy
-     cargo-generate
-     lldb
-     trunk                         # js build tool
-     leptosfmt                     # web frontend framework
-     cargo-shuttle                 # shuttle rs cli
-
      # keyboard firmware
      qmk
-
-     # applications
-     obsidian
-     discord
-     zoom
-     zoom-us
-     anki
-     google-chrome
-
-     # LLM
-     claude-code
   ];
 
   environment.variables = {

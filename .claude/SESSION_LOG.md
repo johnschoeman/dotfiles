@@ -1,5 +1,22 @@
 # Session Log
 
+## 2026-02-28
+
+**Goal:** Move user-level packages from configuration.nix to home.nix, add devenv and trusted-users
+
+**What happened:**
+- Added `devenv` to home-manager packages
+- Added `nix.settings.trusted-users` for devenv cachix support
+- Moved ~26 packages from `configuration.nix` to `home.nix`: dev tools, language tooling, LSPs, applications
+- Kept system-level packages in `configuration.nix`: C toolchain, desktop env deps, system utilities
+- Removed duplicate `fonts.packages` from `configuration.nix` (already in `home.nix`)
+- Removed standalone `clippy` (conflicts with `rustup` which provides it)
+- Dropped `zoom` duplicate (only `zoom-us` needed)
+
+**Decisions:**
+- `configuration.nix` = system concerns (services, hardware, C libs, desktop env). `home.nix` = user tools (editors, LSPs, dev tools, apps)
+- `clippy` via `rustup component add clippy`, not as a standalone nixpkg — avoids `cargo-clippy` binary conflict
+
 ## 2026-02-25 (6)
 
 **Goal:** Manage Claude Code global settings via home-manager
