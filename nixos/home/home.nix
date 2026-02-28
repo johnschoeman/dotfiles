@@ -31,6 +31,7 @@
     pkgs.nerd-fonts.jetbrains-mono
 
     # programs
+    devenv
     git
     spotify
 
