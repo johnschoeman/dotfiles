@@ -21,13 +21,22 @@ rustPlatform.buildRustPackage {
     cp ${./ccboard-Cargo.lock} Cargo.lock
   '';
 
-  cargoBuildFlags = [ "-p" "ccboard" ];
-  cargoTestFlags = [ "-p" "ccboard" ];
+  cargoBuildFlags = [
+    "-p"
+    "ccboard"
+  ];
+  cargoTestFlags = [
+    "-p"
+    "ccboard"
+  ];
 
   meta = {
     description = "TUI dashboard for Claude Code session monitoring";
     homepage = "https://github.com/FlorianBruniaux/ccboard";
-    license = with lib.licenses; [ mit asl20 ];
+    license = with lib.licenses; [
+      mit
+      asl20
+    ];
     mainProgram = "ccboard";
   };
 }

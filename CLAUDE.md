@@ -121,4 +121,6 @@ This commit:
 
 **Modify shell aliases:** Edit `nixos/home/fish.nix`, then rebuild
 
+**After editing or creating `.nix` files:** Run `nixfmt` on them before finishing
+
 **Session log:** `.claude/SESSION_LOG.md`

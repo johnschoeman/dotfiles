@@ -6,7 +6,12 @@
       Type = "oneshot";
       ExecStart = "${pkgs.bash}/bin/bash /home/john/dotfiles/scripts/battery-notify.sh";
       Environment = [
-        "PATH=${pkgs.lib.makeBinPath [ pkgs.coreutils pkgs.libnotify ]}"
+        "PATH=${
+          pkgs.lib.makeBinPath [
+            pkgs.coreutils
+            pkgs.libnotify
+          ]
+        }"
       ];
     };
   };
