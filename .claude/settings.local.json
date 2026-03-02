@@ -24,7 +24,8 @@
       "Bash(python3:*)",
       "Bash(ls:*)",
       "Bash(jq:*)",
-      "Bash(bc:*)"
+      "Bash(bc:*)",
+      "Bash(find:*)"
     ],
     "deny": [
       "Bash(git add *)",

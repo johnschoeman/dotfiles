@@ -82,7 +82,7 @@ User manages all commits. You remind and suggest, never commit.
 **After significant work:**
 1. Update `.claude/SESSION_LOG.md` with session summary
 2. Run `git status` to see what's actually uncommitted
-3. Write commit message to `temp_commit_message.txt`
+3. Write commit message to `commit-msg.txt`
 4. Remind: "You may want to commit these changes"
 
 **Commit message format:**

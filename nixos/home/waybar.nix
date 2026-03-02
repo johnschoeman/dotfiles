@@ -48,7 +48,13 @@
           icon-size = 9;
           sort-by-number = true;
       };
-      battery = { format = "󰁹 {}%"; };
+      battery = {
+        format = "󰁹 {}%";
+        states = {
+          warning = 20;
+          critical = 10;
+        };
+      };
       cpu = {
         interval = 10;
         format = "󰻠 {}%";

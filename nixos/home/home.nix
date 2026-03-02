@@ -8,6 +8,7 @@
     /home/john/dotfiles/nixos/home/alacritty.nix
     /home/john/dotfiles/nixos/home/atuin.nix
     /home/john/dotfiles/nixos/home/bash.nix
+    /home/john/dotfiles/nixos/home/battery-notify.nix
     /home/john/dotfiles/nixos/home/ccboard.nix
     /home/john/dotfiles/nixos/home/claude.nix
     /home/john/dotfiles/nixos/home/fish.nix

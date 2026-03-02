@@ -32,6 +32,14 @@ tooltip {
   color: @flamingo;
 }
 
+#battery.warning {
+  color: @peach;
+}
+
+#battery.critical {
+  color: @red;
+}
+
 #custom-claude {
   color: @text;
   padding: 0 4px;
