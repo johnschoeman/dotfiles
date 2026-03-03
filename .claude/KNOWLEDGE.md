@@ -7,7 +7,10 @@ Stable knowledge for this repository. Read at session start. Organized by topic,
 ## Decisions
 
 **Directory convention**
-`claude/` holds repo-managed global settings (symlinked to `~/.claude/`). `.claude/` holds project-level settings (session log, knowledge, local config).
+`claude/` holds repo-managed global settings (symlinked to `~/.claude/`). `.claude/` holds project-level settings (session history, knowledge, local config).
+
+**Session log format**
+Daily files in `.claude/session-history/YYYY-MM-DD.md` instead of a single `SESSION_LOG.md`. Multiple entries per day are appended. Date is in the filename so entries use `## [title]` without date prefix. Old `SESSION_LOG.md` files left in place as history.
 
 **Package split**
 `configuration.nix` = system-level (C toolchain, desktop env, system utils). `home.nix` = user-level (dev tools, LSPs, apps, languages).

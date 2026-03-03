@@ -5,7 +5,7 @@ description: Capture session context for cross-session continuity. Run after sig
 
 # Update Session Log
 
-Write a structured entry in `.claude/SESSION_LOG.md` capturing context that helps future sessions pick up where this one left off.
+Write a structured entry in `.claude/session-history/YYYY-MM-DD.md` capturing context that helps future sessions pick up where this one left off.
 
 ## Process
 
@@ -22,26 +22,29 @@ Look back through the conversation to understand:
 
 Run `git diff --stat` and `git log --oneline -3` to see what concrete changes were made. This grounds the entry in reality, but the entry itself should not be a change list.
 
-### 3. Read Existing Log
+### 3. Read Recent History
 
-Read `.claude/SESSION_LOG.md` to match the existing format and avoid duplicating recent entries.
+Create `.claude/session-history/` if it doesn't exist.
 
-If the file doesn't exist, create it with:
+Read today's file at `.claude/session-history/YYYY-MM-DD.md` if it exists — you'll append to it (multiple sessions per day are normal).
 
-```markdown
-# Session Log
-
-Most recent first.
-
----
-```
+Also read the most recent 2-3 files in `.claude/session-history/` for continuity context and to avoid duplicating recent entries.
 
 ### 4. Write Entry
 
-Add a new entry at the top (after the header). Use this format:
+Write to `.claude/session-history/YYYY-MM-DD.md`.
+
+If creating a new file, start with a date header:
 
 ```markdown
-## YYYY-MM-DD - [descriptive thread title]
+# YYYY-MM-DD
+
+```
+
+Then append the entry (whether the file is new or existing):
+
+```markdown
+## [descriptive thread title]
 
 **Thread:** [what we were trying to accomplish]
 
@@ -49,8 +52,6 @@ Add a new entry at the top (after the header). Use this format:
 
 **Open:** [incomplete threads, what to pick up next]
 ```
-
-Adapt the format to match the repo's existing entries if they use a different structure.
 
 ### 5. Show the User
 
