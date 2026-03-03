@@ -25,7 +25,8 @@
       "Bash(ls:*)",
       "Bash(jq:*)",
       "Bash(bc:*)",
-      "Bash(find:*)"
+      "Bash(find:*)",
+      "Bash(git -C /home/john/dotfiles status -s)"
     ],
     "deny": [
       "Bash(git add *)",
