@@ -8,6 +8,7 @@
       ## Setup
 
       function fish_greeting; end
+      fish_add_path ~/dotfiles/scripts
       set EDITOR hx
       starship init fish | source
       zoxide init fish | source

@@ -12,10 +12,10 @@ Analyze git commit history to reveal patterns in how files are modified together
 
 ### 1. Run the Analysis
 
-Use `~/dotfiles/scripts/analyze_colocations.sh` with the user-provided timeframe (default: 6 months).
+Use `analyze_colocations.sh` with the user-provided timeframe (default: 6 months).
 
 ```bash
-~/dotfiles/scripts/analyze_colocations.sh [OPTIONS] [MONTHS]
+analyze_colocations.sh [OPTIONS] [MONTHS]
 ```
 
 **Options:**
