@@ -12,6 +12,12 @@ Stable knowledge for this repository. Read at session start. Organized by topic,
 **Session log format**
 Daily files in `.claude/session-history/YYYY-MM-DD.md` instead of a single `SESSION_LOG.md`. Multiple entries per day are appended. Date is in the filename so entries use `## [title]` without date prefix. Old `SESSION_LOG.md` files left in place as history.
 
+**Global skill pattern**
+Global skills in `claude/skills/` define the process; repo-specific `.claude/docs/` files provide configuration. Skills validate their context file at startup and bail with guidance if missing or incomplete. Pattern used by: `planning-check` (reads `planning.md`), `capture-content` (reads `content-capture.md`), `synthesize-learning` (reads `content-synthesis.md`).
+
+**Content note format**
+YAML frontmatter (`source`, `type`, `date-captured`, `author`) for machine-readable metadata. `synthesize-learning` adds `date-processed` when done. Filename: `YYYY-MM-DD-[slug].md`. Processed notes move to `_processed/` subfolder within the content notes directory.
+
 **Package split**
 `configuration.nix` = system-level (C toolchain, desktop env, system utils). `home.nix` = user-level (dev tools, LSPs, apps, languages).
 
