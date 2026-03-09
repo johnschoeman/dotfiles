@@ -69,3 +69,11 @@ Display the entry you wrote so they can review it.
 - File-by-file change lists (git history covers this)
 - Implementation details (code + commits cover this)
 - Stable decisions or knowledge (belongs in KNOWLEDGE.md)
+
+## After Writing the Entry
+
+After showing the user the session log entry, prompt:
+
+> Want to log time for this session? (runs `/log-time`)
+
+If the user says yes, invoke the `/log-time` skill. If they decline or skip, that's fine — just a nudge to keep the timesheet current.
