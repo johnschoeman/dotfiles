@@ -16,7 +16,10 @@ Daily files in `.claude/session-history/YYYY-MM-DD.md` instead of a single `SESS
 `~/dotfiles/scripts/` is on Fish PATH (via `fish_add_path` in `fish.nix`). Scripts there are available as bare commands — reference them by name in skills and docs, not by absolute path.
 
 **Global skill pattern**
-Global skills in `claude/skills/` define the process; repo-specific `.claude/docs/` files provide configuration. Skills validate their context file at startup and bail with guidance if missing or incomplete. Pattern used by: `planning-check` (reads `planning.md`), `capture-content` (reads `content-capture.md`), `synthesize-learning` (reads `content-synthesis.md`). Variant: `git-analysis` uses a global script (`analyze_colocations.sh`) with CLI flags (`--strip-prefix`, `--exclude`) for repo-specific customization instead of a context file.
+Global skills in `claude/skills/` define the process; repo-specific `.claude/docs/` files provide configuration. Skills validate their context file at startup and bail with guidance if missing or incomplete. Pattern used by: `planning-check` (reads `planning.md`), `capture-content` (reads `content-capture.md`), `synthesize-learning` (reads `content-synthesis.md`). Variants: `git-analysis` uses a global script with CLI flags for repo-specific customization instead of a context file. `project-init` is standalone (no context file) — one-time setup that creates CLAUDE.md, `.claude/` infrastructure, and optional `.claude/docs/` templates.
+
+**Git Workflow section is verbatim**
+The Git Workflow section in CLAUDE.md is identical across every project — user manages commits, `/update-session-log` + `git status` + `commit-msg.txt` + remind pattern, standard commit format (imperative title, "Why:" paragraph, "This commit:" bullets), never modify history. Enforced by `/project-init` which inserts it as a fixed block.
 
 **Content note format**
 YAML frontmatter (`source`, `type`, `date-captured`, `author`) for machine-readable metadata. `synthesize-learning` adds `date-processed` when done. Filename: `YYYY-MM-DD-[slug].md`. Processed notes move to `_processed/` subfolder within the content notes directory.

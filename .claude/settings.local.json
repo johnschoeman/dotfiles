@@ -26,7 +26,8 @@
       "Bash(jq:*)",
       "Bash(bc:*)",
       "Bash(find:*)",
-      "Bash(git -C /home/john/dotfiles status -s)"
+      "Bash(git -C /home/john/dotfiles status -s)",
+      "WebFetch(domain:www.anthropic.com)"
     ],
     "deny": [
       "Bash(git add *)",
