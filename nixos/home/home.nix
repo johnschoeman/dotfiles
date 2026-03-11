@@ -37,9 +37,9 @@
     # programs
     devenv
     git
-    spotify
 
     # applications
+    spotify
     obsidian
     discord
     zoom-us
@@ -87,5 +87,6 @@
     btop
     htop
     yazi
+    poppler-utils   # pdf reading
   ];
 }
