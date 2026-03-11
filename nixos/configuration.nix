@@ -4,10 +4,9 @@
 
 { config, pkgs, ... }:
 {
-  imports =
-    [
-      /etc/nixos/hardware-configuration.nix
-    ];
+  imports = [
+    /etc/nixos/hardware-configuration.nix
+  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -71,7 +70,6 @@
   # Ollama - local LLM inference
   services.ollama.enable = true;
 
-
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
@@ -100,12 +98,14 @@
     "nix-command"
     "flakes"
   ];
-  nix.settings.trusted-users = [ "root" "john" ];
+  nix.settings.trusted-users = [
+    "root"
+    "john"
+  ];
 
   # ==== Keyboard ====
 
   hardware.keyboard.qmk.enable = true;
-
 
   # ==== Fonts ====
 
@@ -117,9 +117,12 @@
   users.users.john = {
     isNormalUser = true;
     description = "john";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
     packages = with pkgs; [
-    #  thunderbird
+      #  thunderbird
     ];
     shell = pkgs.fish;
   };
@@ -134,36 +137,36 @@
   programs._1password-gui.enable = true;
 
   environment.systemPackages = with pkgs; [
-     # nix
-     nh
+    # nix
+    nh # nix helper CLI
 
-     # desktop environment
-     wl-clipboard
-     brightnessctl
-     swayidle
+    # desktop environment
+    wl-clipboard # Wayland clipboard
+    brightnessctl # brightness control
+    swayidle # idle manager
 
-     # essentials
-     wget
-     openssl
-     pkg-config
-     libgit2
-     clang
-     libgccjit
-     llvmPackages.bintools
+    # essentials
+    wget # file downloader
+    openssl # crypto library
+    pkg-config # build config
+    libgit2 # git C library
+    clang # C compiler
+    libgccjit # JIT compiler lib
+    llvmPackages.bintools # LLVM linker
 
-     # utilities
-     inotify-tools
-     usbutils
-     unzip
-     zip
-     qpdf
-     timer
-     alsa-utils
-     wl-clipboard-rs
-     dig
+    # utilities
+    inotify-tools # file watcher
+    usbutils # USB info
+    unzip # extract archives
+    zip # create archives
+    qpdf # PDF tool
+    timer # countdown timer
+    alsa-utils # audio tools
+    wl-clipboard-rs # clipboard (Rust)
+    dig # DNS lookup
 
-     # keyboard firmware
-     qmk
+    # keyboard firmware
+    qmk # QMK firmware
   ];
 
   environment.variables = {

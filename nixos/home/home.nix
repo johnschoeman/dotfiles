@@ -26,67 +26,67 @@
 
   home.packages = with pkgs; [
     # nix
-    nixfmt-rfc-style
-    nil
-    nixd
-    direnv
+    nixfmt-rfc-style # nix formatter
+    nil # nix LSP
+    nixd # nix LSP (advanced)
+    direnv # auto env loading
 
     # fonts
-    pkgs.nerd-fonts.jetbrains-mono
+    pkgs.nerd-fonts.jetbrains-mono # monospace font
 
     # programs
-    devenv
-    git
+    devenv # dev environments
+    git # version control
 
     # applications
-    spotify
-    obsidian
-    discord
-    zoom-us
-    anki
-    google-chrome
-    claude-code
+    spotify # music streaming
+    obsidian # note-taking
+    discord # chat app
+    zoom-us # video calls
+    anki # flashcards
+    google-chrome # web browser
+    claude-code # AI coding CLI
 
     # python
-    python315
+    python315 # Python runtime
 
     # web dev tools
-    nodejs_24
-    pnpm
-    typescript-language-server
-    vscode-langservers-extracted
-    superhtml
-    tailwindcss_4
-    zola
+    nodejs_24 # JS runtime
+    pnpm # package manager
+    typescript-language-server # TS LSP
+    vscode-langservers-extracted # HTML/CSS/JSON LSPs
+    superhtml # HTML LSP
+    tailwindcss_4 # CSS framework
+    zola # static site generator
 
     # rust dev tools
-    rustup
-    cargo-watch
-    cargo-generate
-    cargo-shuttle
-    trunk
-    leptosfmt
-    lldb
+    rustup # Rust toolchain
+    cargo-watch # auto-rebuild
+    cargo-generate # project templates
+    cargo-shuttle # cloud deploy
+    trunk # WASM bundler
+    leptosfmt # Leptos formatter
+    lldb # debugger
 
     # language servers / editor tools
-    fish-lsp
+    fish-lsp # Fish LSP
 
     # utilities
-    bat
-    fzf
-    fd
-    ripgrep
-    eza
-    xh
-    zoxide
-    gitui
-    dust
-    dua
-    fastfetch
-    starship
-    btop
-    htop
-    yazi
-    poppler-utils   # pdf reading
+    bat # syntax-highlighted cat
+    fzf # fuzzy finder
+    fd # file finder
+    ripgrep # fast grep
+    eza # modern ls
+    xh # HTTP client
+    zoxide # smart cd
+    gitui # git TUI
+    dust # disk usage tree
+    dua # disk usage interactive
+    fastfetch # system info
+    starship # shell prompt
+    btop # system monitor
+    htop # process viewer
+    yazi # file manager
+    poppler-utils # pdf reading
   ];
 }
