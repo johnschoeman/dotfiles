@@ -138,35 +138,35 @@
 
   environment.systemPackages = with pkgs; [
     # nix
-    nh # nix helper CLI
+    nh                # nix helper CLI
 
     # desktop environment
-    wl-clipboard # Wayland clipboard
-    brightnessctl # brightness control
-    swayidle # idle manager
+    wl-clipboard      # Wayland clipboard
+    brightnessctl     # brightness control
+    swayidle          # idle manager
 
     # essentials
-    wget # file downloader
-    openssl # crypto library
-    pkg-config # build config
-    libgit2 # git C library
-    clang # C compiler
-    libgccjit # JIT compiler lib
+    wget              # file downloader
+    openssl           # crypto library
+    pkg-config        # build config
+    libgit2           # git C library
+    clang             # C compiler
+    libgccjit         # JIT compiler lib
     llvmPackages.bintools # LLVM linker
 
     # utilities
-    inotify-tools # file watcher
-    usbutils # USB info
-    unzip # extract archives
-    zip # create archives
-    qpdf # PDF tool
-    timer # countdown timer
-    alsa-utils # audio tools
-    wl-clipboard-rs # clipboard (Rust)
-    dig # DNS lookup
+    inotify-tools     # file watcher
+    usbutils          # USB info
+    unzip             # extract archives
+    zip               # create archives
+    qpdf              # PDF tool
+    timer             # countdown timer
+    alsa-utils        # audio tools
+    wl-clipboard-rs   # clipboard (Rust)
+    dig               # DNS lookup
 
     # keyboard firmware
-    qmk # QMK firmware
+    qmk               # QMK firmware
   ];
 
   environment.variables = {

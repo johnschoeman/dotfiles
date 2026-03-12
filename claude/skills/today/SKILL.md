@@ -60,9 +60,9 @@ Extract:
 - Red Flags
 - Priority ratings (brief summary)
 
-### 6. Read Active Projects
+### 6. Read Active Projects and Task Files
 
-From the planning doc's **Active items** section, find projects matching the active criteria (typically `status: now` in frontmatter).
+**Projects:** From the planning doc's **Active items** section, find projects matching the active criteria (typically `status: now` in frontmatter).
 
 For each active project:
 - Read the file
@@ -71,6 +71,8 @@ For each active project:
 - Note the project's domains
 
 Skip the template file (`_project_template.md`).
+
+**Task files:** Read all files in `tasks/` with frontmatter `status: this-week` or `status: in-progress`. These are the active task items to include in today's plan alongside project next actions. Note each task's domain and priority for ranking.
 
 ### 7. Rank and Output
 
