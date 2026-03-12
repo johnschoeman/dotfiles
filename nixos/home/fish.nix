@@ -40,6 +40,7 @@
       alias bell "aplay ~/dotfiles/media/bell.wav"
       alias copy "wl-copy"
       alias paste "wl-paste"
+      alias ccm "bat commit-msg.txt | wl-copy"
 
       ## Functions
 
