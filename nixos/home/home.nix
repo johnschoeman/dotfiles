@@ -87,5 +87,6 @@
     htop               # process viewer
     yazi               # file manager
     poppler-utils      # pdf reading
+    pandoc             # doc reading
   ];
 }
