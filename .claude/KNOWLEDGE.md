@@ -61,6 +61,7 @@ Catppuccin Frappe is the base/default theme (Waybar, Hyprlock, Zellij, Helix, Al
 - Zellij intercepts keybindings before they reach terminal apps — remap conflicts on Zellij side, not the app side
 
 **NixOS / Nix**
+- `services.xserver.enable = true` is needed even on Wayland — XWayland depends on it for X11 apps (Discord, Chrome, Spotify)
 - Custom Rust packages: use `rustPlatform.buildRustPackage` + `fetchFromGitHub`
 - When upstream has no `Cargo.lock`: store one locally, use `cargoLock.lockFile`
 - Scope builds to specific crate with `cargoBuildFlags = ["-p" "crate-name"]`
