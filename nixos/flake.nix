@@ -11,6 +11,7 @@
       url = "github:hyprwm/Hyprland";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    catppuccin.url = "github:catppuccin/nix";
   };
 
   outputs =
@@ -18,6 +19,7 @@
       nixpkgs,
       hyprland,
       home-manager,
+      catppuccin,
       ...
     }:
     {
@@ -25,14 +27,18 @@
         system = "x86_64-linux";
         modules = [
           ./configuration.nix
+          catppuccin.nixosModules.catppuccin
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.backupFileExtension = "backup";
-            home-manager.users.john = import /home/john/dotfiles/nixos/home/home.nix;
-
-            # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
+            home-manager.users.john = {
+              imports = [
+                /home/john/dotfiles/nixos/home/home.nix
+                catppuccin.homeModules.catppuccin
+              ];
+            };
           }
           hyprland.nixosModules.default
           {
