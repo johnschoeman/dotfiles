@@ -59,14 +59,8 @@
     tailwindcss_4      # CSS framework
     zola               # static site generator
 
-    # rust dev tools
+    # rust
     rustup             # Rust toolchain
-    cargo-watch        # auto-rebuild
-    cargo-generate     # project templates
-    cargo-shuttle      # cloud deploy
-    trunk              # WASM bundler
-    leptosfmt          # Leptos formatter
-    lldb               # debugger
 
     # language servers / editor tools
     fish-lsp           # Fish LSP
