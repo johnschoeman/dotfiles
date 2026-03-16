@@ -30,6 +30,9 @@ YAML frontmatter (`source`, `type`, `date-captured`, `author`) for machine-reada
 **Zellij mode switches**
 Remapped from Ctrl to Alt to avoid conflicts with Claude Code keybindings.
 
+**Idle management**
+hypridle via home-manager `services.hypridle` in `hyprland.nix`. Lock at 600s, dpms off at 900s, no suspend. Replaces swayidle + `hypr/suspend.sh`. Starts as a systemd user service — no `exec-once` needed.
+
 ---
 
 ## Learnings

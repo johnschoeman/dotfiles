@@ -143,7 +143,6 @@
     # desktop environment
     wl-clipboard      # Wayland clipboard
     brightnessctl     # brightness control
-    swayidle          # idle manager
 
     # essentials
     wget              # file downloader
