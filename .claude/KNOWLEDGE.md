@@ -68,7 +68,7 @@ Catppuccin Frappe is the base/default theme. `catppuccin/nix` flake is a flake i
 - Custom Rust packages: use `rustPlatform.buildRustPackage` + `fetchFromGitHub`
 - When upstream has no `Cargo.lock`: store one locally, use `cargoLock.lockFile`
 - Scope builds to specific crate with `cargoBuildFlags = ["-p" "crate-name"]`
-- Mutable symlinks: `config.lib.file.mkOutOfStoreSymlink` creates a direct symlink to a repo path — file stays mutable. Use for configs that apps write to (e.g., Claude Code `settings.json`). Regular `home.file.source` copies to the nix store (read-only).
+- Mutable symlinks: `config.lib.file.mkOutOfStoreSymlink` creates a direct symlink to a repo path — file stays mutable. Use for configs that apps write to (e.g., Claude Code `settings.json`) or configs you want to edit without rebuild (e.g., hyprland.conf). Regular `home.file.source` copies to the nix store (read-only). Requires `config` in the module's function args.
 - clippy conflict: don't install standalone `clippy` alongside `rustup` — both provide `cargo-clippy`. Use `rustup component add clippy` instead.
 - `rofi-wayland` has been merged into `rofi` in nixpkgs-unstable — just use `pkgs.rofi`
 - catppuccin/nix `catppuccin.enable = true` auto-sets theme options on supported programs (helix, rofi, etc.) — don't also set theme manually or you get conflicts

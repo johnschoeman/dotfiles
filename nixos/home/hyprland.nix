@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 {
   home.packages = with pkgs; [
     waybar
@@ -33,10 +33,9 @@
     };
   };
 
-  wayland.windowManager.hyprland = {
-    enable = true;
-    extraConfig = builtins.readFile /home/john/dotfiles/hypr/hyprland.conf;
-  };
+  wayland.windowManager.hyprland.enable = true;
+  xdg.configFile."hypr/hyprland.conf".source =
+    config.lib.file.mkOutOfStoreSymlink "/home/john/dotfiles/hypr/hyprland.conf";
 
   wayland.windowManager.hyprland.systemd.enable = false;
 
