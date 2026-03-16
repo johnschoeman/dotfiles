@@ -8,7 +8,7 @@
     enable = true;
     defaultEditor = true;
     settings = {
-      theme = "everforest_dark";
+      theme = "catppuccin_frappe";
       editor = {
         line-number = "relative";
         # lsp.display-messages = true;

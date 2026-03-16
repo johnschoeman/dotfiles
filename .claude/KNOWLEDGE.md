@@ -36,6 +36,9 @@ hypridle via home-manager `services.hypridle` in `hyprland.nix`. Lock at 600s, d
 **Rust tooling strategy**
 Only `rustup` is installed globally (for ad-hoc `rustc`/`cargo`). Project-specific tools (cargo-watch, cargo-generate, trunk, leptosfmt, etc.) belong in devenv templates, not `home.nix`.
 
+**Theme approach**
+Catppuccin Frappe is the base/default theme (Waybar, Hyprlock, Zellij, Helix, Alacritty). Inline color definitions preferred over the `catppuccin/nix` flake to avoid the dependency. Theme cycling across multiple palettes is planned (task 11) — not locked to a single theme.
+
 ---
 
 ## Learnings
@@ -63,3 +66,7 @@ Only `rustup` is installed globally (for ad-hoc `rustc`/`cargo`). Project-specif
 - Scope builds to specific crate with `cargoBuildFlags = ["-p" "crate-name"]`
 - Mutable symlinks: `config.lib.file.mkOutOfStoreSymlink` creates a direct symlink to a repo path — file stays mutable. Use for configs that apps write to (e.g., Claude Code `settings.json`). Regular `home.file.source` copies to the nix store (read-only).
 - clippy conflict: don't install standalone `clippy` alongside `rustup` — both provide `cargo-clippy`. Use `rustup component add clippy` instead.
+
+**Alacritty**
+- Live-reloads on config file change — no restart needed for theme/color updates
+- home-manager `programs.alacritty.settings` maps directly to TOML; no built-in `theme` option
