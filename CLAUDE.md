@@ -103,5 +103,3 @@ This commit:
 **Add a Hyprland keybinding:** Edit `hypr/hyprland.conf`, reload Hyprland
 
 **Modify shell aliases:** Edit `nixos/home/fish.nix`, then rebuild
-
-**After editing or creating `.nix` files:** Run `nixfmt` on them before finishing
