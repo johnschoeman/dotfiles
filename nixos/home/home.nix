@@ -37,6 +37,7 @@
     # programs
     devenv             # dev environments
     git                # version control
+    marp-cli           # slide decks
 
     # applications
     spotify            # music streaming
