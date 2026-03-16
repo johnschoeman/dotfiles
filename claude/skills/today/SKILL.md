@@ -50,6 +50,27 @@ Extract:
 - Notes section content
 - Intention if filled in
 
+### 4a. Read Previous Day's Session Log
+
+Find the most recent `.claude/session-history/*.md` file before today. Read it.
+
+Extract:
+- Session summaries (H2 headings = what was worked on)
+- Open threads / items left incomplete (look for **Open:** sections)
+- Key decisions, artifacts created, or tasks created
+
+If no session log exists, skip — this is supplementary context.
+
+### 4b. Read Recent Git History
+
+Run `git log --since="yesterday" --oneline` to get recent commits.
+
+Extract:
+- What was committed (commit messages)
+- Rough volume (number of commits)
+
+If no commits, skip.
+
 ### 5. Find Latest Weekly Note
 
 Find the most recent `_daily/wk_*.md`. Read it.
@@ -107,8 +128,10 @@ Print to conversation (never write to files):
 - [ ] [items from Killing It if any]
 
 ### Yesterday
-[What got done (completed items), what didn't (uncompleted items worth noting), any reflections from notes]
-[Flag items that should carry forward to today]
+[Session log summaries — what was actually worked on, decisions made, artifacts created]
+[Git commits — what shipped (commit messages, brief)]
+[Daily note completed/uncompleted items if any]
+[Carryover — open threads from session log + uncompleted daily note items that should carry forward]
 
 ### This Week
 [From weekly note — current intentions/priorities, relevant incomplete action items]
@@ -120,6 +143,8 @@ Print to conversation (never write to files):
 - Brief and actionable — this is a morning kickstart, not a report
 - Present tense, forward-looking
 - Flag carryover items from yesterday without judgment
+- Session log is the richest source for "what happened yesterday" — lead with it over daily note activity
+- Keep git commit lists brief — summarize, don't list every commit
 - If daily note is missing, say so simply and suggest creating one
 - Don't repeat the full project descriptions — just names and next actions
 - If a section has no content (e.g., no Killing It items), omit it rather than showing empty sections
