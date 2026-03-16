@@ -1,0 +1,71 @@
+{ ... }:
+{
+  programs.git = {
+    enable = true;
+    userName = "John Schoeman";
+    userEmail = "johnschoeman1617@gmail.com";
+
+    aliases = {
+      a       = "add";
+      aa      = "add --all";
+      ap      = "add --patch";
+      alias   = "config --get-regexp ^alias\\\\.";
+      b       = "checkout -b";
+      bb      = "branch";
+      bd      = "branch -d";
+      bdd     = "branch -D";
+      c       = "commit";
+      cc      = "commit -am";
+      ca      = "commit --amend";
+      cam     = "commit -a";
+      can     = "commit --amend --no-edit";
+      caan    = "commit -a --amend --no-edit";
+      cap     = "commit -p --amend";
+      caap    = "commit -ap --amend";
+      cm      = "commit -m";
+      caw     = "commit -am \"wip\"";
+      cp      = "commit -p";
+      cw      = "commit -m \"wip\"";
+      cv      = "commit -v";
+      co      = "checkout";
+      d       = "diff";
+      dh      = "diff HEAD~1..HEAD";
+      dc      = "diff --word-diff --cached --color-words";
+      df      = "diff --word-diff --color-words";
+      l       = "log --oneline";
+      ld      = "log --oneline --decorate";
+      ll      = "log --oneline --decorate --graph -40";
+      lla     = "log --oneline --decorate --graph --all -40";
+      llg     = "log --oneline --decorate --graph --first-parent main -40";
+      lg      = "log -E -i --grep";
+      ls      = "log --oneline";
+      lw      = "log --date=relative --since='1 week ago' --oneline";
+      mup     = "!git checkout main && git pull && git checkout -";
+      p       = "push";
+      pf      = "push --force-with-lease";
+      pfu     = "push -fu origin HEAD";
+      pu      = "push -u origin HEAD";
+      r       = "rebase main";
+      ri      = "rebase -i main";
+      ua      = "reset";
+      uc      = "reset --soft HEAD^";
+      us      = "reset HEAD --";
+      undo    = "co";
+    };
+
+    extraConfig = {
+      push.default = "upstream";
+      color.ui = "auto";
+      core.autocrlf = "input";
+      merge.ff = "only";
+      fetch.prune = true;
+      rebase.autosquash = true;
+      diff.colorMoved = "zebra";
+      init.defaultBranch = "main";
+      include.path = "~/.gitconfig.local";
+      commit.template = "~/.gitmessage";
+    };
+  };
+
+  home.file.".gitmessage".source = /home/john/dotfiles/gitmessage;
+}

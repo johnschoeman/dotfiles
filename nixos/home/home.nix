@@ -12,6 +12,7 @@
     /home/john/dotfiles/nixos/home/ccboard.nix
     /home/john/dotfiles/nixos/home/claude.nix
     /home/john/dotfiles/nixos/home/fish.nix
+    /home/john/dotfiles/nixos/home/git.nix
     /home/john/dotfiles/nixos/home/helix.nix
     /home/john/dotfiles/nixos/home/hyprland.nix
     /home/john/dotfiles/nixos/home/nh.nix
@@ -42,7 +43,6 @@
 
     # programs
     devenv             # dev environments
-    git                # version control
     marp-cli           # slide decks
 
     # applications

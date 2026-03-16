@@ -27,25 +27,25 @@ exit
 
 ## Setup
 
-- [ ] move git config to nix so we don't have to do the symlinking step
+- [x] move git config to nix so we don't have to do the symlinking step
 
 ## Window Manager - Hyprland
 
 - [ ] ? move hyprland.conf to nix (or use a symlink?)
 - [x] replicate omarchy bindings
 - [x] setup waybar
-- [ ] rofi configuration
+- [x] rofi configuration
 - [ ] checkout hyprpaper and other related packages
 - [ ] use more neutral cursor
 
 ## Theme
 
 - [x] select theme (catppuccine frappe)
-  - [ ] helix
+  - [x] helix
   - [ ] nvim
   - [x] waybar
   - [x] zellij
-  - [ ] alacritty / kitty
+  - [x] alacritty
   - [ ] firefox / chrome / brave
 - [ ] toggle from light to dark
 

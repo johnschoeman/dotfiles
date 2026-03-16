@@ -34,16 +34,9 @@ git clone git@github.com:johnschoeman/dotfiles.git
 sudo nixos-rebuild switch --impure --flake /home/john/dotfiles/nixos#nixos
 ```
 
-5. Add symlinks for non nix program configs
+5. Restart System
 
-```
-ln -s ~/dotfiles/gitconfig ~/.gitconfig
-ln -s ~/dotfiles/gitmessage ~/.gitmessage
-```
-
-6. Restart System
-
-7. Validate
+6. Validate
 
 ```
 ninfo

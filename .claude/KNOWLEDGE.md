@@ -27,6 +27,9 @@ YAML frontmatter (`source`, `type`, `date-captured`, `author`) for machine-reada
 **Package split**
 `configuration.nix` = system-level (C toolchain, desktop env, system utils). `home.nix` = user-level (dev tools, LSPs, apps, languages).
 
+**Git config**
+Managed declaratively via `programs.git` in `nixos/home/git.nix`. Commit template (`gitmessage`) delivered via `home.file`. Machine-specific overrides via `include.path = ~/.gitconfig.local`. No manual symlinks needed.
+
 **Zellij mode switches**
 Remapped from Ctrl to Alt to avoid conflicts with Claude Code keybindings.
 
