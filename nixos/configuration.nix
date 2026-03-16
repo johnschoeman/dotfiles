@@ -168,7 +168,6 @@
     qpdf              # PDF tool
     timer             # countdown timer
     alsa-utils        # audio tools
-    wl-clipboard-rs   # clipboard (Rust)
     dig               # DNS lookup
 
     # keyboard firmware

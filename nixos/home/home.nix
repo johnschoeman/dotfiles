@@ -16,7 +16,7 @@
     /home/john/dotfiles/nixos/home/hyprland.nix
     /home/john/dotfiles/nixos/home/nh.nix
     /home/john/dotfiles/nixos/home/waybar.nix
-    # /home/john/dotfiles/nixos/home/yazi.nix
+    /home/john/dotfiles/nixos/home/yazi.nix
     /home/john/dotfiles/nixos/home/zellij.nix
   ];
 
@@ -86,7 +86,6 @@
     starship           # shell prompt
     btop               # system monitor
     htop               # process viewer
-    yazi               # file manager
     poppler-utils      # pdf reading
     pandoc             # doc reading
   ];

@@ -39,7 +39,6 @@
     extraConfig = builtins.readFile /home/john/dotfiles/hypr/hyprland.conf;
   };
 
-  programs.kitty.enable = true;
   wayland.windowManager.hyprland.systemd.enable = false;
 
   # programs.waybar.enable = true;
