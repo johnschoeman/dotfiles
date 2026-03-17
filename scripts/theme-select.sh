@@ -95,7 +95,20 @@ set_theme() {
   notify-send -a "Theme" "Theme switched" "$name"
 }
 
-if [[ -n "$1" ]]; then
+next_theme() {
+  local idx=0
+  for i in "${!CURATED[@]}"; do
+    if [[ "${CURATED[$i]}" == "$active" ]]; then
+      idx=$(( (i + 1) % ${#CURATED[@]} ))
+      break
+    fi
+  done
+  echo "${CURATED[$idx]}"
+}
+
+if [[ "$1" == "--next" ]]; then
+  set_theme "$(next_theme)"
+elif [[ -n "$1" ]]; then
   set_theme "$1"
 else
   choice=$(pick_theme)
