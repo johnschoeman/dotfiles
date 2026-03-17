@@ -1,6 +1,6 @@
 # dotfiles
 
-These are my personal dotfiles
+These are my personal dotfiles. They support NixOS, Ubuntu, and MacOS machines.
 
 # Setup
 

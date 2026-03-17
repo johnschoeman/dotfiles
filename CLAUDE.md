@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Overview
 
-Personal dotfiles for NixOS (primary), with legacy support for Ubuntu and macOS.
+Personal dotfiles for NixOS (primary). `ubuntu/` and `mac/` directories contain setup scripts for those platforms — not legacy, still useful for future machine setups.
 
 ## Quick Reference
 
@@ -39,8 +39,11 @@ claude/                 # Claude Code global settings (symlinked to ~/.claude/)
 scripts/               # Claude Code hooks & waybar integration
 .claude/               # Session log, knowledge, settings
 
-ubuntu/                # Ubuntu setup scripts (legacy)
-mac/                   # macOS setup scripts (legacy)
+ubuntu/                # Ubuntu setup scripts (still useful for new machines)
+mac/                   # macOS setup scripts (still useful for new machines)
+
+tasks/                 # Task tracking (numbered markdown files)
+├── _done/             # Completed tasks moved here
 
 gitconfig              # Git config (symlinked to ~/.gitconfig)
 gitmessage             # Commit message template
@@ -103,3 +106,5 @@ This commit:
 **Add a Hyprland keybinding:** Edit `hypr/hyprland.conf`, reload Hyprland
 
 **Modify shell aliases:** Edit `nixos/home/fish.nix`, then rebuild
+
+**Track work:** `tasks/` holds numbered markdown files for planned work. Move completed tasks to `tasks/_done/`.

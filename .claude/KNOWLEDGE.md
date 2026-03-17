@@ -10,7 +10,7 @@ Stable knowledge for this repository. Read at session start. Organized by topic,
 `claude/` holds repo-managed global settings (symlinked to `~/.claude/`). `.claude/` holds project-level settings (session history, knowledge, local config).
 
 **Session log format**
-Daily files in `.claude/session-history/YYYY-MM-DD.md` instead of a single `SESSION_LOG.md`. Multiple entries per day are appended. Date is in the filename so entries use `## [title]` without date prefix. Old `SESSION_LOG.md` files left in place as history.
+Daily files in `.claude/session-history/YYYY-MM-DD.md` instead of a single `SESSION_LOG.md`. Multiple entries per day are appended. Date is in the filename so entries use `## [title]` without date prefix. Old `SESSION_LOG.md` was deleted during documentation cleanup (2026-03-17); canonical history lives in `.claude/session-history/`.
 
 **Scripts on PATH**
 `~/dotfiles/scripts/` is on Fish PATH (via `fish_add_path` in `fish.nix`). Scripts there are available as bare commands — reference them by name in skills and docs, not by absolute path.
@@ -40,7 +40,7 @@ hypridle via home-manager `services.hypridle` in `hyprland.nix`. Lock at 600s, d
 Only `rustup` is installed globally (for ad-hoc `rustc`/`cargo`). Project-specific tools (cargo-watch, cargo-generate, trunk, leptosfmt, etc.) belong in devenv templates, not `home.nix`.
 
 **Theme approach**
-`theme-select` is the single source of truth for theming. It switches Alacritty, Zellij, Waybar, and Helix at runtime — no rebuild needed. Catppuccin Frappe is the default. The `catppuccin/nix` module was removed because it created a hybrid where some programs were nix-managed (locked to frappe, reset on rebuild) and others were `theme-select`-managed. Yazi theme is a mutable symlink (`yazi/theme.toml`) so it can be added to `theme-select` later. Mako has hardcoded frappe colors in `hyprland.nix` — also a candidate for future `theme-select` integration.
+`theme-select` is the single source of truth for theming. It switches Alacritty, Zellij, Waybar, and Helix at runtime — no rebuild needed. Catppuccin Frappe is the default. The `catppuccin/nix` module was removed because it created a hybrid where some programs were nix-managed (locked to frappe, reset on rebuild) and others were `theme-select`-managed. Yazi theme is a mutable symlink (`yazi/theme.toml`) so it can be added to `theme-select` later. Mako was integrated into `theme-select` on 2026-03-17 — all themed programs now switch at runtime.
 
 ---
 
