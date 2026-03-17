@@ -4,6 +4,22 @@
   home.homeDirectory = "/home/john";
   home.stateVersion = "25.05";
 
+  home.activation.themeDefaults =
+    config.lib.dag.entryAfter [ "linkGeneration" ] ''
+      dotfiles="/home/john/dotfiles"
+      name=$(cat "$HOME/.config/alacritty/current-theme-name" 2>/dev/null || echo "catppuccin_frappe")
+      kebab="''${name//_/-}"
+
+      [ ! -e "$dotfiles/waybar/colors.css" ] && \
+        ln -sf "themes/$kebab.css" "$dotfiles/waybar/colors.css"
+      [ ! -e "$dotfiles/rofi/colors.rasi" ] && \
+        ln -sf "themes/$kebab.rasi" "$dotfiles/rofi/colors.rasi"
+      [ ! -e "$dotfiles/hyprlock/colors.conf" ] && \
+        ln -sf "themes/$kebab.conf" "$dotfiles/hyprlock/colors.conf"
+      [ ! -e "$dotfiles/mako/config" ] && \
+        cat "$dotfiles/mako/base.conf" "$dotfiles/mako/themes/$kebab.conf" > "$dotfiles/mako/config"
+    '';
+
   imports = [
     /home/john/dotfiles/nixos/home/alacritty.nix
     /home/john/dotfiles/nixos/home/atuin.nix

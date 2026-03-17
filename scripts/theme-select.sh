@@ -54,7 +54,7 @@ set_theme() {
   waybar_theme="$HOME/dotfiles/waybar/themes/$zellij_name.css"
   waybar_colors="$HOME/dotfiles/waybar/colors.css"
   if [[ -f "$waybar_theme" ]]; then
-    cp "$waybar_theme" "$waybar_colors"
+    ln -sf "themes/$zellij_name.css" "$waybar_colors"
     pkill -SIGUSR2 waybar || true
   fi
 
@@ -62,7 +62,7 @@ set_theme() {
   rofi_theme="$HOME/dotfiles/rofi/themes/$zellij_name.rasi"
   rofi_colors="$HOME/dotfiles/rofi/colors.rasi"
   if [[ -f "$rofi_theme" ]]; then
-    cp "$rofi_theme" "$rofi_colors"
+    ln -sf "themes/$zellij_name.rasi" "$rofi_colors"
   fi
 
   # Update Mako colors (instant reload)
@@ -78,7 +78,7 @@ set_theme() {
   hyprlock_theme="$HOME/dotfiles/hyprlock/themes/$zellij_name.conf"
   hyprlock_colors="$HOME/dotfiles/hyprlock/colors.conf"
   if [[ -f "$hyprlock_theme" ]]; then
-    cp "$hyprlock_theme" "$hyprlock_colors"
+    ln -sf "themes/$zellij_name.conf" "$hyprlock_colors"
   fi
 
   # Update Helix theme (new instances only, can reload with space + T)
