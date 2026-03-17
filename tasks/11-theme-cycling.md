@@ -13,12 +13,7 @@
 - catppuccin/nix module: removed (theme-select is single source of truth)
 
 - Mako: done (cat base.conf + theme colors > config, makoctl reload instant)
-
-## Remaining
-
-### Hyprlock
-
-Not yet investigated. May have hardcoded colors that should follow the active theme.
+- Hyprlock: done (cp theme colors.conf, next lock)
 
 ## Documentation
 

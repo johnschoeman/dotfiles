@@ -1,6 +1,6 @@
 # Theme Switching
 
-Runtime theme switching across Alacritty, Zellij, Helix, Waybar, Rofi, Yazi, and Mako via a single script, bound to `Super+T`.
+Runtime theme switching across Alacritty, Zellij, Helix, Waybar, Rofi, Yazi, Mako, and Hyprlock via a single script, bound to `Super+T`.
 
 ## Supported Themes
 
@@ -16,15 +16,22 @@ Runtime theme switching across Alacritty, Zellij, Helix, Waybar, Rofi, Yazi, and
 
 The canonical name format uses underscores (Alacritty convention). Other tools need different formats — the script handles translation.
 
+## Supported Programs
+
+| Name | Notes |
+| Alacritty | instant |
+| Zellij | new only |
+| Helix | new only, reload with space+T |
+| Waybar | instant |
+| Rofi | next launch |
+| Yazi | instant |
+| Mako | instant |
+| Hyperlock | next lock |
+
 ## Architecture
 
 ```
-Super+T → scripts/theme-select.sh → rofi picker
-                                      │
-              ┌───────────┬───────────┼───────────┬───────────┬───────────┬───────────┐
-              ▼           ▼           ▼           ▼           ▼           ▼           ▼
-          Alacritty    Zellij      Helix       Waybar       Rofi        Yazi        Mako
-          (instant)   (new only)  (new only)  (instant)  (next launch) (instant)  (instant)
+Super+T → scripts/theme-select.sh#launch_rofi → rofi picker → scripts/theme-select.sh#set_theme
 ```
 
 ### The NixOS Problem
@@ -51,6 +58,8 @@ The `catppuccin/nix` module was previously used for automatic theming of some pr
 
 **Mako** — Mako's config format doesn't support imports, so the script concatenates a shared `mako/base.conf` (layout/timing settings) with a per-theme color file from `mako/themes/`, writing the result to `mako/config`. The config file is a mutable symlink (`mkOutOfStoreSymlink`). `makoctl reload` applies changes instantly. Theme files contain global colors plus an `[urgency=critical]` section for the critical border color.
 
+**Hyprlock** — `hyprlock.conf` sources `colors.conf` via hyprlang's `source` directive. The script copies a theme-specific file from `hyprlock/themes/` over `colors.conf`. Three variables: `$font_color` (text), `$inner_color` (overlay1), `$outer_color` (crust). The config is a mutable symlink (`mkOutOfStoreSymlink`). Hyprlock reads config fresh each launch, so changes apply on the next lock — no reload needed.
+
 ## Name Translation
 
 Each tool has its own naming convention. The script starts with the canonical underscore name and translates:
@@ -63,10 +72,7 @@ Each tool has its own naming convention. The script starts with the canonical un
 | Waybar | `kebab-case` | `catppuccin-frappe` | Reuses Zellij's translated name for file lookup |
 | Rofi | `kebab-case` | `catppuccin-frappe` | Reuses Zellij's translated name for file lookup |
 | Mako | `kebab-case` | `catppuccin-frappe` | Reuses Zellij's translated name for file lookup |
-
-### Not Yet Switched
-
-**Hyprlock** — lock screen colors are hardcoded in `nixos/home/hyprland.nix`. Not yet investigated.
+| Hyprlock | `kebab-case` | `catppuccin-frappe` | Reuses Zellij's translated name for file lookup |
 
 ## File Layout
 
@@ -85,6 +91,9 @@ rofi/themes/*.rasi                # Per-theme color definitions
 mako/config                       # Active config (base + colors, overwritten by script)
 mako/base.conf                    # Non-color settings (layout, timeouts)
 mako/themes/*.conf                # Per-theme color definitions
+hyprlock/hyprlock.conf            # Main config, sources colors.conf
+hyprlock/colors.conf              # Active color variables (overwritten by script)
+hyprlock/themes/*.conf            # Per-theme color definitions
 nixos/home/alacritty.nix          # Alacritty config + activation script
 nixos/home/helix.nix              # Helix config (mkOutOfStoreSymlink)
 nixos/home/rofi.nix               # Rofi config (string path to repo theme)
@@ -99,6 +108,7 @@ nixos/home/zellij.nix             # Zellij config (mkOutOfStoreSymlink)
 2. Create `waybar/themes/<kebab-name>.css` mapping the theme's palette to Catppuccin semantic color names
 3. Create `rofi/themes/<kebab-name>.rasi` mapping the theme's palette to Catppuccin semantic color names
 4. Create `mako/themes/<kebab-name>.conf` with background-color, text-color, border-color, and `[urgency=critical]` border-color + default-timeout
-5. Verify the theme exists as a Zellij built-in and a Helix built-in
-6. If the Helix built-in name differs from the underscore name, add an entry to `helix_map` in the script
-7. Add the name to the `CURATED` array in `scripts/theme-select.sh`
+5. Create `hyprlock/themes/<kebab-name>.conf` with `$font_color` (text), `$inner_color` (overlay1), `$outer_color` (crust)
+6. Verify the theme exists as a Zellij built-in and a Helix built-in
+7. If the Helix built-in name differs from the underscore name, add an entry to `helix_map` in the script
+8. Add the name to the `CURATED` array in `scripts/theme-select.sh`

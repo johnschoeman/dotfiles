@@ -74,6 +74,13 @@ set_theme() {
     makoctl reload || true
   fi
 
+  # Update Hyprlock colors (next lock)
+  hyprlock_theme="$HOME/dotfiles/hyprlock/themes/$zellij_name.conf"
+  hyprlock_colors="$HOME/dotfiles/hyprlock/colors.conf"
+  if [[ -f "$hyprlock_theme" ]]; then
+    cp "$hyprlock_theme" "$hyprlock_colors"
+  fi
+
   # Update Helix theme (new instances only, can reload with space + T)
   declare -A helix_map=(
     [gruvbox_dark]=gruvbox
