@@ -1,4 +1,12 @@
 { config, pkgs, ... }:
+let
+  sddm-theme = pkgs.catppuccin-sddm.override {
+    flavor = "frappe";
+    accent = "mauve";
+    font = "JetBrainsMono Nerd Font";
+    fontSize = "10";
+  };
+in
 {
   imports = [
     /etc/nixos/hardware-configuration.nix
@@ -37,6 +45,8 @@
       package = pkgs.kdePackages.sddm;
       enable = true;
       wayland.enable = true;
+      theme = "catppuccin-frappe-mauve";
+      extraPackages = [ pkgs.kdePackages.qtsvg ];
     };
   };
 
@@ -77,6 +87,9 @@
   # ==== Fonts ====
 
   fonts.fontconfig.enable = true;
+  fonts.packages = with pkgs; [
+    nerd-fonts.jetbrains-mono
+  ];
 
   # ==== User Account ====
 
@@ -103,6 +116,7 @@
   environment.systemPackages = with pkgs; [
     # nix
     nh                # nix helper CLI
+    sddm-theme        # catppuccin SDDM theme
 
     # desktop environment
     wl-clipboard      # Wayland clipboard
