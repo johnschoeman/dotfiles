@@ -1,0 +1,81 @@
+#!/usr/bin/env bash
+THEME_DIR="$HOME/dotfiles/alacritty/themes"
+CURRENT="$HOME/.config/alacritty/current-theme.toml"
+CURRENT_NAME="$HOME/.config/alacritty/current-theme-name"
+
+CURATED=(
+  catppuccin_frappe
+  catppuccin_mocha
+  gruvbox_dark
+  nord
+  rose_pine
+  solarized_light
+  tokyo_night
+)
+
+active=$(cat "$CURRENT_NAME" 2>/dev/null)
+
+pick_theme() {
+  list=""
+  for t in "${CURATED[@]}"; do
+    if [[ "$t" == "$active" ]]; then
+      list+="* $t\n"
+    else
+      list+="  $t\n"
+    fi
+  done
+
+  printf "%b" "$list" \
+    | rofi -dmenu -i -p "Theme" -theme-str 'listview { lines: 7; }' \
+    | sed 's/^[* ] //'
+}
+
+set_theme() {
+  local name="$1"
+  local file="$THEME_DIR/$name.toml"
+
+  if [[ ! -f "$file" ]]; then
+    notify-send -u critical -a "Theme" "Theme not found" "'$name' does not exist"
+    exit 1
+  fi
+
+  cp "$file" "$CURRENT"
+  echo "$name" > "$CURRENT_NAME"
+  touch "$HOME/.config/alacritty/alacritty.toml"
+
+  # Update Zellij config (new sessions only)
+  zellij_name="${name//_/-}"
+  zellij_config="$HOME/.config/zellij/config.kdl"
+  if [[ -f "$zellij_config" ]]; then
+    sed -i "s/^theme \".*\"/theme \"$zellij_name\"/" "$zellij_config"
+  fi
+
+  # Update Waybar colors (instant reload)
+  waybar_theme="$HOME/dotfiles/waybar/themes/$zellij_name.css"
+  waybar_colors="$HOME/dotfiles/waybar/colors.css"
+  if [[ -f "$waybar_theme" ]]; then
+    cp "$waybar_theme" "$waybar_colors"
+    pkill -SIGUSR2 waybar || true
+  fi
+
+  # Update Helix theme (new instances only)
+  declare -A helix_map=(
+    [gruvbox_dark]=gruvbox
+    [tokyo_night]=tokyonight
+  )
+  helix_name="${helix_map[$name]:-$name}"
+  helix_config="$HOME/dotfiles/helix/config.toml"
+  if [[ -f "$helix_config" ]]; then
+    sed -i "s/^theme = .*/theme = \"$helix_name\"/" "$helix_config"
+  fi
+
+  notify-send -a "Theme" "Theme switched" "$name"
+}
+
+if [[ -n "$1" ]]; then
+  set_theme "$1"
+else
+  choice=$(pick_theme)
+  [[ -z "$choice" ]] && exit 0
+  set_theme "$choice"
+fi

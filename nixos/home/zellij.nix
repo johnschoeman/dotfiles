@@ -1,8 +1,9 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 {
   home.packages = [
     pkgs.zellij
   ];
 
-  xdg.configFile."zellij/config.kdl".source = /home/john/dotfiles/zellij/config.kdl;
+  xdg.configFile."zellij/config.kdl".source =
+    config.lib.file.mkOutOfStoreSymlink /home/john/dotfiles/zellij/config.kdl;
 }

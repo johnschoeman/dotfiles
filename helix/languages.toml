@@ -1,0 +1,21 @@
+[[language]]
+auto-format = false
+name = "rust"
+
+[[language]]
+language-servers = ["typescript-language-server", "vscode-eslint-language-server"]
+name = "typescript"
+
+[[language]]
+language-servers = ["vscode-html-language-server"]
+name = "html"
+
+[language-server.rust-analyzer.config.cargo]
+allFeatures = true
+
+[language-server.rust-analyzer.config.procMacro.ignored]
+leptos_macro = ["component", "server"]
+
+[language-server.vscode-html-language-server]
+args = ["--stdio"]
+command = "vscode-html-language-server"

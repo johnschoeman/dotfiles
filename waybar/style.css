@@ -1,4 +1,4 @@
-@import "/home/john/dotfiles/waybar/frappe.css";
+@import "/home/john/dotfiles/waybar/colors.css";
 
 * {
   border: none;
@@ -16,7 +16,7 @@ window#waybar {
 
 tooltip {
   background: @base;
-  color: @subtext2;
+  color: @subtext1;
 }
 
 #workspaces button {

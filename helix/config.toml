@@ -1,0 +1,28 @@
+theme = "catppuccin_frappe"
+
+[editor]
+bufferline = "multiple"
+cursorline = true
+line-number = "relative"
+
+[editor.soft-wrap]
+enable = true
+wrap-indicator = ""
+
+[keys.insert.j]
+k = "normal_mode"
+
+[keys.normal]
+A-z = ":toggle-option soft-wrap.enable"
+esc = ["collapse_selection", "keep_primary_selection"]
+
+[keys.normal.space]
+o = "file_picker_in_current_buffer_directory"
+q = ":q"
+space = "file_picker"
+t = ":config-reload"
+w = ":w"
+
+[keys.normal.z]
+j = "page_down"
+k = "page_up"

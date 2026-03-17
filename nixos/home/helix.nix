@@ -1,5 +1,7 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 {
+  catppuccin.helix.enable = false;
+
   home.packages = [
     pkgs.helix
   ];
@@ -7,78 +9,10 @@
   programs.helix = {
     enable = true;
     defaultEditor = true;
-    settings = {
-      editor = {
-        line-number = "relative";
-        # lsp.display-messages = true;
-        # lsp.display-inlay-hints = true;
-        # inline-diagnostics.cursor-line = "hint";
-        bufferline = "multiple";
-        cursorline = true;
-      };
-      editor.soft-wrap = {
-        enable = true;
-        wrap-indicator = "";
-      };
-      keys.normal = {
-        space.space = "file_picker";
-        space.w = ":w";
-        space.q = ":q";
-        space.o = "file_picker_in_current_buffer_directory";
-        esc = [
-          "collapse_selection"
-          "keep_primary_selection"
-        ];
-        A-z = ":toggle-option soft-wrap.enable";
-      };
-      keys.normal.z = {
-        j = "page_down";
-        k = "page_up";
-      };
-      keys.insert = {
-        j = {
-          k = "normal_mode";
-        };
-      };
-
-    };
-    languages = {
-      language = [
-        {
-          name = "rust";
-          auto-format = false;
-        }
-        {
-          name = "typescript";
-          language-servers = [
-            "typescript-language-server"
-            "vscode-eslint-language-server"
-          ];
-        }
-        {
-          name = "html";
-          language-servers = [ "vscode-html-language-server" ];
-        }
-      ];
-      language-server.rust-analyzer = {
-        config = {
-          procMacro = {
-            ignored = {
-              leptos_macro = [
-                "component"
-                "server"
-              ];
-            };
-          };
-        };
-      };
-      language-server.rust-analyzer.config.cargo = {
-        allFeatures = true;
-      };
-      language-server.vscode-html-language-server = {
-        command = "vscode-html-language-server";
-        args = [ "--stdio" ];
-      };
-    };
   };
+
+  xdg.configFile."helix/config.toml".source =
+    config.lib.file.mkOutOfStoreSymlink /home/john/dotfiles/helix/config.toml;
+  xdg.configFile."helix/languages.toml".source =
+    config.lib.file.mkOutOfStoreSymlink /home/john/dotfiles/helix/languages.toml;
 }

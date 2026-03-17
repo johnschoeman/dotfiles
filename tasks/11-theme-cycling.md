@@ -1,32 +1,67 @@
-# Theme cycling for Alacritty
+# Theme cycling across Alacritty, Zellij, and Waybar
 
 ## Priority: Medium
 
-## Why
+## Status
 
-Catppuccin Frappe doesn't suit all lighting environments. Need a quick way to switch between themes for different contexts — high contrast for bright rooms, warm tones for evening, cool tones for focus, low-light for dark rooms, etc.
+- Alacritty: done (rofi picker + live reload)
+- Zellij: done (sed config, new sessions only)
+- Waybar: next
 
-## What
+## Waybar plan
 
-Build a theme cycling mechanism for Alacritty:
+### Context
 
-- Curate a small set of themes (4-6) covering different needs:
-  - **Low light / dark**: Catppuccin Frappe (current default)
-  - **High contrast**: e.g., Solarized Dark, Gruvbox Dark Hard
-  - **Warm**: e.g., Gruvbox Dark, Tokyo Night
-  - **Cool / focus**: e.g., Nord, Dracula
-  - **Bright / daylight**: e.g., Solarized Light, Catppuccin Latte
-- A keybinding or script to cycle through them (or pick from a list via rofi/wofi)
-- Persist the current selection so new Alacritty windows use it
+`theme-select` currently switches themes for Alacritty and Zellij. Waybar uses a separate `frappe.css` color file imported via CSS `@import` in `style.css`. The `@import` is baked into the nix store at build time (`builtins.readFile`), but waybar resolves the import path **at runtime** — meaning the imported color file in the dotfiles repo is already mutable. No changes to `waybar.nix` needed.
 
-## Design considerations
+Waybar reloads on `SIGUSR2` (default behavior), so theme changes are instant.
 
-- Alacritty supports `import` in its config and live-reloads on config change — could swap an imported theme file
-- Could also extend to Helix / other tools for full environment theme switching
-- Keep it simple initially — Alacritty first, expand later if useful
+### Bug fix
 
-## Files
+`style.css:19` references `@subtext2` which doesn't exist in `frappe.css` (only `subtext0` and `subtext1`). Fix to `@subtext1`.
 
-- `nixos/home/alacritty.nix` — theme import mechanism
-- New: theme files or script for cycling
-- Possibly `hypr/hyprland.conf` — keybinding to trigger
+### Files to change
+
+| File | Action |
+|------|--------|
+| `waybar/themes/*.css` | **Create** — color CSS files for each curated theme |
+| `waybar/colors.css` | **Create** — active color file (defaults to catppuccin-frappe) |
+| `waybar/style.css` | **Modify** — change `@import` from `frappe.css` to `colors.css` |
+| `scripts/theme-select` | **Modify** — add waybar color swap + SIGUSR2 reload |
+
+### Step 1: Create `waybar/themes/` color files
+
+Create a CSS file for each of the 7 curated themes, each defining the same `@define-color` variables. Use hyphenated names matching the Zellij convention:
+
+- `catppuccin-frappe.css` — exact copy of current `frappe.css`
+- `catppuccin-mocha.css` — from catppuccin/waybar published palette
+- `gruvbox-dark.css` — mapped from gruvbox palette
+- `nord.css` — mapped from nord palette
+- `rose-pine.css` — mapped from rose pine palette
+- `solarized-light.css` — mapped from solarized palette
+- `tokyo-night.css` — mapped from tokyo night palette
+
+Each file defines all 26 variables (base, mantle, crust, text, subtext0/1, surface0/1/2, overlay0/1/2, and the 14 accent colors). For non-Catppuccin themes, accent colors are mapped semantically (e.g., nord aurora → rosewater/flamingo/mauve/etc.).
+
+Variables actually used in style.css today: `mantle`, `base`, `text`, `subtext1`, `rosewater`, `flamingo`, `peach`, `red`. All 26 defined for forward-compatibility.
+
+### Step 2: Create `waybar/colors.css`
+
+Copy of `catppuccin-frappe.css` content. This is the "active" color file that `theme-select` overwrites at runtime. Tracked in git (like `zellij/config.kdl`).
+
+### Step 3: Update `waybar/style.css`
+
+Change `@import` from `frappe.css` to `colors.css`. Fix `@subtext2` → `@subtext1`.
+
+### Step 4: Update `scripts/theme-select`
+
+After the Zellij block, add waybar color swap + `pkill -SIGUSR2 waybar`. Reuses the `$zellij_name` variable (underscore→hyphen). If no matching waybar theme file exists, waybar keeps current colors.
+
+Simplify notification to just `"$name"` (no longer Zellij-specific).
+
+### Verification
+
+1. Rebuild with `nrs` (one-time, to bake the new @import path)
+2. `theme-select nord` → check `waybar/colors.css` has nord colors, waybar reloads instantly
+3. `theme-select catppuccin_frappe` → reverts to frappe
+4. Pick an uncurated theme → waybar stays on current colors, Alacritty changes

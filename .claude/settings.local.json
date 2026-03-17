@@ -25,7 +25,9 @@
       "WebFetch(domain:github.com)",
       "WebFetch(domain:api.github.com)",
       "WebFetch(domain:raw.githubusercontent.com)",
-      "WebFetch(domain:www.anthropic.com)"
+      "WebFetch(domain:www.anthropic.com)",
+      "WebFetch(domain:nix.catppuccin.com)",
+      "Bash(nix flake show:*)"
     ],
     "deny": [
       "Bash(git add *)",
