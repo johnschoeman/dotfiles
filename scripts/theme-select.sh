@@ -58,7 +58,14 @@ set_theme() {
     pkill -SIGUSR2 waybar || true
   fi
 
-  # Update Helix theme (new instances only)
+  # Update Rofi colors (next launch)
+  rofi_theme="$HOME/dotfiles/rofi/themes/$zellij_name.rasi"
+  rofi_colors="$HOME/dotfiles/rofi/colors.rasi"
+  if [[ -f "$rofi_theme" ]]; then
+    cp "$rofi_theme" "$rofi_colors"
+  fi
+
+  # Update Helix theme (new instances only, can reload with space + T)
   declare -A helix_map=(
     [gruvbox_dark]=gruvbox
     [tokyo_night]=tokyonight

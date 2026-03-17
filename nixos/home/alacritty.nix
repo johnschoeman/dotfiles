@@ -1,7 +1,5 @@
 { pkgs, config, ... }:
 {
-  catppuccin.alacritty.enable = false;
-
   home.packages = [
     pkgs.alacritty
   ];

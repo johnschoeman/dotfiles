@@ -40,7 +40,7 @@ hypridle via home-manager `services.hypridle` in `hyprland.nix`. Lock at 600s, d
 Only `rustup` is installed globally (for ad-hoc `rustc`/`cargo`). Project-specific tools (cargo-watch, cargo-generate, trunk, leptosfmt, etc.) belong in devenv templates, not `home.nix`.
 
 **Theme approach**
-Catppuccin Frappe is the base/default theme. `catppuccin/nix` flake is a flake input with global `catppuccin.enable = true` + `catppuccin.flavor = "frappe"` in home.nix. Per-app theming is automatic for supported programs. Theme cycling across multiple palettes is planned (task 11).
+`theme-select` is the single source of truth for theming. It switches Alacritty, Zellij, Waybar, and Helix at runtime — no rebuild needed. Catppuccin Frappe is the default. The `catppuccin/nix` module was removed because it created a hybrid where some programs were nix-managed (locked to frappe, reset on rebuild) and others were `theme-select`-managed. Yazi theme is a mutable symlink (`yazi/theme.toml`) so it can be added to `theme-select` later. Mako has hardcoded frappe colors in `hyprland.nix` — also a candidate for future `theme-select` integration.
 
 ---
 
@@ -71,7 +71,7 @@ Catppuccin Frappe is the base/default theme. `catppuccin/nix` flake is a flake i
 - Mutable symlinks: `config.lib.file.mkOutOfStoreSymlink` creates a direct symlink to a repo path — file stays mutable. Use for configs that apps write to (e.g., Claude Code `settings.json`) or configs you want to edit without rebuild (e.g., hyprland.conf). Regular `home.file.source` copies to the nix store (read-only). Requires `config` in the module's function args.
 - clippy conflict: don't install standalone `clippy` alongside `rustup` — both provide `cargo-clippy`. Use `rustup component add clippy` instead.
 - `rofi-wayland` has been merged into `rofi` in nixpkgs-unstable — just use `pkgs.rofi`
-- catppuccin/nix `catppuccin.enable = true` auto-sets theme options on supported programs (helix, rofi, etc.) — don't also set theme manually or you get conflicts
+- catppuccin/nix was removed — all theming is now runtime via `theme-select` and mutable dotfiles
 
 **Alacritty**
 - Live-reloads on config file change — no restart needed for theme/color updates

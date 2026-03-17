@@ -1,7 +1,5 @@
 { pkgs, config, ... }:
 {
-  catppuccin.helix.enable = false;
-
   home.packages = [
     pkgs.helix
   ];

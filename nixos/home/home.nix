@@ -22,11 +22,6 @@
     /home/john/dotfiles/nixos/home/zellij.nix
   ];
 
-  catppuccin = {
-    enable = true;
-    flavor = "frappe";
-  };
-
   home.sessionVariables = {
     EDITOR = "hx";
   };
