@@ -25,7 +25,7 @@ From the planning doc's **Focus** section, read the referenced priority and goal
 - What are the current high-level priorities?
 - What should be getting the most attention right now?
 
-### 3. Active Items → Next Actions
+### 3. Active Items and Next Actions
 
 From the planning doc's **Active items** section, find items matching the "active" criteria described there.
 
@@ -34,8 +34,6 @@ For each active item:
 - **Extract Next Actions** — incomplete tasks (`- [ ]`) from each item
 - Flag items with **no Next Actions** defined (needs planning attention)
 - Flag items that appear **stalled** (no recent updates, empty task lists)
-
-This surfaces actual work to be done, not just item names.
 
 ### 4. Queued Items
 
@@ -60,52 +58,7 @@ Compare active work against priorities:
 - Are active items aligned with stated focus?
 - Is anything important being neglected?
 - Is lower-priority work crowding out higher-priority work?
-- Any drift from priorities?
 
 ### 8. Output Summary
 
-Provide a structured summary. Adapt section names to match the repo's terminology:
-
-```
-## Planning Status Check
-
-### Focus
-- [High-level priorities summary]
-- [Current period focus]
-
-### Active Items
-**[Item Name]** - [relevant metadata]
-- [ ] [Next action 1]
-- [ ] [Next action 2]
-
-**[Item Name]** - [relevant metadata]
-- [ ] [Next action 1]
-
-### Queued
-- [Item list]
-
-### Recent Activity
-- [What's getting attention]
-- [Patterns observed]
-
-### [Repo-Specific Sections]
-- [As defined in planning.md]
-
-### Observations
-- [Alignment concerns or drift]
-- [Stalled or under-planned items]
-- [Things going well]
-
-### Recommended Focus
-1. [Highest priority action]
-2. [Second priority]
-3. [If time remains]
-```
-
-## When to Use
-
-- Weekly planning or check-in
-- When feeling scattered or wanting to refocus
-- When unsure what to work on next
-- After completing a major milestone
-- Before status updates or 1:1s
+Provide a structured summary using the [output template in REFERENCE.md](REFERENCE.md#output-template).

@@ -45,16 +45,14 @@ Read the target file and follow the guidance from the context file's **Target fi
 
 1. Find the appropriate section for this insight (or create one if needed)
 2. Add the new information, matching the doc's existing style
-3. Add source reference using the format from the context file's **Source reference format** section
-4. Follow any additional per-target rules from the context file
+3. Add source reference using the format from the context file
+4. Follow any additional per-target rules
 
 **Be selective:** Only add genuinely new or valuable insights. Don't duplicate existing content.
 
 #### Handle Actionable Items
 
-Follow the context file's **Actionable items** section — this varies by repo:
-- Some repos want actions written to specific files
-- Others want actions flagged in output only
+Follow the context file's **Actionable items** section — this varies by repo.
 
 #### Flag for Active Work
 
@@ -62,7 +60,7 @@ Check if insights are relevant to active items in the location specified by the 
 
 If relevant, note in output: "This may be relevant to [item]: [why]"
 
-Don't automatically modify active work files unless the context file says otherwise — just flag for user awareness.
+Don't automatically modify active work files unless the context file says otherwise.
 
 ### 4. Mark Note as Processed
 
@@ -71,29 +69,9 @@ After processing:
 2. Add `date-processed: YYYY-MM-DD` to the YAML frontmatter
 3. Move the file to `_processed/` within the input folder
 
-This keeps the input folder as a clean inbox.
-
 ### 5. Report Summary
 
-Output a summary:
-
-```
-## Synthesis Complete
-
-**Processed:** [filename]
-
-**Updated:**
-- [target file] - Added [what]
-
-**Active work flags:**
-- [item]: [insight] may be relevant because [reason]
-
-**Actionable items:**
-- [what was done per context file guidance]
-
-**Skipped:**
-- [target] - No new insights to add
-```
+Output a summary using the [template in REFERENCE.md](REFERENCE.md#output-template).
 
 ## Tips
 

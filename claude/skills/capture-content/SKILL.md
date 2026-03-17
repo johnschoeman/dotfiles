@@ -44,62 +44,20 @@ For videos or audio, ask the user to paste a transcript or their manual notes.
 
 ### 4. Extract Notes
 
-Create structured notes with YAML frontmatter and standard body sections:
-
-```markdown
----
-source: [URL, file path, or "pasted"]
-type: [blog/article/report/video/podcast/pdf]
-date-captured: YYYY-MM-DD
-author: [if known]
----
-
-# [Title]
-
-## Summary
-
-[2-3 sentences on the main point]
-
-## Key Takeaways
-
-- [Bullet points of main insights]
-- [Focus on actionable or quotable items]
-- [Include relevant statistics or data points]
-
-## Relevant To
-
-[Checkbox template from context file — see step 5]
-
-## Quotes
-
-> [Notable passages worth preserving]
-
-## Questions / Follow-ups
-
-- [Things to explore further]
-- [Skepticism or things to verify]
-
-## Raw Notes
-
-[Additional unstructured notes, details]
-```
+Create structured notes using the [template in REFERENCE.md](REFERENCE.md#note-template).
 
 ### 5. Fill Out Relevant To
 
 Using the **Relevance targets** template from the context file:
 
 - **Be selective** — only include targets that are clearly relevant
-- **Remove irrelevant lines** — delete checkboxes that don't apply (keep it clean)
-- **Check active work** — read the location specified in the context file's **Active work** section to check for relevance to current projects/initiatives
-- Note author credibility if known (researcher, practitioner, vendor, etc.)
+- **Remove irrelevant lines** — delete checkboxes that don't apply
+- **Check active work** — read the location specified in the context file's **Active work** section
+- Note author credibility if known
 
 ### 6. Save Notes
 
-Save to the path from the context file's **Save path** section, using filename format: `YYYY-MM-DD-[slug].md`
-
-- Use today's date
-- Create a slug from the title (lowercase, hyphens, no special chars)
-- Example: `2026-03-03-effective-prompt-engineering.md`
+Save to the path from the context file's **Save path** section, using the [filename format in REFERENCE.md](REFERENCE.md#filename-format).
 
 ### 7. Report Back
 

@@ -68,82 +68,13 @@ Based on:
 Does this look right? Adjust hours, initiative, category, or description?
 ```
 
-**Guidance for each field:**
-
-- **Date:** Today's date (YYYY-MM-DD format)
+**Field guidance:**
+- **Date:** Today's date (YYYY-MM-DD)
 - **Hours:** Estimate from session duration. Round to nearest 0.5h. If unclear, ask.
-- **Initiative:** Match folder names in `~/workspace/evolv-notes/initiative-planning/initiatives/`, or use `learning` (personal projects, skill building) or `admin` (meetings, planning, misc overhead). Check existing timesheet entries for consistency.
-- **Category:** One of `roadmap`, `stakeholder`, `reactive`, `learning` — matches capacity budget in priority framework
-  - `roadmap` — Initiative work on the roadmap (claude-code-pilot, knowledge-hub, safety-governance, user-research)
-  - `stakeholder` — Meetings, 1:1s, admin, planning
-  - `reactive` — Quick wins, ad-hoc requests, office hours
-  - `learning` — Personal skill building, tool exploration, training
-- **Description:** Concise summary. Include key activities, not just initiative name.
+- **Initiative:** Match folder names in initiatives dir, or use `learning`/`admin`
+- **Category:** `roadmap` | `stakeholder` | `reactive` | `learning`
+- **Description:** Concise summary of key activities
 
-### 4. Confirm and Append
+### 4-6. Confirm, Follow-up, Summary
 
-After user confirms (or adjusts):
-
-1. Read `~/workspace/evolv-notes/_daily/timesheet.md` to find the current month's table
-2. Append the entry as a new row at the end of the current month's table (before the week totals section)
-3. If the month section doesn't exist yet, create it with the table header:
-   ```
-   ### [Month Name]
-
-   | Date       | Hours | Initiative | Category | Description                                     |
-   | ---------- | ----- | ---------- | -------- | ----------------------------------------------- |
-   | ...        | ...   | ...        | ...      | ...                                             |
-   ```
-4. Update the week totals if they exist — add hours to the current week's total, or create a new week entry
-
-### 5. Ask About Other Work
-
-After appending the entry, ask:
-
-> Any other work today not captured here? (meetings, learning, work in other repos, etc.)
-> Say "done" to skip.
-
-If the user describes additional work:
-- Propose another entry following the same format
-- Repeat until user says "done" or skips
-
-### 6. Summary
-
-Show a brief summary:
-
-```
-Logged today:
-- Xh: initiative (category) — description
-- Yh: initiative (category) — description
-Total: Zh
-
-Week so far: [total]h / 20h target
-```
-
-## Table Format Reference
-
-The timesheet table uses this exact format:
-
-```
-| Date       | Hours | Initiative | Category | Description                                     |
-| ---------- | ----- | ---------- | -------- | ----------------------------------------------- |
-```
-
-- Date: `YYYY-MM-DD`
-- Hours: number (0.5 increments)
-- Initiative: lowercase, hyphenated (match existing entries)
-- Category: `roadmap` | `stakeholder` | `reactive` | `learning`
-- Description: free text, concise
-
-## Valid Values
-
-**Initiatives** (from `~/workspace/evolv-notes/initiative-planning/initiatives/`):
-- `claude-code-pilot`, `knowledge-hub`, `safety-governance`, `ai-agent-pilot`, `user-research`
-- `learning` — personal projects, skill building
-- `admin` — meetings, planning, overhead
-
-**Categories** (from priority framework):
-- `roadmap` — initiative delivery work
-- `stakeholder` — meetings, 1:1s, admin
-- `reactive` — ad-hoc requests, quick wins
-- `learning` — skill building, exploration
+After user confirms, append to timesheet, ask about other work, then show summary. See [REFERENCE.md](REFERENCE.md) for detailed steps, table format, and valid values.

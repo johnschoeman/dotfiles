@@ -12,10 +12,10 @@ Analyze git commit history to reveal patterns in how files are modified together
 
 ### 1. Run the Analysis
 
-Use `analyze_colocations.sh` with the user-provided timeframe (default: 6 months).
+Use the bundled script with the user-provided timeframe (default: 6 months).
 
 ```bash
-analyze_colocations.sh [OPTIONS] [MONTHS]
+~/.claude/skills/git-analysis/scripts/analyze_colocations.sh [OPTIONS] [MONTHS]
 ```
 
 **Options:**
@@ -45,6 +45,8 @@ Summarize findings with:
 - Cross-folder patterns worth noting
 - Surprises — unexpected relationships
 - Suggestions — restructuring ideas, if any patterns are strong
+
+See [EXAMPLES.md](EXAMPLES.md) for a sample analysis and what to look for.
 
 ## Tips
 

@@ -21,7 +21,7 @@ Then stop.
 
 ### 2. Read Focus & Priorities
 
-From the planning doc's **Focus** section, read the referenced plan and goals documents (e.g., `_2026-plan.md`, `_goals.md`).
+From the planning doc's **Focus** section, read the referenced plan and goals documents.
 
 Extract:
 - North Star (primary yearly focus)
@@ -32,11 +32,7 @@ Extract:
 
 Calculate today's date. Look for `_daily/dn_YYYY-MM-DD.md`.
 
-**If it exists:** Read it. Note any items already filled in:
-- "Who do I want to be today?" intention
-- Habit checklist items (the `- [ ]` items before the first `---` separator after the intention)
-- Minimum section items
-- Killing It section items
+**If it exists:** Read it. Note any items already filled in (intention, habits, minimum, killing it).
 
 **If it doesn't exist:** Note this — will prompt the user in the output.
 
@@ -48,7 +44,6 @@ Extract:
 - Completed items (`- [x]`)
 - Uncompleted items (`- [ ]`) that may need to carry forward
 - Notes section content
-- Intention if filled in
 
 ### 4a. Read Previous Day's Session Log
 
@@ -59,17 +54,11 @@ Extract:
 - Open threads / items left incomplete (look for **Open:** sections)
 - Key decisions, artifacts created, or tasks created
 
-If no session log exists, skip — this is supplementary context.
+If no session log exists, skip.
 
 ### 4b. Read Recent Git History
 
-Run `git log --since="yesterday" --oneline` to get recent commits.
-
-Extract:
-- What was committed (commit messages)
-- Rough volume (number of commits)
-
-If no commits, skip.
+Run `git log --since="yesterday" --oneline` to get recent commits. Summarize briefly. If none, skip.
 
 ### 5. Find Latest Weekly Note
 
@@ -86,65 +75,16 @@ Extract:
 **Projects:** From the planning doc's **Active items** section, find projects matching the active criteria (typically `status: now` in frontmatter).
 
 For each active project:
-- Read the file
 - Extract project name (from H1 heading)
-- Extract incomplete Next Actions (`- [ ]` items from the `## Next Actions` section)
+- Extract incomplete Next Actions (`- [ ]` from `## Next Actions`)
 - Note the project's domains
 
-Skip the template file (`_project_template.md`).
+Skip `_project_template.md`.
 
-**Task files:** Read all files in `tasks/` with frontmatter `status: this-week` or `status: in-progress`. These are the active task items to include in today's plan alongside project next actions. Note each task's domain and priority for ranking.
+**Task files:** Read all files in `tasks/` with frontmatter `status: this-week` or `status: in-progress`. Note each task's domain and priority for ranking.
 
 ### 7. Rank and Output
 
 Produce the daily briefing. Rank project actions by alignment with current weekly intentions and North Star priorities.
 
-## Output Format
-
-Print to conversation (never write to files):
-
-```
-## Today — [Day of Week], [Month Day, Year]
-
-### Intention
-[If today's note has "Who do I want to be today?" filled in, reflect it back]
-[If blank or no daily note: "Your intention is blank — take a moment to fill in 'Who do I want to be today?' in your daily note."]
-
-### Today's Plan
-
-**Habits**
-- [ ] [habit items from daily note template — track weight, water, meds, etc.]
-
-**Must-dos** (from daily note Minimum section + weekly action items due)
-- [ ] [items from Minimum section]
-- [ ] [relevant weekly action items]
-
-**Project work** (ranked by priority alignment)
-- **[Project Name]**: [specific next action from project file]
-- **[Project Name]**: [specific next action]
-[Include 2-4 most aligned project actions, not exhaustive list]
-
-**Stretch** (from Killing It section + lower-priority items)
-- [ ] [items from Killing It if any]
-
-### Yesterday
-[Session log summaries — what was actually worked on, decisions made, artifacts created]
-[Git commits — what shipped (commit messages, brief)]
-[Daily note completed/uncompleted items if any]
-[Carryover — open threads from session log + uncompleted daily note items that should carry forward]
-
-### This Week
-[From weekly note — current intentions/priorities, relevant incomplete action items]
-[Note any red flags flagged in the weekly review]
-```
-
-## Tone
-
-- Brief and actionable — this is a morning kickstart, not a report
-- Present tense, forward-looking
-- Flag carryover items from yesterday without judgment
-- Session log is the richest source for "what happened yesterday" — lead with it over daily note activity
-- Keep git commit lists brief — summarize, don't list every commit
-- If daily note is missing, say so simply and suggest creating one
-- Don't repeat the full project descriptions — just names and next actions
-- If a section has no content (e.g., no Killing It items), omit it rather than showing empty sections
+Use the [output format](REFERENCE.md#output-format) and [tone guidance](REFERENCE.md#tone) from REFERENCE.md.
