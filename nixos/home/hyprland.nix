@@ -14,24 +14,11 @@
   ];
 
   # notification daemon (required for notify-send / Claude Code hooks)
-  # Catppuccin Frappe colors
-  services.mako = {
-    enable = true;
-    settings = {
-      background-color = "#303446";
-      text-color = "#c6d0f5";
-      border-color = "#8caaee";
-      width = 300;
-      border-radius = 8;
-      border-size = 2;
-      default-timeout = 5000;
+  # colors managed by scripts/theme-select.sh
+  services.mako.enable = true;
 
-      "urgency=critical" = {
-        border-color = "#e78284";
-        default-timeout = 10000;
-      };
-    };
-  };
+  xdg.configFile."mako/config".source =
+    config.lib.file.mkOutOfStoreSymlink "/home/john/dotfiles/mako/config";
 
   wayland.windowManager.hyprland.enable = true;
   xdg.configFile."hypr/hyprland.conf".source =

@@ -65,6 +65,15 @@ set_theme() {
     cp "$rofi_theme" "$rofi_colors"
   fi
 
+  # Update Mako colors (instant reload)
+  mako_theme="$HOME/dotfiles/mako/themes/$zellij_name.conf"
+  mako_base="$HOME/dotfiles/mako/base.conf"
+  mako_config="$HOME/dotfiles/mako/config"
+  if [[ -f "$mako_theme" ]]; then
+    cat "$mako_base" "$mako_theme" > "$mako_config"
+    makoctl reload || true
+  fi
+
   # Update Helix theme (new instances only, can reload with space + T)
   declare -A helix_map=(
     [gruvbox_dark]=gruvbox
