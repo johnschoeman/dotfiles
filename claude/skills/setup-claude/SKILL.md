@@ -20,6 +20,7 @@ Check which of these exist and read their contents:
 - `.claude/docs/content-capture.md`
 - `.claude/docs/content-synthesis.md`
 - `.claude/docs/close-day.md`
+- `.claude/docs/tasks.md`
 
 **If none exist** → run [Fresh Setup](#fresh-setup)
 
@@ -57,6 +58,7 @@ Ask the user which they want. Create from [templates](REFERENCE.md#doc-templates
 - **content-capture.md** — enables `/content-capture`
 - **content-synthesis.md** — enables `/content-synthesize`
 - **close-day.md** — enables `/wrap-day`
+- **tasks.md** — enables `/task-board`, `/task-create`, `/task-update`, `/task-groom`, `/task-plan`
 
 Show summary using the [output format](REFERENCE.md#summary-output).
 

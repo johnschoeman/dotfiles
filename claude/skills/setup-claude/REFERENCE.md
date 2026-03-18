@@ -140,6 +140,51 @@ PATH_TO_NOTES_DIRECTORY
 PATH_TO_ACTIVE_WORK
 ```
 
+### tasks.md
+
+```markdown
+# Task Config
+
+## Storage
+
+- **type:** markdown-files
+- **path:** tasks/
+- **done_path:** tasks/_done/
+
+## Format
+
+<!-- Skills read task files in this directory to infer format.
+     Add sections below to override defaults. -->
+
+<!-- Optional sections — add as needed:
+
+## Fields
+
+### status
+- **values:** now, next, later, done
+- **default:** later
+
+### priority
+- **values:** high, medium, low
+- **default:** medium
+
+## Template
+
+(paste your task file template here)
+
+## Filename
+
+- **pattern:** slug-from-title.md
+
+## Board
+
+- **group_by:** status
+- **group_order:** now, next, later
+- **sort_within:** priority
+- **done_recent_days:** 7
+-->
+```
+
 ## Summary Output
 
 Show the user what was created:
@@ -154,6 +199,7 @@ Show the user what was created:
 - .claude/docs/planning.md — [created / skipped / already existed]
 - .claude/docs/content-capture.md — [created / skipped / already existed]
 - .claude/docs/content-synthesis.md — [created / skipped / already existed]
+- .claude/docs/tasks.md — [created / skipped / already existed]
 
 **Next steps:**
 - Review CLAUDE.md and adjust as needed
