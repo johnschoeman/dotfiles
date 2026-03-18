@@ -116,7 +116,7 @@ PATH_TO_ACTIVE_WORK
 
 ## Input folder
 
-<!-- Where unprocessed captured notes live (output of /capture-content). -->
+<!-- Where unprocessed captured notes live (output of /content-capture). -->
 PATH_TO_NOTES_DIRECTORY
 
 ## Target files

@@ -1,9 +1,9 @@
 ---
-name: close-day
-description: Evening close-out — walk through today's daily note, complete habits/tasks, capture reflection, carry forward incomplete items. Use at end of day or when saying "close day".
+name: wrap-day
+description: Evening close-out — walk through today's daily note, complete habits/tasks, capture reflection, carry forward incomplete items. Use at end of day or when saying "wrap day".
 ---
 
-# Close Day
+# Wrap Day
 
 Evening bookend to `/today`. Walks through the daily note interactively — complete habits, review tasks, capture reflection, carry forward incomplete items. Reads repo-specific configuration from `.claude/docs/close-day.md`.
 

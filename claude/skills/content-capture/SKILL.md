@@ -1,10 +1,10 @@
 ---
-name: capture-content
+name: content-capture
 description: Generate structured notes from blog posts, PDFs, or transcripts. Use when consuming content for learning - pass a URL or paste content.
 argument-hint: [url, path, or paste text]
 ---
 
-# Capture Content
+# Content Capture
 
 Extract and structure notes from content for later synthesis. Reads repo-specific configuration from `.claude/docs/content-capture.md`.
 
@@ -16,7 +16,7 @@ Read `.claude/docs/content-capture.md` in the current repository.
 
 **If the file is missing**, tell the user:
 
-> No content capture context found. To use `/capture-content`, create `.claude/docs/content-capture.md` with these sections:
+> No content capture context found. To use `/content-capture`, create `.claude/docs/content-capture.md` with these sections:
 >
 > - **Save path** — where to write captured notes
 > - **Relevance targets** — checkbox template for the "Relevant To" section
@@ -64,7 +64,7 @@ Save to the path from the context file's **Save path** section, using the [filen
 Tell the user:
 - Where the notes were saved
 - Which targets seem relevant
-- Suggest running `/synthesize-learning` when ready to process
+- Suggest running `/content-synthesize` when ready to process
 
 ## Tips
 

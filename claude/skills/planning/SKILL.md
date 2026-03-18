@@ -1,9 +1,9 @@
 ---
-name: planning-check
-description: Review the current state of planning — active work, queued items, priorities, and alignment. Use when the user wants a status check, asks "how am I doing", or wants to review priorities. Reads repo-specific planning context from .claude/docs/planning.md.
+name: planning
+description: Review the current state of planning — active work, queued items, priorities, and alignment. Use when the user wants a status check, says "planning", asks "how am I doing", or wants to review priorities. Reads repo-specific planning context from .claude/docs/planning.md.
 ---
 
-# Planning Status Check
+# Planning
 
 Review the current state of planning by reading the repo's planning context and following its references.
 
@@ -15,7 +15,7 @@ Read `.claude/docs/planning.md` in the current repository.
 
 **If the file is missing**, tell the user:
 
-> No planning context found. To use `/planning-check`, create `.claude/docs/planning.md` describing your planning setup — focus areas, where active/queued items live, and where recent activity is tracked.
+> No planning context found. To use `/planning`, create `.claude/docs/planning.md` describing your planning setup — focus areas, where active/queued items live, and where recent activity is tracked.
 
 Then stop.
 

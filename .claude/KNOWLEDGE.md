@@ -16,7 +16,7 @@ Daily files in `.claude/session-history/YYYY-MM-DD.md` instead of a single `SESS
 `~/dotfiles/scripts/` is on Fish PATH (via `fish_add_path` in `fish.nix`). Scripts there are available as bare commands — reference them by name in skills and docs, not by absolute path.
 
 **Global skill pattern**
-Global skills in `claude/skills/` define the process; repo-specific `.claude/docs/` files provide configuration. Skills validate their context file at startup and bail with guidance if missing or incomplete. Pattern used by: `planning-check` (reads `planning.md`), `capture-content` (reads `content-capture.md`), `synthesize-learning` (reads `content-synthesis.md`). Variants: `git-analysis` uses a global script with CLI flags for repo-specific customization instead of a context file. `project-init` is standalone (no context file) — one-time setup that creates CLAUDE.md, `.claude/` infrastructure, and optional `.claude/docs/` templates.
+Global skills in `claude/skills/` define the process; repo-specific `.claude/docs/` files provide configuration. Skills validate their context file at startup and bail with guidance if missing or incomplete. Pattern used by: `planning` (reads `planning.md`), `content-capture` (reads `content-capture.md`), `content-synthesize` (reads `content-synthesis.md`), `wrap-day` (reads `close-day.md`). Variants: `git-analysis` uses a global script with CLI flags. `setup-claude` is standalone — creates CLAUDE.md + `.claude/` infrastructure, or audits existing setup. `commit` defaults to suggest-only, `--run` flag commits (checks CLAUDE.md for git rules first). `wrap-session` chains `/update-session-log` → `/update-knowledge` → `/commit`.
 
 **Git Workflow section is verbatim**
 The Git Workflow section in CLAUDE.md is identical across every project — user manages commits, `/update-session-log` + `git status` + `commit-msg.txt` + remind pattern, standard commit format (imperative title, "Why:" paragraph, "This commit:" bullets), never modify history. Enforced by `/project-init` which inserts it as a fixed block.
@@ -78,13 +78,17 @@ NixOS is the primary machine; macOS is actively used alongside it. Both platform
 - clippy conflict: don't install standalone `clippy` alongside `rustup` — both provide `cargo-clippy`. Use `rustup component add clippy` instead.
 - `rofi-wayland` has been merged into `rofi` in nixpkgs-unstable — just use `pkgs.rofi`
 - catppuccin/nix was removed — all theming is now runtime via `theme-select` and mutable dotfiles
+
 - Hyprlock reads config fresh on each launch — no reload mechanism needed, theme changes apply on next lock
 - Mako doesn't support imports — uses concatenation (`cat base + theme > config`) instead of the symlink pattern used by waybar/rofi/hyprlock
 - SDDM theming: `catppuccin-sddm` package with `.override { flavor; accent; font; }`, needs `qtsvg` in `extraPackages` and system-level font package (SDDM can't see home-manager fonts)
+- `home.pointerCursor` sets `XCURSOR_SIZE` and `HYPRCURSOR_SIZE` env vars automatically — don't set them manually in hyprland.conf. Requires logout/login to take effect.
+- home-manager backup collisions (e.g., `config.kdl.backup` already exists): add `force = true` to the `xdg.configFile` declaration to overwrite in place instead of backing up
 
 **macOS / Homebrew**
 - `brew bundle --file=Brewfile` is idempotent — safe to re-run, only installs missing items
 - Root `gitconfig` in repo is the macOS git config (symlinked by setup script); NixOS uses declarative `git.nix` instead
+
 
 **Alacritty**
 - Live-reloads on config file change — no restart needed for theme/color updates

@@ -1,9 +1,9 @@
 ---
-name: synthesize-learning
-description: Process raw content notes into target docs and flag relevant items for active work. Use after capturing content with /capture-content.
+name: content-synthesize
+description: Process raw content notes into target docs and flag relevant items for active work. Use after capturing content with /content-capture.
 ---
 
-# Synthesize Learning
+# Content Synthesize
 
 Process raw content notes into target documents and flag items relevant to active work. Reads repo-specific configuration from `.claude/docs/content-synthesis.md`.
 
@@ -15,7 +15,7 @@ Read `.claude/docs/content-synthesis.md` in the current repository.
 
 **If the file is missing**, tell the user:
 
-> No content synthesis context found. To use `/synthesize-learning`, create `.claude/docs/content-synthesis.md` with these sections:
+> No content synthesis context found. To use `/content-synthesize`, create `.claude/docs/content-synthesis.md` with these sections:
 >
 > - **Input folder** — where unprocessed notes live
 > - **Target files** — table of synthesis destinations with guidance
