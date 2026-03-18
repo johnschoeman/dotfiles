@@ -4,6 +4,7 @@
     waybar
     xdg-utils
     hyprcursor
+    bibata-cursors
 
     # screenshot
     hyprshot
@@ -12,6 +13,14 @@
     jq
     libnotify
   ];
+
+  home.pointerCursor = {
+    name = "Bibata-Modern-Classic";
+    package = pkgs.bibata-cursors;
+    size = 12;
+    gtk.enable = true;
+    hyprcursor.enable = true;
+  };
 
   # notification daemon (required for notify-send / Claude Code hooks)
   # colors managed by scripts/theme-select.sh
