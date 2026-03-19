@@ -11,7 +11,6 @@
   bb            = branch
   bd            = branch -d
   bdd           = branch -D
-  bdjts         = ! git branch -D `git branch | grep -E 'jts-*'`
   c             = commit
   cc            = commit -am
   ca            = commit --amend
@@ -20,7 +19,6 @@
   caan          = commit -a --amend --no-edit
   cap           = commit -p --amend
   caap          = commit -ap --amend
-  cdate         = ! git commit -m `date "+%Y-%m-%d_%H:%M:%S" | awk '{ print $1 }'`
   cm            = commit -m
   caw           = commit -am "wip"
   cp            = commit -p
@@ -32,12 +30,11 @@
   dc            = diff --word-diff --cached --color-words
   df            = diff --word-diff --color-words
   l             = log --oneline
-  ld            = log --oneline --decorate ; usage: git log --oneline --decorate main my-branch
+  ld            = log --oneline --decorate
   ll            = log --oneline --decorate --graph -40
   lla           = log --oneline --decorate --graph --all -40
   llg           = log --oneline --decorate --graph --first-parent main -40
   lg            = log -E -i --grep
-  lnumstat      = log --pretty=tformat: --numstat
   ls            = log --oneline
   lw            = log --date=relative --since='1 week ago' --oneline
   mup           = !git checkout main && git pull && git checkout -
@@ -49,17 +46,14 @@
   ri            = rebase -i main
   ua            = reset
   uc            = reset --soft HEAD^
-  ustage        = reset HEAD --
   us            = reset HEAD --
   undo          = co
-  ; author        = log --oneline --author="Author Name" --pretty=format:"%h - %an, %ar : %s"
 [core]
-	excludesfile  = /Users/johnschoeman/.gitignore_global
   autocrlf      = input
 [merge]
   ff            = only
 [commit]
-	template      = ~/.gitmessage
+  template      = ~/.gitmessage
 [fetch]
   prune         = true
 [rebase]
@@ -69,9 +63,7 @@
 [diff]
   colorMoved    = zebra
 [user]
-	name          = John Schoeman
-	email         = johnschoeman1617@gmail.com
-[http]
-	postBuffer    = 1572864000
+  name          = John Schoeman
+  email         = johnschoeman1617@gmail.com
 [init]
-	defaultBranch = main
+  defaultBranch = main

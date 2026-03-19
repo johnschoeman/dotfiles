@@ -1,0 +1,39 @@
+# mac/Brewfile — Homebrew packages for macOS dev environment
+
+# CLI tools
+brew "fish"
+brew "helix"
+brew "zellij"
+brew "bat"
+brew "fzf"
+brew "fd"
+brew "ripgrep"
+brew "eza"
+brew "zoxide"
+brew "gitui"
+brew "dust"
+brew "dua-cli"
+brew "fastfetch"
+brew "starship"
+brew "btop"
+brew "htop"
+brew "atuin"
+brew "xh"
+brew "direnv"
+brew "pandoc"
+cask "timer"
+
+# Dev tools
+brew "node"
+brew "pnpm"
+brew "python@3"
+brew "rustup"
+
+# Fonts
+cask "font-jetbrains-mono-nerd-font"
+
+# GUI apps (installed to ~/Applications via --appdir in setup_mac.sh)
+cask "alacritty"
+cask "obsidian"
+cask "google-chrome"
+cask "rectangle"
