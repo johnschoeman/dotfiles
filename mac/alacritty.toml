@@ -3,3 +3,4 @@ import = ["~/.config/alacritty/current-theme.toml"]
 
 [window]
 opacity = 0.9
+option_as_alt = "OnlyLeft"

@@ -1,5 +1,4 @@
 {
-  "model": "opus",
   "hooks": {
     "Notification": [
       {
@@ -7,7 +6,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "/home/john/dotfiles/scripts/claude-notify.sh",
+            "command": "$HOME/dotfiles/scripts/claude-notify.sh",
             "timeout": 5
           }
         ]
@@ -16,7 +15,7 @@
   },
   "statusLine": {
     "type": "command",
-    "command": "/home/john/dotfiles/scripts/claude-statusline.sh"
+    "command": "$HOME/dotfiles/scripts/claude-statusline.sh"
   },
   "enabledPlugins": {
     "rust-analyzer-lsp@claude-plugins-official": true,

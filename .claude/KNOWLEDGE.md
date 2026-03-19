@@ -40,7 +40,13 @@ hypridle via home-manager `services.hypridle` in `hyprland.nix`. Lock at 600s, d
 Only `rustup` is installed globally (for ad-hoc `rustc`/`cargo`). Project-specific tools (cargo-watch, cargo-generate, trunk, leptosfmt, etc.) belong in devenv templates, not `home.nix`.
 
 **Theme approach**
-`theme-select` is the single source of truth for theming. It switches Alacritty, Zellij, Waybar, and Helix at runtime — no rebuild needed. Catppuccin Frappe is the default. The `catppuccin/nix` module was removed because it created a hybrid where some programs were nix-managed (locked to frappe, reset on rebuild) and others were `theme-select`-managed. Yazi theme is a mutable symlink (`yazi/theme.toml`) so it can be added to `theme-select` later. Mako was integrated into `theme-select` on 2026-03-17 — all themed programs now switch at runtime.
+`theme-select` is the single source of truth for runtime theming. Switches Alacritty, Zellij, Waybar, Helix, Rofi, Yazi, Mako, and Hyprlock at runtime — no rebuild needed. Catppuccin Frappe is the default. Super+T cycles themes, Super+Shift+T opens rofi picker. SDDM is themed separately (fixed Catppuccin Frappe via `catppuccin-sddm` nixpkg) since it runs before login. The `catppuccin/nix` module was removed — all theming is runtime via mutable dotfiles.
+
+**macOS setup approach**
+`mac/` uses an idempotent Homebrew + symlink setup script. `Brewfile` declares packages. Fish and Alacritty configs are macOS-adapted versions of the NixOS equivalents (pbcopy instead of wl-copy, `/opt/homebrew` paths). nix-darwin is a future exploration candidate for declarative macOS management.
+
+**Dual-platform maintenance (NixOS + macOS)**
+NixOS is the primary machine; macOS is actively used alongside it. Both platforms share the same tool stack (Fish, Alacritty, Zellij, Helix, Git) but configs diverge where platform differences require it (e.g., `option_as_alt` on macOS Alacritty, `pbcopy` vs `wl-copy` in Fish, `/opt/homebrew` paths). NixOS configs live in `nixos/` (declarative), macOS configs live in `mac/` (imperative Brew + symlinks). When changing shared tooling, consider whether both platforms need updating.
 
 ---
 
@@ -72,6 +78,13 @@ Only `rustup` is installed globally (for ad-hoc `rustc`/`cargo`). Project-specif
 - clippy conflict: don't install standalone `clippy` alongside `rustup` — both provide `cargo-clippy`. Use `rustup component add clippy` instead.
 - `rofi-wayland` has been merged into `rofi` in nixpkgs-unstable — just use `pkgs.rofi`
 - catppuccin/nix was removed — all theming is now runtime via `theme-select` and mutable dotfiles
+- Hyprlock reads config fresh on each launch — no reload mechanism needed, theme changes apply on next lock
+- Mako doesn't support imports — uses concatenation (`cat base + theme > config`) instead of the symlink pattern used by waybar/rofi/hyprlock
+- SDDM theming: `catppuccin-sddm` package with `.override { flavor; accent; font; }`, needs `qtsvg` in `extraPackages` and system-level font package (SDDM can't see home-manager fonts)
+
+**macOS / Homebrew**
+- `brew bundle --file=Brewfile` is idempotent — safe to re-run, only installs missing items
+- Root `gitconfig` in repo is the macOS git config (symlinked by setup script); NixOS uses declarative `git.nix` instead
 
 **Alacritty**
 - Live-reloads on config file change — no restart needed for theme/color updates
