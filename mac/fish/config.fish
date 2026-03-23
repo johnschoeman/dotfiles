@@ -18,6 +18,10 @@ direnv hook fish | source
 alias v "hx"
 alias h "hx"
 
+#### Homebrew
+
+alias brewfile "brew bundle --file=~/dotfiles/mac/Brewfile"
+
 #### Utilities
 
 alias ls "eza -la"
