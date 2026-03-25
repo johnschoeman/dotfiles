@@ -8,7 +8,7 @@
     enable = true;
     settings = {
       general.import = [ "/home/john/.config/alacritty/current-theme.toml" ];
-      window.opacity = 0.9;
+      window.opacity = 1.0;
     };
   };
 
