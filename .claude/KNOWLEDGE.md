@@ -18,6 +18,12 @@ Daily files in `.claude/session-history/YYYY-MM-DD.md` instead of a single `SESS
 **Global skill pattern**
 Global skills in `claude/skills/` define the process; repo-specific `.claude/docs/` files provide configuration. Skills validate their context file at startup and bail with guidance if missing or incomplete. Pattern used by: `planning` (reads `planning.md`), `content-capture` (reads `content-capture.md`), `content-synthesize` (reads `content-synthesis.md`), `wrap-day` (reads `close-day.md`). Variants: `git-analysis` uses a global script with CLI flags. `setup-claude` is standalone — creates CLAUDE.md + `.claude/` infrastructure, or audits existing setup. `commit` defaults to suggest-only, `--run` flag commits (checks CLAUDE.md for git rules first). `wrap-session` chains `/update-session-log` → `/update-knowledge` → `/commit`.
 
+**Project-local skill overrides**
+`.claude/skills/<name>/SKILL.md` in a project repo overrides the global skill of the same name. Used for project-specific commit conventions, task thresholds, session logging, etc. The `add-project-skill` catalog scaffolds these from templates.
+
+**Skill catalog pattern (`add-project-skill`)**
+`claude/skills/add-project-skill/catalog/` holds templates for scaffolding project-local skill overrides. Each catalog entry is a directory: `README.md` (description, detection hints, customization questions) + `.template` files (with `{{placeholder}}` markers). No registry — skill discovers templates by scanning `catalog/*/README.md`. Generated skills include `<!-- catalog: <name> v1 -->` for audit version tracking. `--audit` flag compares existing project skills against catalog.
+
 **Git Workflow section is verbatim**
 The Git Workflow section in CLAUDE.md is identical across every project — user manages commits, `/update-session-log` + `git status` + `commit-msg.txt` + remind pattern, standard commit format (imperative title, "Why:" paragraph, "This commit:" bullets), never modify history. Enforced by `/project-init` which inserts it as a fixed block.
 
