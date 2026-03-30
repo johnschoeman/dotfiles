@@ -1,0 +1,50 @@
+---
+name: today
+description: Morning daily briefing — {{briefing_description}}. Use when starting the day, saying "today", or wanting a morning plan.
+---
+
+# Today — Daily Briefing
+
+Read-only morning command. Gathers context from {{context_summary}}, then outputs a concise daily plan. Does not modify any files.
+
+## Process
+
+### 1. Load Planning Context
+
+{{load_planning_instructions}}
+
+### 2. Read Focus & Priorities
+
+{{focus_instructions}}
+
+### 3. Find Today's Daily Note
+
+Calculate today's date. Look for {{daily_note_pattern}}.
+
+**If it exists:** Read it. Note any items already filled in.
+
+**If it doesn't exist:** Note this — will prompt the user in the output.
+
+### 4. Find Yesterday's Context
+
+{{yesterday_instructions}}
+
+{{session_log_instructions}}
+
+{{git_log_instructions}}
+
+### 5. Find Latest Weekly Note
+
+{{weekly_note_instructions}}
+
+### 6. Read Active Work
+
+{{active_work_instructions}}
+
+### 7. Rank and Output
+
+Produce the daily briefing. Rank actions by alignment with current priorities.
+
+Use the [output format](REFERENCE.md#output-format) and [tone guidance](REFERENCE.md#tone) from REFERENCE.md.
+{{extra_notes}}
+<!-- catalog: today v1 -->

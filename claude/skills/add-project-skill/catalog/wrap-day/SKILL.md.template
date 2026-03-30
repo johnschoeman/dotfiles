@@ -1,0 +1,60 @@
+---
+name: wrap-day
+description: Evening close-out — walk through today's daily note, complete habits/tasks, capture reflection, carry forward incomplete items. Use at end of day or when saying "wrap day".
+---
+
+# Wrap Day
+
+Evening bookend to `/today`. Walks through the daily note interactively — complete habits, review tasks, capture reflection, carry forward incomplete items.
+
+## Process
+
+### 1. Load Config
+
+{{load_config_instructions}}
+
+### 2. Find Today's Daily Note
+
+Calculate today's date. Look for the daily note at: {{daily_note_path_pattern}}
+
+**If it exists:** Read it and proceed to step 3.
+
+**If it doesn't exist:** Tell the user no daily note was found for today. Offer to create one from the template. If user declines, stop. If user accepts, create the note from {{template_path}}, then proceed.
+
+### 3. Scan What's Already Filled In
+
+Read the note and identify which sections already have content. Track which sections are filled vs empty — this determines prompting behavior in step 4.
+
+### 4. Walk Through Sections Interactively
+
+{{sections_instructions}}
+
+**Keep it low-friction** — 3-5 prompts total across all sections. Combine where natural. Don't over-ask.
+
+### 5. Carryover Check
+
+{{carryover_instructions}}
+
+### 6. Summary
+
+Print a brief recap:
+
+```
+## Day Closed
+
+**Completed:** [count] items checked off
+**Carried forward:** [count] items → tomorrow
+**Sections updated:** [list]
+```
+
+{{follow_up_instructions}}
+
+## Tone
+
+- Conversational and low-key — this is end-of-day, not a status report
+- Don't judge incomplete items — just ask what carries forward
+- Keep prompts short — the user is tired
+- If a section is already complete, acknowledge briefly and move on
+- Treat the whole flow as 2-3 minutes max
+{{extra_notes}}
+<!-- catalog: wrap-day v1 -->

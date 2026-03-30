@@ -2,7 +2,8 @@
 
 ## Setup
 
-function fish_greeting; end
+function fish_greeting
+end
 fish_add_path /opt/homebrew/bin
 fish_add_path ~/dotfiles/scripts
 set -gx EDITOR hx
@@ -15,8 +16,8 @@ direnv hook fish | source
 
 #### Helix
 
-alias v "hx"
-alias h "hx"
+alias v hx
+alias h hx
 
 #### Homebrew
 
@@ -25,14 +26,15 @@ alias brewfile "brew bundle --file=~/dotfiles/mac/Brewfile"
 #### Utilities
 
 alias ls "eza -la"
-alias cat "bat"
-alias cd "z"
-alias find "fd"
+alias cat bat
+alias cd z
+alias find fd
 alias bell "afplay ~/dotfiles/media/bell.wav"
-alias copy "pbcopy"
-alias paste "pbpaste"
+alias copy pbcopy
+alias paste pbpaste
 alias ccm "bat commit-msg.txt | pbcopy"
-alias neofetch "fastfetch"
+alias neofetch fastfetch
+alias open-deck "npx @marp-team/marp-cli --server ~/workspace/evolv-notes/_decks/ --preview"
 
 ## Functions
 

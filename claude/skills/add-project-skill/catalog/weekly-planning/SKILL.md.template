@@ -1,0 +1,63 @@
+---
+name: weekly-planning
+description: Weekly planning session — review priorities, active work, and set focus for the week. Use when starting a planning session, saying "weekly planning", or wanting to review and set priorities.
+---
+
+# Weekly Planning
+
+Review the current state of work and set focus for the coming {{cadence_period}}.
+
+## Process
+
+### 1. Load Planning Context
+
+{{load_context_instructions}}
+
+### 2. Read Focus / Priorities
+
+{{focus_instructions}}
+
+Summarize:
+- What are the current high-level priorities?
+- What should be getting the most attention right now?
+
+### 3. Active Items and Next Actions
+
+{{active_items_source}}
+
+For each active item:
+- Show its name and relevant metadata
+- **Extract Next Actions** — incomplete tasks (`- [ ]`) from each item
+- Flag items with **no Next Actions** defined (needs planning attention)
+- Flag items that appear **stalled** (no recent updates, empty task lists)
+
+### 4. Queued Items
+
+List items that are ready when capacity opens. These inform what to pull in next.
+
+### 5. Recent Activity
+
+{{recent_activity_instructions}}
+
+Assess:
+- What's been getting attention lately?
+- Any areas being neglected?
+- Any recurring themes or concerns?
+
+{{extra_review_steps}}
+
+### 6. Alignment Check
+
+Compare active work against priorities:
+- Are active items aligned with stated focus?
+- Is anything important being neglected?
+- Is lower-priority work crowding out higher-priority work?
+
+### 7. Output Summary
+
+Provide a structured summary using the [output template in REFERENCE.md](REFERENCE.md#output-template).
+
+## Notes
+
+{{planning_notes}}
+<!-- catalog: weekly-planning v1 -->

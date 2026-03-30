@@ -1,0 +1,57 @@
+---
+name: content-synthesize
+description: Process raw content notes into target docs and flag relevant items for active work. Use after capturing content with /content-capture.
+---
+
+# Content Synthesize
+
+Process raw content notes into target documents and flag items relevant to active work.
+
+## Process
+
+### 1. Load Context
+
+{{load_context_instructions}}
+
+### 2. Find Unprocessed Notes
+
+List `.md` files in {{input_folder}} (root level only, not `_processed/`).
+
+If user specifies a file, process just that one. Otherwise, ask which to process or process all if few.
+
+### 3. For Each Note
+
+Read the note and its "Relevant To" section (if present).
+
+For each relevant target:
+
+#### Update Target Docs
+
+{{target_update_instructions}}
+
+**Be selective:** Only add genuinely new or valuable insights. Don't duplicate existing content.
+
+#### Handle Actionable Items
+
+{{actionable_instructions}}
+
+#### Flag for Active Work
+
+{{active_work_instructions}}
+
+### 4. Mark Note as Processed
+
+{{processed_handling_instructions}}
+
+### 5. Report Summary
+
+Output a summary using the [template in REFERENCE.md](REFERENCE.md#output-template).
+
+## Tips
+
+- Don't over-synthesize — not every note needs to update every target
+- Preserve the original note — synthesis adds to target docs, doesn't replace notes
+- Flag active work relevance liberally — better to flag too much than miss something
+- Match the existing style of target files when adding content
+{{extra_tips}}
+<!-- catalog: content-synthesize v1 -->

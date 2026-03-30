@@ -1,0 +1,31 @@
+# Test Me On — Assessment Rubric
+
+## Scoring Approach
+
+{{scoring_approach}}
+
+## Summary Format
+
+After 3-5 questions, provide:
+
+```
+## Results
+
+**Nailed:**
+- [Practice they demonstrated well] — [specific example from their answer]
+
+**Revisit:**
+- [Practice they missed or partially got] — [what the module says, with a brief explanation]
+- See: [link to module section]
+```
+
+## Question Generation Guidelines
+
+When generating questions beyond the pre-written "Test Yourself" section:
+
+1. **Start from a scenario**, not a concept. Bad: "What is the rule?" Good: "You're in this situation, what do you do?"
+2. **Include realistic constraints.** Add time pressure, competing priorities, or ambiguous inputs.
+{{domain_question_guidance}}
+4. **Test judgment, not recall.** The best questions have multiple defensible answers — you're assessing whether they reason about tradeoffs.
+5. **One right answer isn't enough.** If a user gives a valid approach not in the module, credit it and note what the module additionally recommends.
+<!-- catalog: test-me-on v1 -->

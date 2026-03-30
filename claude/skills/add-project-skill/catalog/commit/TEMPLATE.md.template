@@ -1,0 +1,9 @@
+{{prefix_format}}{{title}}
+
+Why:
+
+{{motivation}}
+
+This commit:
+
+{{changes}}

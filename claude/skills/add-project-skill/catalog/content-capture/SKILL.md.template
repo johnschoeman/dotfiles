@@ -1,0 +1,54 @@
+---
+name: content-capture
+description: Generate structured notes from blog posts, PDFs, or transcripts. Use when consuming content for learning — pass a URL or paste content.
+argument-hint: [url, path, or paste text]
+---
+
+# Content Capture
+
+Extract and structure notes from content for later synthesis.
+
+## Process
+
+### 1. Load Context
+
+{{load_context_instructions}}
+
+### 2. Check Scope
+
+{{scope_instructions}}
+
+### 3. Fetch/Read Content
+
+The user provides one of:
+
+- **URL** — use WebFetch to get content
+- **PDF path** — use Read tool
+- **Pasted text** — use as-is
+
+For videos or audio, ask the user to paste a transcript or their manual notes.
+
+### 4. Extract Notes
+
+Create structured notes using the [template in REFERENCE.md](REFERENCE.md#note-template).
+
+### 5. Fill Out Relevant To
+
+{{relevance_instructions}}
+
+### 6. Save Notes
+
+Save to {{save_path}}, using the [filename format in REFERENCE.md](REFERENCE.md#filename-format).
+
+### 7. Report Back
+
+Tell the user:
+- Where the notes were saved
+{{relevance_report}}
+{{follow_up_instructions}}
+
+## Tips
+
+- Preserve statistics and data points — these are high value
+{{extra_tips}}
+<!-- catalog: content-capture v1 -->

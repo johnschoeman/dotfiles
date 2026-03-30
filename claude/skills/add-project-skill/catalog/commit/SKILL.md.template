@@ -1,0 +1,53 @@
+---
+name: commit
+description: Review git state and create a commit message following repository conventions. {{run_mode_description}}. Use when the user wants to commit, says "commit", or asks for a commit message.
+argument-hint: [--run]
+---
+
+# Commit
+
+{{headline}}
+
+## Process
+
+### 1. Gather Git State
+
+Run in parallel:
+
+```bash
+git status
+git diff --staged
+git diff
+git log --oneline -5
+```
+
+If no changes are staged or modified, inform the user and stop.
+
+### 2. Analyze Changes
+
+- What files are modified, added, or deleted?
+- What is the nature of the changes? (new feature, fix, refactor, docs, etc.)
+- Why were these changes made? (infer from context)
+{{exclude_section}}
+
+### 3. Write Commit Message
+
+Copy `TEMPLATE.md` from this skill directory and fill in the placeholders.
+{{prefix_instructions}}
+
+{{message_format_notes}}
+
+### 4. Write to File
+
+Write the commit message to `commit-msg.txt` in the project root.
+
+### 5. Deliver
+
+{{deliver_section}}
+
+## Notes
+
+- For trivial changes (typos, minor tweaks), keep the message simple
+- Don't include file lists in commit messages unless they add clarity
+{{extra_notes}}
+<!-- catalog: commit v1 -->

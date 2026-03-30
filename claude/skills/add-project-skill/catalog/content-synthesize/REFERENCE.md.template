@@ -1,0 +1,21 @@
+# Content Synthesize — Reference
+
+## Output Template
+
+```
+## Synthesis Complete
+
+**Processed:** [filename]
+
+**Updated:**
+- [target file] — Added [what]
+
+{{active_work_output}}
+
+{{actionable_output}}
+
+**Skipped:**
+- [target] — No new insights to add
+```
+{{extra_reference}}
+<!-- catalog: content-synthesize v1 -->

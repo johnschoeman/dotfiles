@@ -1,0 +1,63 @@
+---
+name: update-session-log
+description: Capture session context for cross-session continuity. Run after significant work to record goals, tradeoffs, open threads, and surprises.
+---
+
+# Update Session Log
+
+Write a structured entry in {{log_path_pattern}} capturing context that helps future sessions pick up where this one left off.
+
+## Process
+
+### 1. Review the Session
+
+Look back through the conversation to understand:
+- What was the goal or thread?
+- What happened — what approach was taken, what tradeoffs were made?
+{{entry_review_bullets}}
+- What's left incomplete or unresolved?
+
+### 2. Check Git State
+
+{{git_grounding_instructions}}
+
+### 3. Read Recent History
+
+Create {{log_directory}} if it doesn't exist.
+
+Read today's file if it exists — you'll append to it (multiple sessions per day are normal).
+
+Also read the most recent 2-3 files for continuity context and to avoid duplicating recent entries.
+
+### 4. Write Entry
+
+Write to {{log_path_pattern}}.
+
+If creating a new file, start with a date header:
+
+```markdown
+# YYYY-MM-DD
+
+```
+
+Then append the entry:
+
+{{entry_template}}
+
+### 5. Show the User
+
+Display the entry you wrote so they can review it.
+
+{{follow_up_instructions}}
+
+## What to Capture
+
+{{capture_guidance}}
+
+## What NOT to Capture
+
+- File-by-file change lists (git history covers this)
+- Implementation details (code + commits cover this)
+- Stable decisions or knowledge (belongs in KNOWLEDGE.md)
+{{extra_notes}}
+<!-- catalog: update-session-log v1 -->

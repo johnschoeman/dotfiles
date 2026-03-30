@@ -1,0 +1,26 @@
+---
+name: wrap-session
+description: End-of-session wrap-up — {{session_description}}. Use when finishing a work session, saying "wrap up", or ready to commit and close out.
+---
+
+# Wrap Session
+
+{{steps_summary}}
+
+## Process
+
+{{session_log_step}}
+
+{{knowledge_step}}
+
+{{extra_steps}}
+
+{{commit_step}}
+
+## Notes
+
+- Each step builds on context from the previous — run sequentially, not in parallel
+- If there are no uncommitted changes, skip the commit step and note it
+- The session log captures narrative; knowledge captures stable facts — don't duplicate between them
+{{extra_notes}}
+<!-- catalog: wrap-session v1 -->

@@ -1,0 +1,71 @@
+---
+name: weekly-review
+description: Weekly review — reflect on what happened, capture learnings, and close out the week. Use when wrapping up a week, saying "weekly review", or wanting to reflect on progress.
+---
+
+# Weekly Review
+
+Look back at the past week's work, capture learnings, and prepare for next week.
+
+## Process
+
+### 1. Gather Activity
+
+{{review_sources_instructions}}
+
+Timeframe: last 7 days (from today).
+
+### 2. Summarize What Happened
+
+Group activity into themes:
+- What areas got attention?
+- What was completed vs started vs in progress?
+- Any surprises or unplanned work?
+
+{{metrics_section}}
+
+### 3. Reflect
+
+{{reflection_instructions}}
+
+### 4. Capture Learnings
+
+{{knowledge_capture_instructions}}
+
+### 5. Look Ahead
+
+Based on the review:
+- What carries forward to next week?
+- What should be prioritized?
+- Any blockers to flag?
+
+### 6. Output
+
+{{output_instructions}}
+
+```
+## Weekly Review — {{date_range}}
+
+### Completed
+- [Items finished this week]
+
+### In Progress
+- [Items actively worked on]
+
+### {{reflection_heading}}
+{{reflection_template}}
+
+### Learnings
+- [Anything worth remembering]
+
+### Carry Forward
+- [What needs attention next week]
+```
+
+## Notes
+
+- This is a reflection tool, not a status report — be honest about what actually happened
+- Keep it concise — 5-10 minutes to run, not an hour
+- Pairs well with `/weekly-planning` — review first, then plan
+{{extra_notes}}
+<!-- catalog: weekly-review v1 -->

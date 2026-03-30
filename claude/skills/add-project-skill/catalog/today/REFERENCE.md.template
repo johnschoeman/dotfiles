@@ -1,0 +1,44 @@
+# Today — Reference
+
+## Output Format
+
+Print to conversation (never write to files):
+
+```
+## Today — [Day of Week], [Month Day, Year]
+
+{{intention_section}}
+
+### Today's Plan
+
+{{habits_section}}
+
+**Must-dos** (from daily note + weekly action items due)
+- [ ] [items from daily note minimum/must-do section]
+- [ ] [relevant weekly action items]
+
+**Project work** (ranked by priority alignment)
+- **[Project Name]**: [specific next action]
+- **[Project Name]**: [specific next action]
+[Include 2-4 most aligned actions, not exhaustive list]
+
+{{stretch_section}}
+
+### Yesterday
+{{yesterday_format}}
+
+### This Week
+{{this_week_format}}
+```
+
+## Tone
+
+- Brief and actionable — this is a morning kickstart, not a report
+- Present tense, forward-looking
+- Flag carryover items from yesterday without judgment
+- Keep git commit lists brief — summarize, don't list every commit
+- If daily note is missing, say so simply and suggest creating one
+- Don't repeat full project descriptions — just names and next actions
+- If a section has no content, omit it rather than showing empty sections
+{{extra_tone_notes}}
+<!-- catalog: today v1 -->
