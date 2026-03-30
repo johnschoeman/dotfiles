@@ -1,0 +1,67 @@
+---
+name: code-review
+description: Review code changes against project standards — {{review_focus_summary}}. Use when reviewing a PR, diff, or set of changes, or saying "review this".
+argument-hint: [file, PR number, or branch]
+---
+
+# Code Review
+
+Review code changes against this project's standards and conventions.
+
+## Process
+
+### 1. Gather Changes
+
+Determine what to review based on the argument:
+
+- **No argument** — review uncommitted changes: `git diff` and `git diff --staged`
+- **File path** — review that specific file
+- **Branch name** — review diff against main: `git diff main...<branch>`
+- **PR number** — fetch PR diff via `gh pr diff <number>`
+
+If nothing to review, inform the user and stop.
+
+### 2. Understand Context
+
+Read (in parallel, skip if missing):
+- `CLAUDE.md` — project conventions
+- Related test files for the changed code
+- Recent git log for the changed files to understand evolution
+
+### 3. Review Against Checklist
+
+{{checklist_instructions}}
+
+### 4. Check Sensitive Paths
+
+{{sensitive_paths_instructions}}
+
+### 5. Deliver Feedback
+
+{{review_style_instructions}}
+
+Categorize findings by severity:
+- **Must fix** — bugs, security issues, data loss risks
+- **Should fix** — convention violations, missing error handling, unclear naming
+- **Consider** — style suggestions, alternative approaches, minor improvements
+- **Looks good** — things done well worth calling out
+
+### 6. Summary
+
+```
+## Review Summary
+
+**Verdict:** [Approve / Request Changes / Comment]
+**Must fix:** N issues
+**Should fix:** N issues
+**Consider:** N suggestions
+```
+
+## Notes
+
+- Be specific — reference exact lines and explain why, not just what
+- Suggest fixes, don't just point out problems
+- Acknowledge good patterns — reinforcement matters
+- Don't nitpick formatting if there's a linter
+{{extra_notes}}
+<!-- catalog: code-review v1 -->

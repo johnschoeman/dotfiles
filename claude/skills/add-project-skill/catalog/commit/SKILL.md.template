@@ -35,6 +35,10 @@ If no changes are staged or modified, inform the user and stop.
 Copy `TEMPLATE.md` from this skill directory and fill in the placeholders.
 {{prefix_instructions}}
 
+**Title:** imperative mood, max 50 chars, no period, capitalize first letter.
+
+**Body:** explain WHY not just WHAT, wrap at 72 chars, bullet points for multiple changes.
+
 {{message_format_notes}}
 
 ### 4. Write to File

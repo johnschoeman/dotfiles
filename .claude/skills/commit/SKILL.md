@@ -43,7 +43,7 @@ Why:
 
 This commit:
 
-- <bullet points of actual changes>
+- <bullet points of actual changes, wrap at 72 chars>
 - <only uncommitted changes, not already-committed work>
 ```
 

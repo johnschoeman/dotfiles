@@ -1,0 +1,54 @@
+---
+name: deploy
+description: Run pre-deploy checks and guide deployment to {{deploy_target_name}}. Use when deploying, saying "deploy", or preparing a release.
+---
+
+# Deploy
+
+Pre-deploy checks and deployment guidance for this project.
+
+## Process
+
+### 1. Pre-Deploy Checks
+
+{{pre_deploy_instructions}}
+
+If any check fails, stop and report what needs fixing.
+
+### 2. Confirm Readiness
+
+Show the user:
+- What will be deployed (branch, commit, summary of changes)
+- Which checks passed
+- Target environment
+
+Ask for confirmation before proceeding.
+
+### 3. Deploy
+
+{{deploy_instructions}}
+
+### 4. Verify
+
+{{verify_instructions}}
+
+### 5. Report
+
+```
+## Deploy Complete
+
+**Target:** {{deploy_target_name}}
+**Branch:** [branch]
+**Commit:** [short hash] — [message]
+**Status:** [success/failed]
+```
+
+{{rollback_section}}
+
+## Notes
+
+- Never deploy without running pre-deploy checks
+- Always confirm with the user before deploying
+{{environment_notes}}
+{{extra_notes}}
+<!-- catalog: deploy v1 -->

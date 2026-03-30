@@ -1,0 +1,51 @@
+---
+name: onboarding
+description: Get up to speed on this project — structure, conventions, active work, and how things fit together. Use when starting fresh, returning after a break, or saying "onboard me".
+---
+
+# Onboarding
+
+{{onboarding_headline}}
+
+## Process
+
+### 1. Gather Project Context
+
+Read (in parallel, skip if missing):
+- `CLAUDE.md` — project overview, structure, conventions
+- `README.md` — public-facing project description
+- `.claude/KNOWLEDGE.md` — accumulated decisions and learnings
+- Recent session history (last 2-3 entries from `.claude/session-history/`)
+- `tasks/` — active work items
+
+### 2. Project Overview
+
+Summarize:
+- What is this project and why does it exist?
+- What's the tech stack?
+- What are the key directories and files?
+
+### 3. Conventions and Workflow
+
+{{conventions_instructions}}
+
+### 4. Active Work
+
+{{active_work_instructions}}
+
+### 5. Recent Context
+
+{{recent_context_instructions}}
+
+### 6. Deliver
+
+{{output_instructions}}
+
+## Notes
+
+- Keep it concise — onboarding should take minutes, not hours
+- Link to files rather than reproducing their content
+- Flag things that are surprising or non-obvious
+- If the project has gaps (no README, no tests, no CLAUDE.md), note them as setup opportunities
+{{extra_notes}}
+<!-- catalog: onboarding v1 -->
