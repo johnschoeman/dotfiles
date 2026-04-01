@@ -61,8 +61,10 @@
     obsidian           # note-taking
     discord            # chat app
     zoom-us            # video calls
+    teams-for-linux    # Microsoft Teams
     google-chrome      # web browser
     claude-code        # AI coding CLI
+    
 
     # python
     python315          # Python runtime
