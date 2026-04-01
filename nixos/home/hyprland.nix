@@ -12,6 +12,10 @@
     slurp
     jq
     libnotify
+
+    # screen recording
+    wf-recorder
+    ffmpeg
   ];
 
   home.pointerCursor = {

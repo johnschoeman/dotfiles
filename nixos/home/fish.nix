@@ -41,6 +41,7 @@
       alias copy "wl-copy"
       alias paste "wl-paste"
       alias ccm "bat commit-msg.txt | wl-copy"
+      alias rec "gif-record.sh"
 
       ## Functions
 
