@@ -101,5 +101,6 @@
     htop               # process viewer
     poppler-utils      # pdf reading
     pandoc             # doc reading
+    jfrog-cli          # JFrog Artifactory CLI
   ];
 }
