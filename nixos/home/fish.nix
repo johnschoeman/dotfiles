@@ -58,6 +58,20 @@
           end
       end
 
+      # jfrog-login
+      #
+      # Load JFrog npm auth token from 1Password.
+      # Run once per session before using npm/pnpm with Artifactory.
+
+      function jfrog-login --description "Load JFrog npm token from 1Password"
+          set -gx JFROG_NPM_TOKEN (op read "op://Personal/JFrog Artifactory Token/token" 2>/dev/null)
+          if test $status -eq 0
+              echo "JFrog npm token loaded."
+          else
+              echo "Failed to load JFrog token. Is 1Password unlocked?" >&2
+          end
+      end
+
       # pom
       #
       # No arguments: `timer 25m && bell`

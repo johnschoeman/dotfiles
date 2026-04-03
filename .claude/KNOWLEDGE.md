@@ -42,6 +42,9 @@ Remapped from Ctrl to Alt to avoid conflicts with Claude Code keybindings.
 **Idle management**
 hypridle via home-manager `services.hypridle` in `hyprland.nix`. Lock at 600s, dpms off at 900s, no suspend. Replaces swayidle + `hypr/suspend.sh`. Starts as a systemd user service — no `exec-once` needed.
 
+**npm/JFrog auth approach**
+`~/.npmrc` managed via `home.file` in `npm.nix`, not `programs.npm.settings` — scoped registry auth keys (`//host/path/:_authToken`) have slashes and colons that don't work as Nix attribute names, and `programs.npm.enable` would conflict with existing `nodejs_24` in home.packages. Auth token loaded at runtime via `${JFROG_NPM_TOKEN}` env var (npm interpolates env vars in `.npmrc`). Token sourced from 1Password CLI (`op read`) via `jfrog-login` fish function — no sops-nix needed since 1Password is already configured.
+
 **Rust tooling strategy**
 Only `rustup` is installed globally (for ad-hoc `rustc`/`cargo`). Project-specific tools (cargo-watch, cargo-generate, trunk, leptosfmt, etc.) belong in devenv templates, not `home.nix`.
 

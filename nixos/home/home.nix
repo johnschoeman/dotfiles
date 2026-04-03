@@ -32,6 +32,7 @@
     /home/john/dotfiles/nixos/home/helix.nix
     /home/john/dotfiles/nixos/home/hyprland.nix
     /home/john/dotfiles/nixos/home/nh.nix
+    /home/john/dotfiles/nixos/home/npm.nix
     /home/john/dotfiles/nixos/home/rofi.nix
     /home/john/dotfiles/nixos/home/waybar.nix
     /home/john/dotfiles/nixos/home/yazi.nix
