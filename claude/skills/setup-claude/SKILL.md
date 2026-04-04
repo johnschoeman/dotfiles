@@ -56,8 +56,8 @@ Ask the user which they want. Create from [templates](REFERENCE.md#doc-templates
 
 - **planning.md** — enables `/planning`
 - **content-capture.md** — enables `/content-capture`
-- **content-synthesis.md** — enables `/content-synthesize`
-- **close-day.md** — enables `/wrap-day`
+- **content-synthesis.md** — enables `/content-process`
+- **close-day.md** — enables `/today-wrap`
 - **tasks.md** — enables `/task-board`, `/task-create`, `/task-update`, `/task-groom`, `/task-plan`
 
 Show summary using the [output format](REFERENCE.md#summary-output).

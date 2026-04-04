@@ -35,7 +35,7 @@ Project consumes external content (research, articles, reports) and needs struct
    - `custom` — Ask user to describe scope rules
 
 5. **follow_up** — What to suggest after capturing?
-   - `synthesize` — Suggest running `/content-synthesize` (default)
+   - `synthesize` — Suggest running `/content-process` (default)
    - `nothing` — Just show where the notes were saved
    - `custom` — Ask user what to suggest
 

@@ -1,9 +1,9 @@
 ---
-name: content-synthesize
+name: content-process
 description: Process raw content notes into target docs and flag relevant items for active work. Use after capturing content with /content-capture.
 ---
 
-# Content Synthesize
+# Content Process
 
 Process raw content notes into target documents and flag items relevant to active work.
 
@@ -54,4 +54,4 @@ Output a summary using the [template in REFERENCE.md](REFERENCE.md#output-templa
 - Flag active work relevance liberally — better to flag too much than miss something
 - Match the existing style of target files when adding content
 {{extra_tips}}
-<!-- catalog: content-synthesize v1 -->
+<!-- catalog: content-process v1 -->

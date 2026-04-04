@@ -1,4 +1,4 @@
-# wrap-day
+# today-wrap
 
 Project-specific end-of-day close-out — walk through daily note, complete habits/tasks, capture reflection, carry forward incomplete items.
 
@@ -33,7 +33,7 @@ Project uses daily notes or has a daily cadence of tracked habits, tasks, or tim
    - `custom` — Ask user to describe
 
 5. **follow_up** — What to prompt at the end?
-   - `session-log` — Suggest running `/update-session-log` (default)
+   - `session-log` — Suggest running `/session-update` (default)
    - `commit` — Suggest running `/commit`
    - `none` — Just show the summary
    - `custom` — Ask user what to suggest

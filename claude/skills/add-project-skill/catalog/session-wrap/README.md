@@ -1,4 +1,4 @@
-# wrap-session
+# session-wrap
 
 Project-specific end-of-session wrap-up — capture session context, persist knowledge, and suggest a commit.
 

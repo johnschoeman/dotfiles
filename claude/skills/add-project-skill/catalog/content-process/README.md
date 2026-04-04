@@ -1,4 +1,4 @@
-# content-synthesize
+# content-process
 
 Project-specific content synthesis — process raw notes into target docs and flag relevant items for active work.
 

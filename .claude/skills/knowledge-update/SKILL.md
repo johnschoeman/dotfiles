@@ -1,9 +1,9 @@
 ---
-name: update-knowledge
-description: Review and update .claude/KNOWLEDGE.md with stable knowledge from the session — {{knowledge_scope}}. Run when you've learned something worth persisting.
+name: knowledge-update
+description: Review and update .claude/KNOWLEDGE.md with stable knowledge from the session — decisions, learnings, operational context. Run when you've learned something worth persisting.
 ---
 
-# Update Knowledge
+# Knowledge Update
 
 Review the session for stable knowledge worth persisting and update `.claude/KNOWLEDGE.md`.
 
@@ -20,22 +20,37 @@ Stable knowledge for this repository. Read at session start. Organized by topic,
 
 ---
 
-{{category_sections}}
+## Decisions
+
+[Choices and reasoning — why X not Y. Things that shouldn't be re-litigated.]
+
+## Learnings
+
+[Discovered facts, gotchas, technical notes. Things figured out through experience.]
 ```
 
 ### 2. Review the Session
 
 Look through the conversation for knowledge that should persist:
 
-{{capture_criteria_instructions}}
+**Decisions** — choices with reasoning. Prescriptive — guides future behavior.
+- "We use X because Y"
+- "A not B, because..."
+- NixOS configuration choices, tool preferences, workflow decisions
+
+**Learnings** — discovered facts. Descriptive — saves rediscovery.
+- Nix/NixOS gotchas and workarounds
+- How home-manager modules actually behave
+- Hyprland/Waybar configuration quirks
+- Operational values (paths, commands) needed repeatedly
 
 ### 3. Check for Stale Entries
 
-{{staleness_instructions}}
+Review existing entries against what you now know. Flag anything outdated or contradicted by the session's work.
 
 ### 4. Update the File
 
-- Add new entries under the appropriate section
+- Add new entries under the appropriate section (Decisions or Learnings)
 - Use topic subheadings within each section to organize by area
 - Revise entries that are now outdated
 - Remove entries that are no longer true
@@ -44,8 +59,6 @@ Look through the conversation for knowledge that should persist:
 
 Summarize what was added, revised, or removed so they can review.
 
-{{after_update_instructions}}
-
 ## Guidelines
 
 - Organize by topic, not chronologically
@@ -53,5 +66,4 @@ Summarize what was added, revised, or removed so they can review.
 - Remove entries that become outdated
 - Only add knowledge that's stable and confirmed — not speculative
 - This is distinct from the session log: knowledge = stable facts and decisions, session log = what happened when
-{{extra_notes}}
-<!-- catalog: update-knowledge v1 -->
+<!-- catalog: knowledge-update v1 -->

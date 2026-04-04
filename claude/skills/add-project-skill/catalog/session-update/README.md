@@ -1,4 +1,4 @@
-# update-session-log
+# session-update
 
 Project-specific session logging — capture context for cross-session continuity.
 

@@ -1,9 +1,9 @@
 ---
-name: update-session-log
+name: session-update
 description: Capture session context for cross-session continuity. Run after significant work to record goals, tradeoffs, open threads, and surprises.
 ---
 
-# Update Session Log
+# Session Update
 
 Write a structured entry in `.claude/session-history/YYYY-MM-DD.md` capturing context that helps future sessions pick up where this one left off.
 
@@ -69,4 +69,4 @@ Display the entry you wrote so they can review it.
 - File-by-file change lists (git history covers this)
 - Implementation details (code + commits cover this)
 - Stable decisions or knowledge (belongs in KNOWLEDGE.md)
-<!-- catalog: update-session-log v1 -->
+<!-- catalog: session-update v1 -->

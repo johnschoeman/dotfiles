@@ -1,9 +1,9 @@
 ---
-name: wrap-day
+name: today-wrap
 description: Evening close-out — walk through today's daily note, complete habits/tasks, capture reflection, carry forward incomplete items. Use at end of day or when saying "wrap day".
 ---
 
-# Wrap Day
+# Today Wrap
 
 Evening bookend to `/today`. Walks through the daily note interactively — complete habits, review tasks, capture reflection, carry forward incomplete items.
 
@@ -57,4 +57,4 @@ Print a brief recap:
 - If a section is already complete, acknowledge briefly and move on
 - Treat the whole flow as 2-3 minutes max
 {{extra_notes}}
-<!-- catalog: wrap-day v1 -->
+<!-- catalog: today-wrap v1 -->

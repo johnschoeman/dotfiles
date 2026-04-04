@@ -1,4 +1,29 @@
 {
+  "permissions": {
+    "allow": [
+      "Bash(wc:*)",
+      "Bash(git status:*)",
+      "Bash(git log:*)",
+      "Bash(git diff:*)",
+      "Bash(git show:*)",
+      "Bash(git branch:*)"
+    ],
+    "deny": [
+      "Bash(rm -rf *)",
+      "Bash(rm -rf /)",
+      "Bash(rm -rf /*)",
+      "Bash(chmod 777 *)",
+      "Bash(eval *)",
+      "Bash(base64 -d *)",
+      "Bash(python -c *)",
+      "Bash(node -e *)",
+      "Bash(ruby -e *)",
+      "Bash(perl -e *)",
+      "Bash(drop table *)",
+      "Bash(DROP TABLE *)"
+    ],
+    "defaultMode": "plan"
+  },
   "hooks": {
     "Notification": [
       {
@@ -20,6 +45,5 @@
   "enabledPlugins": {
     "rust-analyzer-lsp@claude-plugins-official": true,
     "typescript-lsp@claude-plugins-official": true
-  },
-  "model": "sonnet"
+  }
 }

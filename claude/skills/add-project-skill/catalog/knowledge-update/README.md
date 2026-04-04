@@ -1,4 +1,4 @@
-# update-knowledge
+# knowledge-update
 
 Project-specific knowledge capture — what to persist, how to organize, and what categories matter.
 

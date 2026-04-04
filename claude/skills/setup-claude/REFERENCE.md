@@ -10,7 +10,7 @@ Use this section exactly as-is in every generated CLAUDE.md:
 User manages all commits. You remind and suggest, never commit.
 
 **After significant work:**
-1. Run `/update-session-log` to capture session context
+1. Run `/session-update` to capture session context
 2. Run `git status` to see what's actually uncommitted
 3. Write commit message to `commit-msg.txt`
 4. Remind: "You may want to commit these changes"
