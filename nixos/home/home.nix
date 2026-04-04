@@ -69,6 +69,7 @@
 
     # python
     python315          # Python runtime
+    uv                 # Python package/script runner
 
     # web dev tools
     nodejs_24          # JS runtime
