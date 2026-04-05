@@ -45,6 +45,9 @@ hypridle via home-manager `services.hypridle` in `hyprland.nix`. Lock at 600s, d
 **npm/JFrog auth approach**
 `~/.npmrc` managed via `home.file` in `npm.nix`, not `programs.npm.settings` — scoped registry auth keys (`//host/path/:_authToken`) have slashes and colons that don't work as Nix attribute names, and `programs.npm.enable` would conflict with existing `nodejs_24` in home.packages. Auth token loaded at runtime via `${JFROG_NPM_TOKEN}` env var (npm interpolates env vars in `.npmrc`). Token sourced from 1Password CLI (`op read`) via `jfrog-login` fish function — no sops-nix needed since 1Password is already configured.
 
+**Claude Code package source**
+Installed via `sadjow/claude-code-nix` flake (auto-updated hourly) instead of nixpkgs, which lags behind npm releases. Added as a flake input with `nixpkgs.follows`, passed to home-manager via `extraSpecialArgs` as `claude-code-pkg`. Update independently with `nix flake update claude-code --flake ~/dotfiles/nixos`.
+
 **Rust tooling strategy**
 Only `rustup` is installed globally (for ad-hoc `rustc`/`cargo`). Project-specific tools (cargo-watch, cargo-generate, trunk, leptosfmt, etc.) belong in devenv templates, not `home.nix`.
 
@@ -92,6 +95,7 @@ NixOS is the primary machine; macOS is actively used alongside it. Both platform
 - Mako doesn't support imports — uses concatenation (`cat base + theme > config`) instead of the symlink pattern used by waybar/rofi/hyprlock
 - SDDM theming: `catppuccin-sddm` package with `.override { flavor; accent; font; }`, needs `qtsvg` in `extraPackages` and system-level font package (SDDM can't see home-manager fonts)
 - `home.pointerCursor` sets `XCURSOR_SIZE` and `HYPRCURSOR_SIZE` env vars automatically — don't set them manually in hyprland.conf. Requires logout/login to take effect.
+- npm-based Nix packages can 404 when an exact version is delisted from the npm registry between flake.lock pins — the hash in the lockfile points to a tarball URL that no longer exists. Fix: update the flake input to pick up a newer version.
 - home-manager backup collisions (e.g., `config.kdl.backup` already exists): add `force = true` to the `xdg.configFile` declaration to overwrite in place instead of backing up
 
 **macOS / Homebrew**

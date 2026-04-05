@@ -1,17 +1,47 @@
 {
   "permissions": {
     "allow": [
-      "Bash(wc:*)",
-      "Bash(git status:*)",
-      "Bash(git log:*)",
-      "Bash(git diff:*)",
-      "Bash(git show:*)",
-      "Bash(git branch:*)"
+      "Skill(*)",
+      "WebSearch",
+
+      "Bash(git status *)",
+      "Bash(git diff *)",
+      "Bash(git log *)",
+      "Bash(git show *)",
+      "Bash(git branch *)",
+      "Bash(git mv *)",
+      "Bash(gh api *)",
+
+      "Bash(nix eval:*)",
+      "Bash(nix search *)",
+      "Bash(nix flake show:*)",
+      "Bash(nixfmt *)",
+
+      "Bash(ls *)",
+      "Bash(mkdir *)",
+      "Bash(stat *)",
+      "Bash(test *)",
+      "Bash(wc *)",
+      "Bash(jq *)",
+      "Bash(bc *)",
+      "Bash(pdftotext *)",
+      "Bash(python3 *)",
+      "Bash(bash *)",
+      "Bash(rm commit-msg.txt)",
+
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:api.github.com)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "WebFetch(domain:www.anthropic.com)",
+      "WebFetch(domain:wiki.nixos.org)",
+      "WebFetch(domain:mynixos.com)",
+      "WebFetch(domain:nix-community.github.io)"
     ],
     "deny": [
       "Bash(rm -rf *)",
       "Bash(rm -rf /)",
       "Bash(rm -rf /*)",
+      "Bash(rm -r *)",
       "Bash(chmod 777 *)",
       "Bash(eval *)",
       "Bash(base64 -d *)",
@@ -20,9 +50,16 @@
       "Bash(ruby -e *)",
       "Bash(perl -e *)",
       "Bash(drop table *)",
-      "Bash(DROP TABLE *)"
+      "Bash(DROP TABLE *)",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(git push *)",
+      "Bash(git checkout *)",
+      "Bash(git merge *)",
+      "Bash(git rebase *)",
+      "Bash(nh os switch *)"
     ],
-    "defaultMode": "plan"
+    "defaultMode": "acceptEdits"
   },
   "hooks": {
     "Notification": [

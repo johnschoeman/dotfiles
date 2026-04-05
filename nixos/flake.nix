@@ -11,6 +11,10 @@
       url = "github:hyprwm/Hyprland";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    claude-code = {
+      url = "github:sadjow/claude-code-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -18,6 +22,7 @@
       nixpkgs,
       hyprland,
       home-manager,
+      claude-code,
       ...
     }:
     {
@@ -30,6 +35,9 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.backupFileExtension = "backup";
+            home-manager.extraSpecialArgs = {
+              claude-code-pkg = claude-code.packages.x86_64-linux.claude-code;
+            };
             home-manager.users.john = {
               imports = [
                 /home/john/dotfiles/nixos/home/home.nix

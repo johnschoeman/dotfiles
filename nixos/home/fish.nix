@@ -23,7 +23,8 @@
       alias nrs "nh os switch /home/john/dotfiles/nixos -- --impure"
       alias nclean "nh clean all --keep-since 14d"
       alias nhsearch "nh search"
-      alias nupdate "nix flake update"
+      alias nupdate "nix flake update --flake ~/dotfiles/nixos"
+      alias nupdated "stat -c '%y' ~/dotfiles/nixos/flake.lock"
       alias drun "rofi -show drun"
       alias neofetch "fastfetch"
 
