@@ -35,21 +35,21 @@ If no changes are staged or modified, inform the user and stop.
 Format:
 
 ```
-<title - imperative mood, max 50 chars>
+<title - imperative mood, MUST be ≤50 chars>
 
 Why:
 
-<brief motivation, wrap at 72 chars>
+<brief motivation, MUST hard-wrap at 72 chars>
 
 This commit:
 
-- <bullet points of actual changes, wrap at 72 chars>
+- <bullet points, MUST hard-wrap at 72 chars>
 - <only uncommitted changes, not already-committed work>
 ```
 
-**Title:** imperative mood, max 50 chars, no period, capitalize first letter. No prefix — just a clear summary.
+**Title:** imperative mood, no period, capitalize first letter. No prefix — just a clear summary. **ALWAYS stay within 50 characters — no exceptions.** Count the characters before writing.
 
-**Body:** explain WHY not just WHAT, wrap at 72 chars, bullet points for multiple changes.
+**Body:** explain WHY not just WHAT, bullet points for multiple changes. **ALWAYS hard-wrap every line at 72 characters — no exceptions.** This includes bullet points, prose, and the "Why:" section.
 
 ### 4. Write to File
 

@@ -3,7 +3,6 @@
     "allow": [
       "Skill(*)",
       "WebSearch",
-
       "Bash(git status *)",
       "Bash(git diff *)",
       "Bash(git log *)",
@@ -11,12 +10,10 @@
       "Bash(git branch *)",
       "Bash(git mv *)",
       "Bash(gh api *)",
-
       "Bash(nix eval:*)",
       "Bash(nix search *)",
       "Bash(nix flake show:*)",
       "Bash(nixfmt *)",
-
       "Bash(ls *)",
       "Bash(mkdir *)",
       "Bash(stat *)",
@@ -28,7 +25,6 @@
       "Bash(python3 *)",
       "Bash(bash *)",
       "Bash(rm commit-msg.txt)",
-
       "WebFetch(domain:github.com)",
       "WebFetch(domain:api.github.com)",
       "WebFetch(domain:raw.githubusercontent.com)",
@@ -59,8 +55,9 @@
       "Bash(git rebase *)",
       "Bash(nh os switch *)"
     ],
-    "defaultMode": "acceptEdits"
+    "defaultMode": "auto"
   },
+  "model": "sonnet",
   "hooks": {
     "Notification": [
       {
@@ -82,5 +79,12 @@
   "enabledPlugins": {
     "rust-analyzer-lsp@claude-plugins-official": true,
     "typescript-lsp@claude-plugins-official": true
-  }
+  },
+  "effortLevel": "low",
+  "voiceEnabled": true,
+  "voice": {
+    "enabled": true,
+    "mode": "hold"
+  },
+  "skipAutoPermissionPrompt": true
 }

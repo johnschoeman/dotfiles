@@ -9,6 +9,12 @@ cwd=$(echo "$input" | jq -r '.workspace.current_dir')
 model=$(echo "$input" | jq -r '.model.display_name')
 used=$(echo "$input" | jq -r '.context_window.remaining_percentage // empty')
 output_style=$(echo "$input" | jq -r '.output_style.name // "default"')
+effort=$(echo "$input" | jq -r '.effort_level // empty')
+if [ -z "$effort" ]; then
+    effort=$(jq -r '.effortLevel // empty' "$HOME/.claude/settings.json" 2>/dev/null)
+fi
+cost=$(echo "$input" | jq -r '.cost.total_cost_usd // 0')
+duration_ms=$(echo "$input" | jq -r '.cost.total_duration_ms // 0')
 
 # Get directory name
 dir=$(basename "$cwd")
@@ -53,10 +59,34 @@ if [ "$output_style" != "default" ]; then
     style_info=" \033[2;36m[$output_style]\033[0m"
 fi
 
+# Effort level indicator
+effort_info=""
+if [ -n "$effort" ]; then
+    case "$effort" in
+        low) eft_short="low" ;;
+        medium) eft_short="med" ;;
+        high) eft_short="hi" ;;
+        *) eft_short="${effort:0:3}" ;;
+    esac
+    effort_info=" \033[2;35meff:${eft_short}\033[0m"
+fi
+
+# Cost and duration info
+cost_info=""
+if [ -n "$cost" ] && [ "$cost" != "0" ]; then
+    cost_fmt=$(printf '$%.2f' "$cost")
+    duration_sec=$((duration_ms / 1000))
+    mins=$((duration_sec / 60))
+    secs=$((duration_sec % 60))
+    cost_info=" \033[2;33m${cost_fmt} ${mins}m${secs}s\033[0m"
+fi
+
 # Build and output the status line
-printf "\033[2;34m%s/\033[0m%b \033[2;36m%s\033[0m%b%b" \
+printf "\033[2;34m%s/\033[0m%b \033[2;36m%s\033[0m%b%b%b%b" \
     "$dir" \
     "$git_info" \
     "$model" \
     "$context_info" \
-    "$style_info"
+    "$style_info" \
+    "$effort_info" \
+    "$cost_info"

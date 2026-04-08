@@ -35,9 +35,9 @@ If no changes are staged or modified, inform the user and stop.
 Copy `TEMPLATE.md` from this skill directory and fill in the placeholders.
 {{prefix_instructions}}
 
-**Title:** imperative mood, max 50 chars, no period, capitalize first letter.
+**Title:** imperative mood, no period, capitalize first letter. **ALWAYS stay within 50 characters — no exceptions.** Count the characters before writing.
 
-**Body:** explain WHY not just WHAT, wrap at 72 chars, bullet points for multiple changes.
+**Body:** explain WHY not just WHAT, bullet points for multiple changes. **ALWAYS hard-wrap every line at 72 characters — no exceptions.** This includes bullet points, prose, and the "Why:" section.
 
 {{message_format_notes}}
 
