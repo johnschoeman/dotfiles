@@ -80,7 +80,7 @@
     "rust-analyzer-lsp@claude-plugins-official": true,
     "typescript-lsp@claude-plugins-official": true
   },
-  "effortLevel": "low",
+  "effortLevel": "medium",
   "voiceEnabled": true,
   "voice": {
     "enabled": true,

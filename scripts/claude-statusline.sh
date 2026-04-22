@@ -14,7 +14,6 @@ if [ -z "$effort" ]; then
     effort=$(jq -r '.effortLevel // empty' "$HOME/.claude/settings.json" 2>/dev/null)
 fi
 cost=$(echo "$input" | jq -r '.cost.total_cost_usd // 0')
-duration_ms=$(echo "$input" | jq -r '.cost.total_duration_ms // 0')
 
 # Get directory name
 dir=$(basename "$cwd")
@@ -75,10 +74,7 @@ fi
 cost_info=""
 if [ -n "$cost" ] && [ "$cost" != "0" ]; then
     cost_fmt=$(printf '$%.2f' "$cost")
-    duration_sec=$((duration_ms / 1000))
-    mins=$((duration_sec / 60))
-    secs=$((duration_sec % 60))
-    cost_info=" \033[2;33m${cost_fmt} ${mins}m${secs}s\033[0m"
+    cost_info=" \033[2;33m${cost_fmt}\033[0m"
 fi
 
 # Build and output the status line
