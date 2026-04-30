@@ -1,0 +1,37 @@
+{
+  "$schema": "https://code.claude.com/schemas/settings.json",
+  "permissions": {
+    "deny": [
+      "Read(./.env)",
+      "Read(./.env.*)",
+      "Read(./secrets/**)",
+      "rm -rf",
+      "chmod 777",
+      "eval",
+      "> /dev/sda",
+      "mkfs",
+      "dd if=",
+      ":(){ :|:& };:"
+    ],
+    "allow": [
+      "git status",
+      "git log",
+      "git diff",
+      "git show",
+      "git branch"
+    ]
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash $CLAUDE_PROJECT_DIR/.claude/hooks/block-dangerous-git.sh"
+          }
+        ]
+      }
+    ]
+  }
+}

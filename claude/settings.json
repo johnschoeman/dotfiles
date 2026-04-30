@@ -81,10 +81,10 @@
     "typescript-lsp@claude-plugins-official": true
   },
   "effortLevel": "medium",
-  "voiceEnabled": true,
   "voice": {
     "enabled": true,
     "mode": "hold"
   },
-  "skipAutoPermissionPrompt": true
+  "skipAutoPermissionPrompt": true,
+  "voiceEnabled": true
 }
