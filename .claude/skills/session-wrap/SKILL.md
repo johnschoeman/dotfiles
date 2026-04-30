@@ -1,11 +1,14 @@
 ---
 name: session-wrap
 description: End-of-session wrap-up — update session log, persist key decisions to knowledge, and suggest a commit. Use when finishing a work session, saying "wrap up", or ready to commit and close out.
+argument-hint: [--all]
 ---
 
 # Session Wrap
 
 Run three end-of-session steps in sequence: capture session context, persist stable knowledge, and suggest a commit.
+
+**Flag:** `--all` — run all steps without pausing for approval between them.
 
 ## Process
 
@@ -50,4 +53,4 @@ Follow the `/commit` process (always suggest mode — never run `git commit`):
 - If there are no uncommitted changes, skip step 3 and note it
 - The session log captures narrative; knowledge captures stable facts — don't duplicate between them
 - Never run `git commit`, `git add`, or any git write commands directly
-<!-- catalog: session-wrap v1 -->
+- With `--all`: proceed through every step automatically; do not pause to ask "should I continue?"

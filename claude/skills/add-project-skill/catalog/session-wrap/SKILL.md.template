@@ -1,11 +1,14 @@
 ---
 name: session-wrap
 description: End-of-session wrap-up — {{session_description}}. Use when finishing a work session, saying "wrap up", or ready to commit and close out.
+argument-hint: [--all]
 ---
 
 # Session Wrap
 
 {{steps_summary}}
+
+**Flag:** `--all` — run all steps without pausing for approval between them.
 
 ## Process
 
@@ -22,5 +25,6 @@ description: End-of-session wrap-up — {{session_description}}. Use when finish
 - Each step builds on context from the previous — run sequentially, not in parallel
 - If there are no uncommitted changes, skip the commit step and note it
 - The session log captures narrative; knowledge captures stable facts — don't duplicate between them
+- With `--all`: proceed through every step automatically; do not pause to ask "should I continue?"
 {{extra_notes}}
 <!-- catalog: session-wrap v1 -->

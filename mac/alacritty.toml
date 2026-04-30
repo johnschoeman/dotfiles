@@ -4,3 +4,8 @@ import = ["~/.config/alacritty/current-theme.toml"]
 [window]
 opacity = 1.0
 option_as_alt = "OnlyLeft"
+
+[[keyboard.bindings]]
+key = "Return"
+mods = "Shift"
+chars = "\u001B\r"

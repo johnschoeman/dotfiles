@@ -35,7 +35,6 @@ Check in order — stop at the first that resolves:
 
 1. `~/workspace/evolv/developer-ai-toolkit/skill-catalog/`
 2. Walk up from `$CLAUDE_SKILL_DIR` looking for a `skill-catalog/` directory (works when skill lives in the toolkit itself)
-
 If none resolve:
 
 ```

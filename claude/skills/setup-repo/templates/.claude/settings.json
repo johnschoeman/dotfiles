@@ -2,9 +2,6 @@
   "$schema": "https://code.claude.com/schemas/settings.json",
   "permissions": {
     "deny": [
-      "Read(./.env)",
-      "Read(./.env.*)",
-      "Read(./secrets/**)",
       "rm -rf",
       "chmod 777",
       "eval",

@@ -104,6 +104,16 @@ User can say **"talk normal"** to switch to standard verbose responses. Say **"u
 
 For Evolv-wide coding conventions, AI guidelines, and reusable skills, see the [developer-ai-toolkit](https://bitbucket.org/evolvmosaiq/developer-ai-toolkit) repo.
 
+## Skill Auto-Routing
+
+Load skills automatically — users shouldn't need to invoke them manually.
+
+| Trigger | Skill |
+|---------|-------|
+| Locating files, navigating the codebase, understanding project structure | `project-index` |
+
+<!-- Add more rows as the project grows — e.g., writing tests → `tdd`, reviewing changes → `code-review` -->
+
 ## Git Workflow
 
 [Paste from REFERENCE.md verbatim]

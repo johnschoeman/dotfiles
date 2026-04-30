@@ -12,6 +12,8 @@ zoxide init fish | source
 atuin init fish | source
 direnv hook fish | source
 
+set -gx DEVELOPER_AI_TOOLKIT /Users/jschoeman/workspace/developer-ai-toolkit
+
 ## Aliases
 
 #### Helix

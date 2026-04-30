@@ -64,6 +64,14 @@ For Evolv-wide coding conventions, AI guidelines, and reusable skills, see the [
 
 - [1-2 things that trip people up — include "why" for non-obvious decisions]
 
+## Skill Auto-Routing
+
+Load skills automatically — users shouldn't need to invoke them manually.
+
+| Trigger | Skill |
+|---------|-------|
+| Locating files, navigating the codebase, understanding project structure | `project-index` |
+
 <!-- Start minimal, grow organically. Add rules only when Claude makes a specific mistake. -->
 <!-- Review quarterly — remove stale rules, offload detail to .claude/references/. -->
 ````

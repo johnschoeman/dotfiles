@@ -132,6 +132,7 @@ NEVER duplicate Evolv-wide content — reference it.
 | `references/architecture.md` | [template](templates/.claude/references/architecture.md) | Copy as template — too project-specific to auto-fill |
 | `skills/commit/` | [template](templates/.claude/skills/commit/) | Copy SKILL.md + TEMPLATE.md |
 | `skills/review/` | [template](templates/.claude/skills/review/) | Copy SKILL.md |
+| `skills/project-index/` | [template](templates/.claude/skills/project-index/) | Copy SKILL.md + references/TEMPLATE.md |
 | `hooks/` | [template](templates/.claude/hooks/block-dangerous-git.sh) | Copy and make executable |
 
 For `references/stack.md`, fill in what you can from the codebase analysis. Leave sections empty that you can't determine.
@@ -205,7 +206,7 @@ Specifically call out:
 **Check .claude/ infrastructure for:**
 - Missing or empty `rules/` directory — suggest adding from [templates](templates/.claude/rules/)
 - Missing `references/` files — suggest adding architecture.md and stack.md
-- Missing project-local skills — suggest adding commit/ and review/
+- Missing project-local skills — suggest adding commit/, review/, and project-index/
 - Missing git guardrails — check `settings.json` for PreToolUse hook and `hooks/` for block script
 - Missing deny/allow permissions in `settings.json`
 
@@ -229,7 +230,7 @@ Setup is complete when:
 - CLAUDE.md is under 200 lines (or user acknowledged and accepted the size)
 - CLAUDE.md follows 80/20 rule (mostly work description, not personality)
 - Evolv repos reference the developer-ai-toolkit
-- `.claude/` directory fully scaffolded: settings.json, rules/, references/, skills/, hooks/
+- `.claude/` directory fully scaffolded: settings.json, rules/, references/, skills/ (commit/, review/, project-index/), hooks/
 - Git guardrails in place (settings.json + hook script)
 - User reminded to review, adapt, and maintain .claude/ files continuously
 - User has a clear summary of what was created/changed
