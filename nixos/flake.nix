@@ -15,6 +15,7 @@
       url = "github:sadjow/claude-code-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    claude-desktop.url = "github:k3d3/claude-desktop-linux-flake";
   };
 
   outputs =
@@ -23,6 +24,7 @@
       hyprland,
       home-manager,
       claude-code,
+      claude-desktop,
       ...
     }:
     {
@@ -37,6 +39,7 @@
             home-manager.backupFileExtension = "backup";
             home-manager.extraSpecialArgs = {
               claude-code-pkg = claude-code.packages.x86_64-linux.claude-code;
+              claude-desktop-pkg = claude-desktop.packages.x86_64-linux.claude-desktop-with-fhs;
             };
             home-manager.users.john = {
               imports = [

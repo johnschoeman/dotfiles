@@ -1,4 +1,4 @@
-{ config, pkgs, claude-code-pkg, ... }:
+{ config, pkgs, claude-code-pkg, claude-desktop-pkg, ... }:
 {
   home.username = "john";
   home.homeDirectory = "/home/john";
@@ -65,6 +65,7 @@
     teams-for-linux    # Microsoft Teams
     google-chrome      # web browser
     claude-code-pkg    # AI coding CLI (from claude-code-nix flake)
+    claude-desktop-pkg # Claude Desktop GUI (from claude-desktop-linux-flake)
     
 
     # python
