@@ -5,6 +5,8 @@
 function fish_greeting
 end
 fish_add_path /opt/homebrew/bin
+fish_add_path ~/.cargo/bin
+fish_add_path ~/.rustup/toolchains/stable-aarch64-apple-darwin/bin
 fish_add_path ~/dotfiles/scripts
 set -gx EDITOR hx
 starship init fish | source

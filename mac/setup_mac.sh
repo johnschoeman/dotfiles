@@ -47,7 +47,17 @@ link "$DOTFILES/claude/settings.json"    "$HOME/.claude/settings.json"
 link "$DOTFILES/claude/skills"           "$HOME/.claude/skills"
 echo
 
-# 4. Copy default Alacritty theme if not present
+# 4. Install Rust stable toolchain if not present
+if ! rustup toolchain list 2>/dev/null | grep -q "stable"; then
+  echo "Installing Rust stable toolchain..."
+  rustup toolchain install stable
+fi
+# Ensure ~/.cargo/bin proxy shims exist
+rustup set profile default
+rustup update stable --no-self-update 2>/dev/null || true
+echo
+
+# 6. Copy default Alacritty theme if not present
 THEME_DEST="$HOME/.config/alacritty/current-theme.toml"
 if [ ! -f "$THEME_DEST" ]; then
   cp "$DOTFILES/alacritty/themes/catppuccin_frappe.toml" "$THEME_DEST"
@@ -57,7 +67,7 @@ else
 fi
 echo
 
-# 5. Set Fish as default shell (requires sudo — skipped if unavailable)
+# 7. Set Fish as default shell (requires sudo — skipped if unavailable)
 FISH_PATH="/opt/homebrew/bin/fish"
 if ! grep -qF "$FISH_PATH" /etc/shells; then
   if sudo -n true 2>/dev/null; then
@@ -77,7 +87,7 @@ elif [ "$SHELL" = "$FISH_PATH" ]; then
 fi
 echo
 
-# 6. Summary
+# 8. Summary
 echo "=== Setup Complete ==="
 echo
 echo "Installed: CLI tools, dev tools, fonts, GUI apps"
@@ -86,4 +96,4 @@ echo
 echo "Next steps:"
 echo "  1. Open Alacritty — should launch Fish with starship prompt"
 echo "  2. Verify: hx --version, zellij --version, bat --version"
-echo "  3. Run 'rustup default stable' to set up Rust toolchain"
+echo "  3. Verify: cargo --version"

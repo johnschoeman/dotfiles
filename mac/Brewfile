@@ -28,6 +28,7 @@ brew "node"
 brew "pnpm"
 brew "python@3"
 brew "rustup"
+brew "uv"
 
 # Fonts
 cask "font-jetbrains-mono-nerd-font"
@@ -38,3 +39,4 @@ cask "obsidian"
 cask "google-chrome"
 cask "rectangle"
 cask "1password"
+cask "claude"
