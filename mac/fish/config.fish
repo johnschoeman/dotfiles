@@ -25,7 +25,7 @@ alias h hx
 
 #### Homebrew
 
-alias brewfile "brew bundle --file=~/dotfiles/mac/Brewfile"
+alias brewbundle "brew bundle --file=~/dotfiles/mac/Brewfile"
 
 #### Utilities
 

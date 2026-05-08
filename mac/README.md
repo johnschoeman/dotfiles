@@ -40,7 +40,7 @@ Helix, Zellij, Git, and Claude configs are shared with NixOS. Fish and Alacritty
 ## Updating Packages
 
 ```bash
-brew bundle --file=~/dotfiles/mac/Brewfile
+brew bundle --file=~/dotfiles/mac/Brewfile # alias: brewbundle
 ```
 
 Add new packages to `mac/Brewfile`, then re-run.

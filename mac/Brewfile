@@ -21,6 +21,7 @@ brew "atuin"
 brew "xh"
 brew "direnv"
 brew "pandoc"
+brew "marp-cli"
 cask "timer"
 
 # Dev tools
