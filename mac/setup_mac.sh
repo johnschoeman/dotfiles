@@ -45,6 +45,7 @@ link "$DOTFILES/gitconfig"               "$HOME/.gitconfig"
 link "$DOTFILES/gitmessage"              "$HOME/.gitmessage"
 link "$DOTFILES/claude/settings.json"    "$HOME/.claude/settings.json"
 link "$DOTFILES/claude/skills"           "$HOME/.claude/skills"
+link "$DOTFILES/claude/CLAUDE.md"        "$HOME/.claude/CLAUDE.md"
 echo
 
 # 4. Install Rust stable toolchain if not present
