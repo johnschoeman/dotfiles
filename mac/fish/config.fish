@@ -15,6 +15,7 @@ atuin init fish | source
 direnv hook fish | source
 
 set -gx DEVELOPER_AI_TOOLKIT /Users/jschoeman/workspace/developer-ai-toolkit
+# Machine-local secrets (tokens, API keys) go in ~/.config/fish/conf.d/secrets.fish — untracked, auto-sourced by Fish
 
 ## Aliases
 

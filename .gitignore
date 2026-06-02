@@ -1,5 +1,9 @@
-# Commit message 
+# Commit message
 commit-msg.txt
+
+# Machine-local secrets — create this file manually, never commit it
+# See mac/fish/config.fish or nixos/home/fish.nix for details
+conf.d/secrets.fish
 
 # temporary artifacts
 !bin

@@ -1,5 +1,8 @@
 {
   "permissions": {
+    "additionalDirectories": [
+      "~/.claude/context-library"
+    ],
     "allow": [
       "Skill(*)",
       "WebSearch",
@@ -57,8 +60,19 @@
     ],
     "defaultMode": "auto"
   },
-  "model": "sonnet",
+  "model": "opus",
   "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "git -C ~/.claude/context-library pull --ff-only --quiet 2>/dev/null || true"
+          }
+        ]
+      }
+    ],
     "Notification": [
       {
         "matcher": "",
@@ -78,9 +92,18 @@
   },
   "enabledPlugins": {
     "rust-analyzer-lsp@claude-plugins-official": true,
-    "typescript-lsp@claude-plugins-official": true
+    "typescript-lsp@claude-plugins-official": true,
+    "evolv-software@evolv-developer-ai-toolkit": true
   },
-  "effortLevel": "medium",
+  "extraKnownMarketplaces": {
+    "evolv-developer-ai-toolkit": {
+      "source": {
+        "source": "git",
+        "url": "git@bitbucket.org:evolvmosaiq/developer-ai-toolkit.git"
+      }
+    }
+  },
+  "effortLevel": "high",
   "voice": {
     "enabled": true,
     "mode": "hold"
