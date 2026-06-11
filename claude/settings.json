@@ -1,8 +1,5 @@
 {
   "permissions": {
-    "additionalDirectories": [
-      "~/.claude/context-library"
-    ],
     "allow": [
       "Skill(*)",
       "WebSearch",
@@ -58,9 +55,12 @@
       "Bash(git rebase *)",
       "Bash(nh os switch *)"
     ],
-    "defaultMode": "auto"
+    "defaultMode": "auto",
+    "additionalDirectories": [
+      "~/.claude/context-library"
+    ]
   },
-  "model": "opus",
+  "model": "sonnet",
   "hooks": {
     "SessionStart": [
       {
@@ -93,7 +93,8 @@
   "enabledPlugins": {
     "rust-analyzer-lsp@claude-plugins-official": true,
     "typescript-lsp@claude-plugins-official": true,
-    "evolv-software@evolv-developer-ai-toolkit": true
+    "evolv-software@evolv-developer-ai-toolkit": true,
+    "evolv-sqa@evolv-developer-ai-toolkit": true
   },
   "extraKnownMarketplaces": {
     "evolv-developer-ai-toolkit": {
