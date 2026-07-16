@@ -31,6 +31,7 @@ brew "pnpm"
 brew "python@3"
 brew "rustup"
 brew "uv"
+brew "asdf"
 
 # Fonts
 cask "font-jetbrains-mono-nerd-font"

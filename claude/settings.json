@@ -56,23 +56,10 @@
       "Bash(nh os switch *)"
     ],
     "defaultMode": "auto",
-    "additionalDirectories": [
-      "~/.claude/context-library"
-    ]
+    "additionalDirectories": []
   },
   "model": "sonnet",
   "hooks": {
-    "SessionStart": [
-      {
-        "matcher": "",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "git -C ~/.claude/context-library pull --ff-only --quiet 2>/dev/null || true"
-          }
-        ]
-      }
-    ],
     "Notification": [
       {
         "matcher": "",
@@ -109,6 +96,8 @@
     "enabled": true,
     "mode": "hold"
   },
+  "skipWorkflowUsageWarning": true,
   "skipAutoPermissionPrompt": true,
-  "voiceEnabled": true
+  "voiceEnabled": true,
+"tui": "fullscreen"
 }
