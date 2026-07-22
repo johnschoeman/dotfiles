@@ -91,13 +91,14 @@
       }
     }
   },
-  "effortLevel": "high",
+  "effortLevel": "low",
+  "tui": "fullscreen",
   "voice": {
     "enabled": true,
     "mode": "hold"
   },
   "skipWorkflowUsageWarning": true,
+  "remoteControlAtStartup": false,
   "skipAutoPermissionPrompt": true,
-  "voiceEnabled": true,
-"tui": "fullscreen"
+  "voiceEnabled": true
 }
