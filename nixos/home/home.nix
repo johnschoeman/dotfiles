@@ -84,6 +84,9 @@
     # rust
     rustup             # Rust toolchain
 
+    # lean
+    lean4              # Lean toolchain
+
     # language servers / editor tools
     fish-lsp           # Fish LSP
 
@@ -105,5 +108,6 @@
     poppler-utils      # pdf reading
     pandoc             # doc reading
     jfrog-cli          # JFrog Artifactory CLI
+    entr               # file watcher
   ];
 }
