@@ -19,7 +19,7 @@
   };
 
   outputs =
-    {
+    inputs@{
       nixpkgs,
       hyprland,
       home-manager,
@@ -30,6 +30,7 @@
     {
       nixosConfigurations.framework = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
+        specialArgs = { inherit inputs; };
         modules = [
           ./configuration.nix
           home-manager.nixosModules.home-manager

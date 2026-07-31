@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ inputs, config, pkgs, ... }:
 let
   sddm-theme = pkgs.catppuccin-sddm.override {
     flavor = "frappe";
@@ -143,6 +143,9 @@ in
 
     # keyboard firmware
     qmk               # QMK firmware
+
+    inputs.claude-desktop.packages.${pkgs.system}.claude-desktop
+    
   ];
 
   environment.variables = {
