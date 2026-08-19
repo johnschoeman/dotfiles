@@ -20,6 +20,7 @@
   cap           = commit -p --amend
   caap          = commit -ap --amend
   cm            = commit -m
+  cn            = "!f() { os=$(uname -s); case \"$os\" in Darwin) os=mac ;; Linux) os=linux ;; esac; git commit -am \"Add general notes ($os)\"; }; f"
   caw           = commit -am "wip"
   cp            = commit -p
   cw            = commit -m "wip"

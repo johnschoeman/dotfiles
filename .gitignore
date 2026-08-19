@@ -16,3 +16,5 @@ waybar/colors.css
 rofi/colors.rasi
 hyprlock/colors.conf
 mako/config
+
+data/
